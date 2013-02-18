@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<events>
+    <event widget="MainWindow/scenePluginDock/scenePluginockWidgetContents/toolComboBox" command="set_string" arguments="Edit"/>
+    <event widget="MainWindow/glWidget" command="mousePress" arguments="(0.393939,0.218679,1,1,0)"/>
+    <event widget="MainWindow/glWidget" command="mouseMove" arguments="(0.328283,0.261959,0,1,0)"/>
+    <event widget="MainWindow/glWidget" command="mouseRelease" arguments="(0.328283,0.261959,1,0,0)"/>
+    <event widget="MainWindow/scenePluginDock/scenePluginockWidgetContents/elementComboBox" command="set_string" arguments="Carbon (6)"/>
+    <event widget="MainWindow/glWidget" command="mousePress" arguments="(0.59596,0.441913,1,1,0)"/>
+    <event widget="MainWindow/glWidget" command="mouseMove" arguments="(0.505051,0.457859,0,1,0)"/>
+    <event widget="MainWindow/glWidget" command="mouseRelease" arguments="(0.505051,0.457859,1,0,0)"/>
+    <event widget="MainWindow/scenePluginDock/scenePluginockWidgetContents/elementComboBox" command="set_string" arguments="Sulfur (16)"/>
+    <event widget="MainWindow/glWidget" command="mousePress" arguments="(0.575758,0.284738,1,1,0)"/>
+    <event widget="MainWindow/glWidget" command="mouseRelease" arguments="(0.575758,0.284738,1,0,0)"/>
+    <event widget="MainWindow/glWidget" command="mousePress" arguments="(0.55303,0.448747,1,1,0)"/>
+    <event widget="MainWindow/glWidget" command="mouseRelease" arguments="(0.55303,0.448747,1,0,0)"/>
+    <event widget="MainWindow/scenePluginDock/scenePluginockWidgetContents/scenePluginTreeView" command="setCheckState" arguments="1.0,2"/>
+    <event widget="MainWindow/scenePluginDock/scenePluginockWidgetContents/scenePluginTreeView" command="setCheckState" arguments="0.0,0"/>
+</events>
