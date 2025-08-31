@@ -1,0 +1,16 @@
+{
+  "chemicalJson": 1,
+  "name": "impossible object",
+  "atoms": {
+    "coords": {"3dFractional": [0.5, 0.5, 0.5]},
+    "elements": {"number": [0]}
+  },
+  "unitCell": {
+    "a": 3.0,
+    "b": 4.0,
+    "c": 5.0,
+    "alpha": 60.0,
+    "beta": 60.0,
+    "gamma": 130.0
+  }
+}

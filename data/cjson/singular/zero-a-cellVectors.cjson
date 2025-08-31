@@ -1,0 +1,15 @@
+{
+  "chemicalJson": 1,
+  "name": "singular: a is zero",
+  "atoms": {
+    "coords": {"3dFractional": [0.5, 0.5, 0.5]},
+    "elements": {"number": [0]}
+  },
+  "unitCell": {
+    "cellVectors": [
+      0.0, 0.0, 0.0,
+      0.0, 4.0, 0.0,
+      0.0, 0.0, 5.0
+    ]
+  }
+}

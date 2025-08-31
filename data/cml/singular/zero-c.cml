@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<molecule xmlns="http://www.xml-cml.org/schema" xmlns:units="http://www.xml-cml.org/unit/nonSi">
+  <name>singular: c is zero</name>
+  <crystal>
+    <scalar title="a" units="units:angstrom">3.0</scalar>
+    <scalar title="b" units="units:angstrom">4.0</scalar>
+    <scalar title="c" units="units:angstrom">0.0</scalar>
+    <scalar title="alpha" units="units:degree">90.0</scalar>
+    <scalar title="beta"  units="units:degree">90.0</scalar>
+    <scalar title="gamma" units="units:degree">90.0</scalar>
+  </crystal>
+  <atomArray>
+    <atom id="a1" elementType="Xx" xFract="0.0" yFract="0.0" zFract="0.0"/>
+  </atomArray>
+</molecule>
