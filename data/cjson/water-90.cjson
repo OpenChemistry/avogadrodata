@@ -1,0 +1,164 @@
+{
+  "atoms": {
+    "coords": {
+      "3d": [
+        0.0,
+        0.0,
+        0.0,
+        0.95,
+        0.0,
+        0.0,
+        0.0,
+        0.95,
+        0.0
+      ]
+    },
+    "elements": {
+      "number": [
+        8,
+        1,
+        1
+      ]
+    },
+    "formalCharges": [
+      0,
+      0,
+      0
+    ],
+    "layer": [
+      0,
+      0,
+      0
+    ]
+  },
+  "bonds": {
+    "connections": {
+      "index": [
+        0,
+        1,
+        0,
+        2
+      ]
+    },
+    "order": [
+      1,
+      1
+    ]
+  },
+  "chemicalJson": 1,
+  "layer": {
+    "enable": {
+      "Ball and Stick": [
+        true
+      ],
+      "Cartoons": [
+        false
+      ],
+      "Close Contacts": [
+        false
+      ],
+      "Crystal Lattice": [
+        true
+      ],
+      "Dipole Moment": [
+        false
+      ],
+      "Force": [
+        false
+      ],
+      "Labels": [
+        false
+      ],
+      "Licorice": [
+        false
+      ],
+      "Meshes": [
+        true
+      ],
+      "Non-Covalent": [
+        false
+      ],
+      "Van der Waals": [
+        false
+      ],
+      "Wireframe": [
+        false
+      ],
+      "undef": [
+        true
+      ]
+    },
+    "locked": [
+      false,
+      false,
+      false
+    ],
+    "settings": {
+      "Ball and Stick": [
+        "true true 0.300000 0.100000 1.000000"
+      ]
+    },
+    "visible": [
+      true,
+      true,
+      true
+    ]
+  },
+  "properties": {
+    "fileName": "/Users/ghutchis/Library/Mobile Documents/com~apple~CloudDocs/water-100.cjson",
+    "modelView": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        1.0,
+        -13.319999694824219
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "projection": [
+      [
+        1.5320334434509277,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        2.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        -1.2308465242385864,
+        -4.461693286895752
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        0.0
+      ]
+    ],
+    "totalCharge": 0,
+    "totalSpinMultiplicity": 1
+  }
+}
