@@ -1,0 +1,15 @@
+# These fixtures are meant to be committed, and they have to be compressed:
+# the point of them is to be real gzip, bzip2, xz and zstd streams produced by
+# the reference tools.
+#
+# A global ignore of "*.gz" is a common default (git's own sample templates
+# suggest it, on the reasoning that you should commit sources rather than
+# archives). That rule silently dropped all nine .gz fixtures from the first
+# commit here, and nothing caught it locally because the files were still on
+# disk and the tests passed. A repository .gitignore takes precedence over the
+# user's global one, so re-include them explicitly.
+!*.gz
+!*.bz2
+!*.xz
+!*.zst
+!*.zstd
