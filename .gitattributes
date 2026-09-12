@@ -1,0 +1,10 @@
+# avogadrodata is a fixture repository: the test suite compares against these
+# files byte for byte, so every one of them has to arrive exactly as committed.
+#
+# Git's end-of-line conversion breaks that. On a Windows checkout it rewrites
+# the text fixtures to CRLF while leaving the compressed ones alone, because
+# those are binary -- so data/xyz/methane.xyz arrived with CRLF while
+# data/compressed/methane.xyz.gz still decompressed to the LF bytes it was
+# built from, and eight compression tests failed on the mismatch. Turning off
+# the conversion keeps every fixture byte-identical on every platform.
+* -text
