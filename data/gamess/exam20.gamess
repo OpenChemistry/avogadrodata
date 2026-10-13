@@ -1,0 +1,1683 @@
+1 : exam20.inp
+2 : 00
+3 : 1
+4 : 1
+----- GAMESS execution script 'rungms' -----
+This job is running on host meyeri
+under operating system Linux at Tue Oct 13 09:19:40 AM EDT 2026
+Available scratch disk space (Kbyte units) at beginning of the job is
+Filesystem       1K-blocks       Used   Available Use% Mounted on
+zraid/home     69573174272 6905928704 62667245568  10% /home
+GAMESS temporary binary files will be written to /home/eric/data/development/forks/OpenChemistry/openchemistry-nix/openchemistry/avogadrodata/data/gamess/scratch
+GAMESS supplementary output files will be written to /home/eric/data/development/forks/OpenChemistry/openchemistry-nix/openchemistry/avogadrodata/data/gamess/scratch
+Copying input file /home/eric/data/development/forks/OpenChemistry/openchemistry-nix/openchemistry/avogadrodata/data/gamess/exam20.inp to your run's scratch directory...
+MPI found 1 node, the current host.
+MPI kickoff will run GAMESS on 1 cores in 1 nodes.
+The binary to be executed is /nix/store/8ifmh5fpc19dw92jhpczcnjdzyvk9hqc-gamess-us-2024R2P1/bin/gamess.2024R2P1.x
+MPI will run 1 compute processes and 1 data servers,
+    placing 1 of each process type onto each node.
+The scratch disk space on each node is /home/eric/data/development/forks/OpenChemistry/openchemistry-nix/openchemistry/avogadrodata/data/gamess/scratch, with free space
+Filesystem       1K-blocks       Used   Available Use% Mounted on
+zraid/home     69573174272 6905928704 62667245568  10% /home
+          *******************************************************
+          *                                                     *
+          *      GAMESS VERSION = 15 JUL 2024 (R2 Patch 1)          *
+          *                                                     *
+          *              doi.org/10.1063/5.0005188              *
+          *                                                     *
+          **************** 64 BIT LINUX VERSION *****************
+
+  GAMESS HAS BEEN MADE POSSIBLE WITH IMPORTANT CONTRIBUTIONS FROM
+  THE FOLLOWING INDIVIDUALS (IN ALPHABETICAL ORDER):
+
+     IVANA ADAMOVIC, CHRISTINE AIKENS, TOMOKO AKAMA,
+     MELISA ALKAN, YURI ALEXEEV, YURIKO AOKI, POOJA ARORA,
+     TOSHIO ASADA, ANDREY ASADCHEV, KIM K. BALDRIDGE,
+     PRADIPTA BANDYOPADHYAY, TAYLOR A. BARNES, MARIA BARYSZ,
+     ROB BELL, JONATHAN BENTZ, COLLEEN BERTONI,
+     JERRY A. BOATZ, BRETT BODE, KURT BRORSEN, KURT R. BRORSEN,
+     LAIMUTIS BYTAUTAS, CALEB CARLIN, LAURA CARRINGTON,
+     GALINA CHABAN, BENOIT CHAMPAGNE, WEI CHEN, MAHITO CHIBA,
+     DAN CHIPMAN, CHEOL HO CHOI, TANNER CULPITT,
+     DIPAYAN DATTA, PAUL DAY, ALBERT DEFUSCO,
+     NUWAN DESILVA, J. EMILIANO DEUSTUA,
+     TIM DUDLEY, MICHEL DUPUIS, STEVEN T. ELBERT,
+     DMITRI FEDOROV, KATHERINE FERRERAS, MICHAEL FILATOV,
+     ALEX FINDLATER,GRAHAM FLETCHER, MARK FREITAG,
+     CHRISTIAN FRIEDL, DAVID GARMER, 
+     IGOR S. GERASIMOV, KURT GLAESEMANN,
+     MARK S. GORDON, JEFFREY R. GOUR, FENG LONG GU,
+     EMILIE B. GUIDEZ, ANASTASIA GUNINA, SHARON HAMMES-SCHIFFER,
+     MASATAKE HARUTA, KIMIHIKO HIRAO, YASUHIRO IKABATA,
+     TZVETELIN IORDANOV, STEPHAN IRLE, KAZUYA ISHIMURA,
+     JOE IVANIC, FRANK JENSEN, JAN H. JENSEN, VISVALDAS KAIRYS,
+     MUNEAKI KAMIYA, MICHIO KATOUDA, NAOAKI KAWAKAMI, DAN KEMP,
+     BERNARD KIRTMAN, KAZUO KITAURA, MARIUSZ KLOBUKOWSKI,
+     MASATO KOBAYASHI, KONSTANTIN KOMAROV, PRAKASHAN KORAMBATH,
+     JACEK KORCHOWIEC, SHIRO KOSEKI, KAROL KOWALSKI,
+     JIMMY KROMANN, STANISLAW A. KUCHARSKI, HENRY KURTZ,
+     SAROM SOK LEANG, SEUNGHOON LEE, HUI LI, SHUHUA LI, WEI LI,
+     JESSE J. LUTZ, ALEKSANDR O. LYKHIN,
+     ILIAS MAGOULAS, MARCIN MAKOWSKI,
+     JOANI MATO, NIKITA MATSUNAGA, BENEDETTA MENNUCCI,
+     GRANT MERRILL, NORIYUKI MINEZAWA, VLADIMIR MIRONOV,
+     EISAKU MIYOSHI, JOHN A. MONTGOMERY JR., HIROTOSHI MORI,
+     JONATHAN MULLIN, MONIKA MUSIAL, SHIGERU NAGASE,
+     TAKESHI NAGATA, HIROMI NAKAI, TAKAHITO NAKAJIMA,
+     YUYA NAKAJIMA, HARUYUKI NAKANO, HIROYA NAKATA, SEAN NEDD,
+     HEATHER NETZLOFF, KIET A. NGUYEN, YOSHIO NISHIMOTO,
+     BOSILJKA NJEGIC, RYAN OLSON, MIKE PAK, ROBERTO PEVERATI,
+     BUU PHAM, PIOTR PIECUCH, ANNA POMOGAEVA, DAVID POOLE,
+     SPENCER PRUITT, OLIVIER QUINET, LUKE ROSKOP,
+     KLAUS RUEDENBERG, ANDREW SAND, TOSAPORN SATTASATHUCHANA,
+     NOZOMI SAWADA, MICHAEL W. SCHMIDT, PATRICK E. SCHNEIDER,
+     JUNJI SEINO, PRACHI SHARMA, JUN SHEN, JIM SHOEMAKER,
+     GEORGE SCHOENDORFF, YINAN SHU, DEJUN SI, JONATHAN SKONE,
+     LYUDMILA SLIPCHENKO, TONY SMITH, JIE SONG, MARK SPACKMAN,
+     CASPER STEINMANN, WALT STEVENS, PEIFENG SU, SHUJUN SU,
+     CHET SWALINA, CHINAMI TAKASHIMA, TETSUYA TAKETSUGU,
+     ZHEN TAO, NANDUN THELLAMUREGE, ANANTA TIWARI,
+     SEIKEN TOKURA, JACOPO TOMASI,
+     TSUGUKI TOUMA, TAKAO TSUNEDA, HIROAKI UMEDA,
+     JORGE LUIS GALVEZ VALLEJO, YALI WANG, SIMON WEBB,
+     AARON WEST, THERESA L. WINDUS, MARTA WLOCH,
+     PENG XU, KIYOSHI YAGI, SUSUMU YANAGISAWA, YANG YANG,
+     SOOHAENG YOO, TAKESHI YOSHIKAWA, FEDERICO ZAHARIEV,
+     TOBY ZENG
+
+  WHO ARE SUPPORTED BY THEIR INSTITUTION/UNIVERSITY/COMPANY/GROUP
+  (IN ALPHABETICAL ORDER):
+
+     EP ANALYTICS,
+     FACULTES UNIVERSITAIRES NOTRE-DAME DE LA PAIX,
+     INSTITUTE FOR MOLECULAR SCIENCE, IOWA STATE UNIVERSITY,
+     JACKSON STATE UNIVERSITY, JOHANNES KEPLER UNIVERSITY LINZ,
+     KYUNGPOOK NATIONAL UNIVERSITY
+     KYUSHU UNIVERSITY, MICHIGAN STATE UNIVERSITY,
+     MIE UNIVERSITY, THE MOLECULAR SCIENCES SOFTWARE INSTITUTE,
+     MOSCOW STATE UNIVERSITY,
+     N. COPERNICUS UNIVERSITY, NAGOYA UNIVERSITY,
+     NANJING UNIVERSITY, NAT. INST. OF ADVANCED INDUSTRIAL
+     SCIENCE AND TECHNOLOGY, NATIONAL INST. OF STANDARDS AND
+     TECHNOLOGY, NESMEYANOV INSTITUTE OF ORGANOELEMENT COMPOUNDS
+     OF RUSSIAN ACADEMY OF SCIENCES, OSAKA PREFECTURE UNIVERSITY,
+     PENNSYLVANIA STATE UNIVERSITY, TOKYO INSTITUTE OF TECHNOLOGY,
+     UNIVERSITY OF AARHUS, UNIVERSITY OF ALBERTA,
+     UNIVERSITY OF CALIFORNIA AT SANTA BARBARA,
+     UNIVERSITY OF COPENHAGEN, UNIVERSITY OF IOWA,
+     UNIVERSITY OF MEMPHIS, UNIVERSITY OF MINNESOTA,
+     UNIVERSITY OF NEBRASKA, UNIVERSITY OF NEW ENGLAND,
+     UNIVERSITY OF NOTRE DAME, UNIVERSITY OF PISA,
+     UNIVERSITY OF SILESIA, UNIVERSITY OF TOKYO,
+     UNIVERSITY OF ZURICH, WASEDA UNIVERSITY,
+     YALE UNIVERSITY
+
+  GAMESS SOFTWARE MANAGEMENT TEAM FOR THIS RELEASE:
+     MARK S. GORDON (TEAM LEAD),
+     BRETT BODE (SENIOR ADVISOR),
+     GIUSEPPE BARCA,
+     COLLEEN BERTONI,
+     KRISTOPHER KEIPERT (ADVISOR),
+     SAROM S. LEANG (DEVELOPMENT LEAD),
+     BUU PHAM,
+     JACKSON HAYES (WEBSITE ADMINISTRATOR),
+     PENG XU
+
+ EXECUTION OF GAMESS BEGUN 09:19:43 13-OCT-2026    
+
+            ECHO OF THE FIRST FEW INPUT CARDS -
+ INPUT CARD>! EXAM 20.                                                                      
+ INPUT CARD>!  Optimize an orbital exponent.                                                
+ INPUT CARD>!  The SBKJC basis for I consists of 5 gaussians, in a -41                      
+ INPUT CARD>!  type split.  The exponent of a diffuse L shell for                           
+ INPUT CARD>!  iodide ion is optimized (6th exponent overall).  The                         
+ INPUT CARD>!  optimal exponent turns out to be 0.036713, with a                            
+ INPUT CARD>!  corresponding FINAL energy of -11.3010023066                                 
+ INPUT CARD>!                                                                               
+ INPUT CARD> $CONTRL SCFTYP=RHF RUNTYP=TRUDGE ICHARG=-1 PP=SBKJC $END                       
+ INPUT CARD> $SYSTEM TIMLIM=1 $END                                                          
+ INPUT CARD> $TRUDGE OPTMIZ=BASIS NPAR=1 IEX(1)=6 $end                                      
+ INPUT CARD> $GUESS  GUESS=HUCKEL $END                                                      
+ INPUT CARD> $DATA                                                                          
+ INPUT CARD>I- ion                                                                          
+ INPUT CARD>Dnh 2                                                                           
+ INPUT CARD>                                                                                
+ INPUT CARD>Iodine 53.0                                                                     
+ INPUT CARD>   SBKJC                                                                        
+ INPUT CARD>   L 1                                                                          
+ INPUT CARD>     1 0.02 1.0                                                                 
+ INPUT CARD>                                                                                
+ INPUT CARD> $END                                                                           
+ INPUT CARD>! TRAVIS-CI SKIP                                                                
+ INPUT CARD>                                                                                
+ INPUT CARD>                                                                                
+      1000000 WORDS OF MEMORY AVAILABLE
+
+
+     RUN TITLE
+     ---------
+ I- ion                                                                          
+
+ THE POINT GROUP OF THE MOLECULE IS DNH     
+ THE ORDER OF THE PRINCIPAL AXIS IS     2
+
+ ATOM      ATOMIC                      COORDINATES (BOHR)
+           CHARGE         X                   Y                   Z
+ IODINE     53.0     0.0000000000        0.0000000000        0.0000000000
+
+          INTERNUCLEAR DISTANCES (ANGS.)
+          ------------------------------
+
+                1 IODI  
+
+   1 IODI    0.0000000  
+
+  * ... LESS THAN  3.000
+
+
+     ATOMIC BASIS SET
+     ----------------
+ THE CONTRACTED PRIMITIVE FUNCTIONS HAVE BEEN UNNORMALIZED
+ THE CONTRACTED BASIS FUNCTIONS ARE NOW NORMALIZED TO UNITY
+
+  SHELL TYPE  PRIMITIVE        EXPONENT          CONTRACTION COEFFICIENT(S)
+
+ IODINE    
+
+      1   L       1             2.6250000    0.073659961641   -0.008880001403
+      1   L       2             1.0140000   -0.836869564198   -0.257351040669
+      1   L       3             0.5009000    0.656246658258    0.455368071961
+      1   L       4             0.2023000    0.900743530935    0.760107120118
+
+      2   L       5             0.0780000    1.000000000000    1.000000000000
+
+      3   L       6             0.0200000    1.000000000000    1.000000000000
+
+ TOTAL NUMBER OF BASIS SET SHELLS             =    3
+ NUMBER OF CARTESIAN GAUSSIAN BASIS FUNCTIONS =   12
+ NUMBER OF ELECTRONS                          =   54
+ CHARGE OF MOLECULE                           =   -1
+ SPIN MULTIPLICITY                            =    1
+ NUMBER OF OCCUPIED ORBITALS (ALPHA)          =   27
+ NUMBER OF OCCUPIED ORBITALS (BETA )          =   27
+ TOTAL NUMBER OF ATOMS                        =    1
+ THE NUCLEAR REPULSION ENERGY IS        0.0000000000
+ NOTE THIS RUN IS USING CORE POTENTIALS, AND THE NUMBER OF ELECTRONS,
+ OCCUPIED ORBITALS, AND NUCLEAR REPULSION ENERGY WILL BE ADJUSTED BELOW
+ AFTER REMOVAL OF THE CORE CHARGES.
+
+ THIS MOLECULE IS RECOGNIZED AS BEING LINEAR,
+ ORBITAL LZ DEGENERACY TOLERANCE ETOLLZ= 1.00E-06
+
+     $CONTRL OPTIONS
+     ---------------
+ SCFTYP=RHF          RUNTYP=TRUDGE       EXETYP=RUN     
+ MPLEVL=       0     CITYP =NONE         CCTYP =NONE         VBTYP =NONE    
+ DFTTYP=NONE         TDDFT =NONE    
+ MULT  =       1     ICHARG=      -1     NZVAR =       0     COORD =UNIQUE  
+ PP    =SBKJC        RELWFN=NONE         LOCAL =NONE         NUMGRD=       F
+ ISPHER=      -1     NOSYM =       0     MAXIT =      30     UNITS =ANGS    
+ PLTORB=       F     MOLPLT=       F     AIMPAC=       F     FRIEND=        
+ NPRINT=       7     IREST =       0     GEOM  =INPUT   
+ NORMF =       0     NORMP =       0     ITOL  =      20     ICUT  =       9
+ INTTYP=BEST         GRDTYP=BEST         QMTTOL= 1.0E-06
+
+     $SYSTEM OPTIONS
+     ---------------
+  REPLICATED MEMORY=     1000000 WORDS (ON EVERY NODE).
+ DISTRIBUTED MEMDDI=           0 MILLION WORDS IN AGGREGATE,
+ MEMDDI DISTRIBUTED OVER   1 PROCESSORS IS           0 WORDS/PROCESSOR.
+ TOTAL MEMORY REQUESTED ON EACH PROCESSOR=     1000000 WORDS.
+ TIMLIM=           1.00 MINUTES, OR       0.0 DAYS.
+ PARALL= F  BALTYP=  DLB     KDIAG=    0  COREFL= F
+ MXSEQ2=     300 MXSEQ3=     150  mem10=         0  mem22=         0
+
+          --------------
+          ECP POTENTIALS
+          --------------
+
+ PARAMETERS FOR "SBKJC-53" ON ATOM    1 WITH ZCORE  46 AND LMAX  3 ARE
+ FOR L= 3      COEFF    N           ZETA
+    1       -3.69639    1        0.97628
+    2      -14.00305    1        4.33343
+ FOR L= 0      COEFF    N           ZETA
+    1       12.11123    0        4.13071
+    2      -41.09206    2        1.33375
+    3       70.73761    2        1.49121
+ FOR L= 1      COEFF    N           ZETA
+    1       10.59271    0        3.04692
+    2      -46.02273    2        1.06339
+    3       65.05047    2        1.14405
+ FOR L= 2      COEFF    N           ZETA
+    1        9.73089    0        3.93063
+    2       13.98880    2        1.06920
+
+ THE ECP RUN REMOVES   46 CORE ELECTRONS, AND THE SAME NUMBER OF PROTONS.
+ NUMBER OF ELECTRONS KEPT IN THE CALCULATION IS =    8
+ NUMBER OF OCCUPIED ORBITALS (ALPHA) KEPT IS    =    4
+ NUMBER OF OCCUPIED ORBITALS (BETA ) KEPT IS    =    4
+ THE ADJUSTED NUCLEAR REPULSION ENERGY=        0.0000000000
+          ECP ANGULAR INTS.........     0.00 SECONDS
+
+          ----------------
+          PROPERTIES INPUT
+          ----------------
+
+     MOMENTS            FIELD           POTENTIAL          DENSITY
+ IEMOM =       1   IEFLD =       0   IEPOT =       0   IEDEN =       0
+ WHERE =COMASS     WHERE =NUCLEI     WHERE =NUCLEI     WHERE =NUCLEI  
+ OUTPUT=BOTH       OUTPUT=BOTH       OUTPUT=BOTH       OUTPUT=BOTH    
+ IEMINT=       0   IEFINT=       0                     IEDINT=       0
+                                                       MORB  =       0
+          EXTRAPOLATION IN EFFECT
+          SOSCF IN EFFECT
+ ORBITAL PRINTING OPTION: NPREO=     1    12     2     1
+
+     ----------------------
+     TARGET OFFLOAD OPTIONS
+     ----------------------
+     RHF    =       F
+     CPHF    =       F
+     MAKEFP =       F
+
+     -------------------------------
+     INTEGRAL TRANSFORMATION OPTIONS
+     -------------------------------
+     NWORD  =            0
+     CUTTRF = 1.0E-09     MPTRAN =       0
+     DIRTRF =       F     AOINTS =DUP     
+
+          ----------------------
+          INTEGRAL INPUT OPTIONS
+          ----------------------
+ NOPK  =       1 NORDER=       0 SCHWRZ=       F
+
+     ------------------------------------------
+     THE POINT GROUP IS DNH, NAXIS= 2, ORDER= 8
+     ------------------------------------------
+
+     DIMENSIONS OF THE SYMMETRY SUBSPACES ARE
+ AG  =    3     AU  =    0     B3U =    3     B3G =    0     B1G =    0
+ B1U =    3     B2U =    3     B2G =    0
+
+ ..... DONE SETTING UP THE RUN .....
+ STEP CPU TIME =     0.01 TOTAL CPU TIME =          0.0 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.2 SECONDS, CPU UTILIZATION IS     5.78%
+
+     --------------------------------
+     NON-GRADIENT ENERGY MINIMIZATION
+     --------------------------------
+ $TRURST KSTART=-1  JSTART= 0  TOLF=  0.001000 TOLR=  0.050000
+         FNOISE=  0.000500  FNOT=   0.000000000
+ $END
+ ----- TRUDGE RESTART DATA AT NSTEP   0 --------
+ $TRUDGE OPTMIZ=BASIS     NPAR= 1
+         IEX(1)=    6,
+         P(1)=      0.020000,
+ $END
+
+          ********************
+          1 ELECTRON INTEGRALS
+          ********************
+ TIME TO DO ORDINARY INTEGRALS=      0.00
+ TIME TO DO      ECP INTEGRALS=      0.00
+ ...... END OF ONE-ELECTRON INTEGRALS ......
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.0 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.2 SECONDS, CPU UTILIZATION IS     6.23%
+
+          -------------
+          GUESS OPTIONS
+          -------------
+          GUESS =HUCKEL            NORB  =       0          NORDER=       0
+          MIX   =       F          PRTMO =       F          PUNMO =       F
+          TOLZ  = 1.0E-08          TOLE  = 1.0E-05
+          SYMDEN=       F          PURIFY=       F
+
+ INITIAL GUESS ORBITALS GENERATED BY HUCKEL   ROUTINE.
+ HUCKEL GUESS REQUIRES      1953 WORDS.
+
+ SYMMETRIES FOR INITIAL GUESS ORBITALS FOLLOW.   BOTH SET(S).
+     4 ORBITALS ARE OCCUPIED (    0 CORE ORBITALS).
+     1=AG       2=B3U      3=B2U      4=B1U      5=AG       6=AG       7=B3U 
+     8=B3U      9=B1U     10=B1U     11=B2U     12=B2U 
+ ...... END OF INITIAL ORBITAL SELECTION ......
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.0 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.2 SECONDS, CPU UTILIZATION IS     5.00%
+
+                    ----------------------
+                    AO INTEGRAL TECHNOLOGY
+                    ----------------------
+     S,P,L SHELL ROTATED AXIS INTEGRALS, REPROGRAMMED BY
+        KAZUYA ISHIMURA (IMS) AND JOSE SIERRA (SYNSTAR).
+     S,P,D,L SHELL ROTATED AXIS INTEGRALS PROGRAMMED BY
+        KAZUYA ISHIMURA (INSTITUTE FOR MOLECULAR SCIENCE).
+     S,P,D,F,G SHELL TO TOTAL QUARTET ANGULAR MOMENTUM SUM 5,
+        ERIC PROGRAM BY GRAHAM FLETCHER (ELORET AND NASA ADVANCED
+        SUPERCOMPUTING DIVISION, AMES RESEARCH CENTER).
+     S,P,D,F,G,L SHELL GENERAL RYS QUADRATURE PROGRAMMED BY
+        MICHEL DUPUIS (PACIFIC NORTHWEST NATIONAL LABORATORY).
+
+          --------------------
+          2 ELECTRON INTEGRALS
+          --------------------
+
+ THE -PK- OPTION IS OFF, THE INTEGRALS ARE NOT IN SUPERMATRIX FORM.
+ STORING   15000 INTEGRALS/RECORD ON DISK, USING 12 BYTES/INTEGRAL.
+ TWO ELECTRON INTEGRAL EVALUATION REQUIRES   89362 WORDS OF MEMORY.
+ II,JST,KST,LST =  1  1  1  1 NREC =         1 INTLOC =    1
+ II,JST,KST,LST =  2  1  1  1 NREC =         1 INTLOC =   17
+ II,JST,KST,LST =  3  1  1  1 NREC =         1 INTLOC =  139
+ TOTAL NUMBER OF NONZERO TWO-ELECTRON INTEGRALS =                 570
+          1 INTEGRAL RECORDS WERE STORED ON DISK FILE  8.
+  ...... END OF TWO-ELECTRON INTEGRALS .....
+ STEP CPU TIME =     0.01 TOTAL CPU TIME =          0.0 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.5 SECONDS, CPU UTILIZATION IS     4.99%
+
+          --------------------------
+                 RHF SCF CALCULATION
+          --------------------------
+
+     NUCLEAR ENERGY =         0.0000000000
+     MAXIT =   30     NPUNCH=    2
+     EXTRAP=T  DAMP=F  SHIFT=F  RSTRCT=F  DIIS=F  DEM=F  SOSCF=T
+     DENSITY MATRIX CONV=  1.00E-05
+     SOSCF WILL OPTIMIZE      32 ORBITAL ROTATIONS, SOGTOL=   0.250
+     MEMORY REQUIRED FOR RHF ITERS=     31304 WORDS.
+
+ ITER EX DEM     TOTAL ENERGY        E CHANGE  DENSITY CHANGE     ORB. GRAD
+   1  0  0      -11.2631582817   -11.2631582817   0.293171916   0.000000000
+          ---------------START SECOND ORDER SCF---------------
+   2  1  0      -11.2996006463    -0.0364423646   0.034663215   0.014636326
+   3  2  0      -11.3003787752    -0.0007781289   0.009057044   0.001082140
+   4  3  0      -11.3004116289    -0.0000328538   0.000438033   0.000191454
+   5  4  0      -11.3004118582    -0.0000002292   0.000030657   0.000017350
+   6  5  0      -11.3004118586    -0.0000000004   0.000003659   0.000001332
+   7  6  0      -11.3004118586    -0.0000000000   0.000000041   0.000000030
+
+          -----------------
+          DENSITY CONVERGED
+          -----------------
+     TIME TO FORM FOCK OPERATORS=       0.0 SECONDS (       0.0 SEC/ITER)
+     TIME TO SOLVE SCF EQUATIONS=       0.0 SECONDS (       0.0 SEC/ITER)
+
+ FINAL RHF ENERGY IS      -11.3004118586 AFTER   7 ITERATIONS
+
+ Alpha HOMO=    -3.354248 eV, LUMO=    4.967384 eV, gap=    8.321632 eV
+
+ LZ VALUE ANALYSIS FOR THE MOS
+ ----------------------------------------
+ MO     1 (    1) HAS LZ(WEIGHT)= 0.00(100.0%) 
+ MO     2 (    2) HAS LZ(WEIGHT)= 0.00(100.0%) 
+ MO     3 (    2) HAS LZ(WEIGHT)=-1.00( 50.0%)  1.00( 50.0%) 
+ MO     4 (    2) HAS LZ(WEIGHT)=-1.00( 50.0%)  1.00( 50.0%) 
+ MO     5 (    3) HAS LZ(WEIGHT)=-1.00( 50.0%)  1.00( 50.0%) 
+ MO     6 (    3) HAS LZ(WEIGHT)=-1.00( 50.0%)  1.00( 50.0%) 
+ MO     7 (    3) HAS LZ(WEIGHT)= 0.00(100.0%) 
+ MO     8 (    4) HAS LZ(WEIGHT)= 0.00(100.0%) 
+ MO     9 (    5) HAS LZ(WEIGHT)=-1.00( 50.0%)  1.00( 50.0%) 
+ MO    10 (    5) HAS LZ(WEIGHT)=-1.00( 50.0%)  1.00( 50.0%) 
+ MO    11 (    5) HAS LZ(WEIGHT)= 0.00(100.0%) 
+ MO    12 (    6) HAS LZ(WEIGHT)= 0.00(100.0%) 
+
+          ------------
+          EIGENVECTORS
+          ------------
+
+                      1          2          3          4          5
+                   -0.6065    -0.1233    -0.1233    -0.1233     0.1825
+                     AG         B1U        B3U        B2U        B3U 
+    1  I  1  S    0.838144  -0.000000  -0.000000  -0.000000   0.000000
+    2  I  1  X   -0.000000  -0.000000   0.689927  -0.000000  -0.064944
+    3  I  1  Y   -0.000000  -0.000000  -0.000000   0.689927   0.000000
+    4  I  1  Z   -0.000000   0.689927  -0.000000  -0.000000   0.000000
+    5  I  1  S    0.171601  -0.000000  -0.000000  -0.000000   0.000000
+    6  I  1  X   -0.000000  -0.000000   0.355035  -0.000000  -0.509927
+    7  I  1  Y   -0.000000  -0.000000  -0.000000   0.355035   0.000000
+    8  I  1  Z   -0.000000   0.355035  -0.000000  -0.000000   0.000000
+    9  I  1  S    0.026648  -0.000000  -0.000000  -0.000000   0.000000
+   10  I  1  X   -0.000000  -0.000000   0.067600  -0.000000   1.198456
+   11  I  1  Y   -0.000000  -0.000000  -0.000000   0.067600   0.000000
+   12  I  1  Z   -0.000000   0.067600  -0.000000  -0.000000   0.000000
+
+                      6          7          8          9         10
+                    0.1825     0.1825     0.1880     0.6258     0.6258
+                     B2U        B1U        AG         B3U        B2U 
+    1  I  1  S    0.000000   0.000000  -0.187833  -0.000000  -0.000000
+    2  I  1  X    0.000000   0.000000   0.000000  -1.321612  -0.000000
+    3  I  1  Y   -0.064944   0.000000   0.000000  -0.000000  -1.321612
+    4  I  1  Z    0.000000  -0.064944   0.000000  -0.000000  -0.000000
+    5  I  1  S    0.000000   0.000000  -0.550119  -0.000000  -0.000000
+    6  I  1  X    0.000000   0.000000   0.000000   1.681232  -0.000000
+    7  I  1  Y   -0.509927   0.000000   0.000000  -0.000000   1.681232
+    8  I  1  Z    0.000000  -0.509927   0.000000  -0.000000  -0.000000
+    9  I  1  S    0.000000   0.000000   1.326357  -0.000000  -0.000000
+   10  I  1  X    0.000000   0.000000   0.000000  -0.511491  -0.000000
+   11  I  1  Y    1.198456   0.000000   0.000000  -0.000000  -0.511491
+   12  I  1  Z    0.000000   1.198456   0.000000  -0.000000  -0.000000
+
+                     11         12
+                    0.6258     4.2042
+                     B1U        AG  
+    1  I  1  S   -0.000000  -1.903127
+    2  I  1  X   -0.000000  -0.000000
+    3  I  1  Y   -0.000000  -0.000000
+    4  I  1  Z   -1.321612  -0.000000
+    5  I  1  S   -0.000000   2.669106
+    6  I  1  X   -0.000000  -0.000000
+    7  I  1  Y   -0.000000  -0.000000
+    8  I  1  Z    1.681232  -0.000000
+    9  I  1  S   -0.000000  -0.970330
+   10  I  1  X   -0.000000  -0.000000
+   11  I  1  Y   -0.000000  -0.000000
+   12  I  1  Z   -0.511491  -0.000000
+ ...... END OF RHF CALCULATION ......
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.0 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.5 SECONDS, CPU UTILIZATION IS     5.45%
+
+     ----------------------------------------------------------------
+     PROPERTY VALUES FOR THE RHF   SELF-CONSISTENT FIELD WAVEFUNCTION
+     ----------------------------------------------------------------
+
+          -----------------
+          ENERGY COMPONENTS
+          -----------------
+
+         WAVEFUNCTION NORMALIZATION =       1.0000000000
+
+                ONE ELECTRON ENERGY =     -20.6481505684
+                TWO ELECTRON ENERGY =       9.3477387099
+           NUCLEAR REPULSION ENERGY =       0.0000000000
+                                      ------------------
+                       TOTAL ENERGY =     -11.3004118586
+
+ ELECTRON-ELECTRON POTENTIAL ENERGY =       9.3477387099
+  NUCLEUS-ELECTRON POTENTIAL ENERGY =     -23.9362143695
+   NUCLEUS-NUCLEUS POTENTIAL ENERGY =       0.0000000000
+                                      ------------------
+             TOTAL POTENTIAL ENERGY =     -14.5884756596
+               TOTAL KINETIC ENERGY =       3.2880638010
+                 VIRIAL RATIO (V/T) =       4.4367982321
+
+          ---------------------------------------
+          MULLIKEN AND LOWDIN POPULATION ANALYSES
+          ---------------------------------------
+
+     ATOMIC MULLIKEN POPULATION IN EACH MOLECULAR ORBITAL
+
+                      1          2          3          4
+
+                  2.000000   2.000000   2.000000   2.000000
+
+    1             2.000000   2.000000   2.000000   2.000000
+
+               ----- POPULATIONS IN EACH AO -----
+                             MULLIKEN      LOWDIN
+              1  I  1  S      1.66571     1.32562
+              2  I  1  X      1.31738     1.20402
+              3  I  1  Y      1.31738     1.20402
+              4  I  1  Z      1.31738     1.20402
+              5  I  1  S      0.30702     0.58848
+              6  I  1  X      0.62499     0.70676
+              7  I  1  Y      0.62499     0.70676
+              8  I  1  Z      0.62499     0.70676
+              9  I  1  S      0.02727     0.08590
+             10  I  1  X      0.05763     0.08922
+             11  I  1  Y      0.05763     0.08922
+             12  I  1  Z      0.05763     0.08922
+
+          ----- MULLIKEN ATOMIC OVERLAP POPULATIONS -----
+          (OFF-DIAGONAL ELEMENTS NEED TO BE MULTIPLIED BY 2)
+
+             1
+
+    1    8.0000000
+
+          TOTAL MULLIKEN AND LOWDIN ATOMIC POPULATIONS
+       ATOM         MULL.POP.    CHARGE          LOW.POP.     CHARGE
+    1 IODINE        8.000000   -1.000000         8.000000   -1.000000
+
+          -------------------------------
+          BOND ORDER AND VALENCE ANALYSIS     BOND ORDER THRESHOLD=0.050
+          -------------------------------
+
+                   BOND                       BOND                       BOND
+  ATOM PAIR DIST  ORDER      ATOM PAIR DIST  ORDER      ATOM PAIR DIST  ORDER
+
+                       TOTAL       BONDED        FREE
+      ATOM            VALENCE     VALENCE     VALENCE
+    1 IODINE           -0.000       0.000      -0.000
+
+          ---------------------
+          ELECTROSTATIC MOMENTS
+          ---------------------
+
+ POINT   1           X           Y           Z (BOHR)    CHARGE
+                 0.000000    0.000000    0.000000       -1.00 (A.U.)
+         DX          DY          DZ         /D/  (DEBYE)
+     0.000000    0.000000    0.000000    0.000000
+ ...... END OF PROPERTY EVALUATION ......
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.0 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.6 SECONDS, CPU UTILIZATION IS     5.04%
+
+ TRUDGE ENERGY VALUE AT NSTEP=   0 IS      -11.3004118586
+ ----- TRUDGE RESTART DATA AT NSTEP   1 --------
+ $TRUDGE OPTMIZ=BASIS     NPAR= 1
+         IEX(1)=    6,
+         P(1)=      0.022103,
+ $END
+ ...... END OF ONE-ELECTRON INTEGRALS ......
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.0 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.6 SECONDS, CPU UTILIZATION IS     5.11%
+ TOTAL NUMBER OF NONZERO TWO-ELECTRON INTEGRALS =                 570
+          1 INTEGRAL RECORDS WERE STORED ON DISK FILE  8.
+  ...... END OF TWO-ELECTRON INTEGRALS .....
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.0 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.6 SECONDS, CPU UTILIZATION IS     5.18%
+
+          --------------------------
+                 RHF SCF CALCULATION
+          --------------------------
+     DENSITY MATRIX CONV=  1.00E-05
+
+ ITER EX DEM     TOTAL ENERGY        E CHANGE  DENSITY CHANGE     ORB. GRAD
+          ---------------START SECOND ORDER SCF---------------
+   1  0  0      -11.3004828415   -11.3004828415   0.011765613   0.002078553
+   2  1  0      -11.3005831101    -0.0001002686   0.005091350   0.000567223
+   3  2  0      -11.3005920528    -0.0000089427   0.000251418   0.000079165
+   4  3  0      -11.3005920735    -0.0000000207   0.000046579   0.000012771
+   5  4  0      -11.3005920741    -0.0000000005   0.000002368   0.000001412
+   6  5  0      -11.3005920741    -0.0000000000   0.000000148   0.000000104
+
+          -----------------
+          DENSITY CONVERGED
+          -----------------
+     TIME TO FORM FOCK OPERATORS=       0.0 SECONDS (       0.0 SEC/ITER)
+     TIME TO SOLVE SCF EQUATIONS=       0.0 SECONDS (       0.0 SEC/ITER)
+
+ FINAL RHF ENERGY IS      -11.3005920741 AFTER   6 ITERATIONS
+
+ Alpha HOMO=    -3.364113 eV, LUMO=    5.232736 eV, gap=    8.596849 eV
+
+ LZ VALUE ANALYSIS FOR THE MOS
+ ----------------------------------------
+ MO     1 (    1) HAS LZ(WEIGHT)= 0.00(100.0%) 
+ MO     2 (    2) HAS LZ(WEIGHT)=-1.00( 50.0%)  1.00( 50.0%) 
+ MO     3 (    2) HAS LZ(WEIGHT)=-1.00( 50.0%)  1.00( 50.0%) 
+ MO     4 (    2) HAS LZ(WEIGHT)= 0.00(100.0%) 
+ MO     5 (    3) HAS LZ(WEIGHT)=-1.00( 50.0%)  1.00( 50.0%) 
+ MO     6 (    3) HAS LZ(WEIGHT)=-1.00( 50.0%)  1.00( 50.0%) 
+ MO     7 (    3) HAS LZ(WEIGHT)= 0.00(100.0%) 
+ MO     8 (    4) HAS LZ(WEIGHT)= 0.00(100.0%) 
+ MO     9 (    5) HAS LZ(WEIGHT)=-1.00( 50.0%)  1.00( 50.0%) 
+ MO    10 (    5) HAS LZ(WEIGHT)=-1.00( 50.0%)  1.00( 50.0%) 
+ MO    11 (    5) HAS LZ(WEIGHT)= 0.00(100.0%) 
+ MO    12 (    6) HAS LZ(WEIGHT)= 0.00(100.0%) 
+ ...... END OF RHF CALCULATION ......
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.0 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.6 SECONDS, CPU UTILIZATION IS     5.42%
+
+ TRUDGE ENERGY VALUE AT NSTEP=   1 IS      -11.3005920741
+ LOOKS =  1   ALF =  0.1000  FUNC =      -11.3005920741
+             AMIN =  0.1000  FMIN =      -11.3005920741
+            ANEXT =  0.0000 FNEXT =      -11.3004118586
+ ----- TRUDGE RESTART DATA AT NSTEP   2 --------
+ $TRUDGE OPTMIZ=BASIS     NPAR= 1
+         IEX(1)=    6,
+         P(1)=      0.021025,
+ $END
+ ...... END OF ONE-ELECTRON INTEGRALS ......
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.0 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.6 SECONDS, CPU UTILIZATION IS     5.03%
+ TOTAL NUMBER OF NONZERO TWO-ELECTRON INTEGRALS =                 570
+          1 INTEGRAL RECORDS WERE STORED ON DISK FILE  8.
+  ...... END OF TWO-ELECTRON INTEGRALS .....
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.0 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.6 SECONDS, CPU UTILIZATION IS     5.10%
+
+          --------------------------
+                 RHF SCF CALCULATION
+          --------------------------
+     DENSITY MATRIX CONV=  1.00E-05
+
+ ITER EX DEM     TOTAL ENERGY        E CHANGE  DENSITY CHANGE     ORB. GRAD
+          ---------------START SECOND ORDER SCF---------------
+   1  0  0      -11.3004703980   -11.3004703980   0.005912292   0.001173294
+   2  1  0      -11.3005024236    -0.0000320256   0.002717401   0.000347152
+   3  2  0      -11.3005056686    -0.0000032450   0.000158884   0.000046475
+   4  3  0      -11.3005056879    -0.0000000193   0.000034854   0.000010503
+   5  4  0      -11.3005056883    -0.0000000004   0.000003350   0.000000982
+   6  5  0      -11.3005056883    -0.0000000000   0.000000192   0.000000129
+
+          -----------------
+          DENSITY CONVERGED
+          -----------------
+     TIME TO FORM FOCK OPERATORS=       0.0 SECONDS (       0.0 SEC/ITER)
+     TIME TO SOLVE SCF EQUATIONS=       0.0 SECONDS (       0.0 SEC/ITER)
+
+ FINAL RHF ENERGY IS      -11.3005056883 AFTER   6 ITERATIONS
+
+ Alpha HOMO=    -3.359421 eV, LUMO=    5.098621 eV, gap=    8.458042 eV
+
+ LZ VALUE ANALYSIS FOR THE MOS
+ ----------------------------------------
+ MO     1 (    1) HAS LZ(WEIGHT)= 0.00(100.0%) 
+ MO     2 (    2) HAS LZ(WEIGHT)= 0.00(100.0%) 
+ MO     3 (    2) HAS LZ(WEIGHT)=-1.00( 50.0%)  1.00( 50.0%) 
+ MO     4 (    2) HAS LZ(WEIGHT)=-1.00( 50.0%)  1.00( 50.0%) 
+ MO     5 (    3) HAS LZ(WEIGHT)=-1.00( 50.0%)  1.00( 50.0%) 
+ MO     6 (    3) HAS LZ(WEIGHT)= 0.00(100.0%) 
+ MO     7 (    3) HAS LZ(WEIGHT)=-1.00( 50.0%)  1.00( 50.0%) 
+ MO     8 (    4) HAS LZ(WEIGHT)= 0.00(100.0%) 
+ MO     9 (    5) HAS LZ(WEIGHT)= 0.00(100.0%) 
+ MO    10 (    5) HAS LZ(WEIGHT)=-1.00( 50.0%)  1.00( 50.0%) 
+ MO    11 (    5) HAS LZ(WEIGHT)=-1.00( 50.0%)  1.00( 50.0%) 
+ MO    12 (    6) HAS LZ(WEIGHT)= 0.00(100.0%) 
+ ...... END OF RHF CALCULATION ......
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.0 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.6 SECONDS, CPU UTILIZATION IS     5.33%
+
+ TRUDGE ENERGY VALUE AT NSTEP=   2 IS      -11.3005056883
+ LOOKS =  2   ALF =  0.0500  FUNC =      -11.3005056883
+             AMIN =  0.1000  FMIN =      -11.3005920741
+            ANEXT =  0.0500 FNEXT =      -11.3005056883
+ ----- TRUDGE RESTART DATA AT NSTEP   3 --------
+ $TRUDGE OPTMIZ=BASIS     NPAR= 1
+         IEX(1)=    6,
+         P(1)=      0.023237,
+ $END
+ ...... END OF ONE-ELECTRON INTEGRALS ......
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.0 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.6 SECONDS, CPU UTILIZATION IS     5.38%
+ TOTAL NUMBER OF NONZERO TWO-ELECTRON INTEGRALS =                 570
+          1 INTEGRAL RECORDS WERE STORED ON DISK FILE  8.
+  ...... END OF TWO-ELECTRON INTEGRALS .....
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.0 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.6 SECONDS, CPU UTILIZATION IS     5.44%
+
+          --------------------------
+                 RHF SCF CALCULATION
+          --------------------------
+     DENSITY MATRIX CONV=  1.00E-05
+
+ ITER EX DEM     TOTAL ENERGY        E CHANGE  DENSITY CHANGE     ORB. GRAD
+          ---------------START SECOND ORDER SCF---------------
+   1  0  0      -11.3005563636   -11.3005563636   0.012936473   0.002179299
+   2  1  0      -11.3006615625    -0.0001051989   0.005487423   0.000593288
+   3  2  0      -11.3006705922    -0.0000090297   0.000267103   0.000079373
+   4  3  0      -11.3006706161    -0.0000000239   0.000050046   0.000013121
+   5  4  0      -11.3006706167    -0.0000000006   0.000002683   0.000001502
+   6  5  0      -11.3006706167    -0.0000000000   0.000000158   0.000000111
+
+          -----------------
+          DENSITY CONVERGED
+          -----------------
+     TIME TO FORM FOCK OPERATORS=       0.0 SECONDS (       0.0 SEC/ITER)
+     TIME TO SOLVE SCF EQUATIONS=       0.0 SECONDS (       0.0 SEC/ITER)
+
+ FINAL RHF ENERGY IS      -11.3006706167 AFTER   6 ITERATIONS
+
+ Alpha HOMO=    -3.368312 eV, LUMO=    5.369742 eV, gap=    8.738053 eV
+
+ LZ VALUE ANALYSIS FOR THE MOS
+ ----------------------------------------
+ MO     1 (    1) HAS LZ(WEIGHT)= 0.00(100.0%) 
+ MO     2 (    2) HAS LZ(WEIGHT)= 0.00(100.0%) 
+ MO     3 (    2) HAS LZ(WEIGHT)=-1.00( 50.0%)  1.00( 50.0%) 
+ MO     4 (    2) HAS LZ(WEIGHT)=-1.00( 50.0%)  1.00( 50.0%) 
+ MO     5 (    3) HAS LZ(WEIGHT)=-1.00( 50.0%)  1.00( 50.0%) 
+ MO     6 (    3) HAS LZ(WEIGHT)=-1.00( 50.0%)  1.00( 50.0%) 
+ MO     7 (    3) HAS LZ(WEIGHT)= 0.00(100.0%) 
+ MO     8 (    4) HAS LZ(WEIGHT)= 0.00(100.0%) 
+ MO     9 (    5) HAS LZ(WEIGHT)= 0.00(100.0%) 
+ MO    10 (    5) HAS LZ(WEIGHT)=-1.00( 50.0%)  1.00( 50.0%) 
+ MO    11 (    5) HAS LZ(WEIGHT)=-1.00( 50.0%)  1.00( 50.0%) 
+ MO    12 (    6) HAS LZ(WEIGHT)= 0.00(100.0%) 
+ ...... END OF RHF CALCULATION ......
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.0 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.7 SECONDS, CPU UTILIZATION IS     5.19%
+
+ TRUDGE ENERGY VALUE AT NSTEP=   3 IS      -11.3006706167
+ LOOKS =  3   ALF =  0.1500  FUNC =      -11.3006706167
+             AMIN =  0.1500  FMIN =      -11.3006706167
+            ANEXT =  0.1000 FNEXT =      -11.3005920741
+ ----- TRUDGE RESTART DATA AT NSTEP   4 --------
+ $TRUDGE OPTMIZ=BASIS     NPAR= 1
+         IEX(1)=    6,
+         P(1)=      0.024428,
+ $END
+ ...... END OF ONE-ELECTRON INTEGRALS ......
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.0 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.7 SECONDS, CPU UTILIZATION IS     5.23%
+ TOTAL NUMBER OF NONZERO TWO-ELECTRON INTEGRALS =                 570
+          1 INTEGRAL RECORDS WERE STORED ON DISK FILE  8.
+  ...... END OF TWO-ELECTRON INTEGRALS .....
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.0 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.7 SECONDS, CPU UTILIZATION IS     5.29%
+
+          --------------------------
+                 RHF SCF CALCULATION
+          --------------------------
+     DENSITY MATRIX CONV=  1.00E-05
+
+ ITER EX DEM     TOTAL ENERGY        E CHANGE  DENSITY CHANGE     ORB. GRAD
+          ---------------START SECOND ORDER SCF---------------
+   1  0  0      -11.3007076553   -11.3007076553   0.007376299   0.001212433
+   2  1  0      -11.3007383636    -0.0000307083   0.003116248   0.000338768
+   3  2  0      -11.3007409882    -0.0000026245   0.000143916   0.000040490
+   4  3  0      -11.3007410004    -0.0000000122   0.000031991   0.000008148
+   5  4  0      -11.3007410006    -0.0000000002   0.000002787   0.000000823
+   6  5  0      -11.3007410006    -0.0000000000   0.000000134   0.000000079
+
+          -----------------
+          DENSITY CONVERGED
+          -----------------
+     TIME TO FORM FOCK OPERATORS=       0.0 SECONDS (       0.0 SEC/ITER)
+     TIME TO SOLVE SCF EQUATIONS=       0.0 SECONDS (       0.0 SEC/ITER)
+
+ FINAL RHF ENERGY IS      -11.3007410006 AFTER   6 ITERATIONS
+
+ Alpha HOMO=    -3.372005 eV, LUMO=    5.509645 eV, gap=    8.881650 eV
+
+ LZ VALUE ANALYSIS FOR THE MOS
+ ----------------------------------------
+ MO     1 (    1) HAS LZ(WEIGHT)= 0.00(100.0%) 
+ MO     2 (    2) HAS LZ(WEIGHT)= 0.00(100.0%) 
+ MO     3 (    2) HAS LZ(WEIGHT)=-1.00( 50.0%)  1.00( 50.0%) 
+ MO     4 (    2) HAS LZ(WEIGHT)=-1.00( 50.0%)  1.00( 50.0%) 
+ MO     5 (    3) HAS LZ(WEIGHT)= 0.00(100.0%) 
+ MO     6 (    3) HAS LZ(WEIGHT)=-1.00( 50.0%)  1.00( 50.0%) 
+ MO     7 (    3) HAS LZ(WEIGHT)=-1.00( 50.0%)  1.00( 50.0%) 
+ MO     8 (    4) HAS LZ(WEIGHT)= 0.00(100.0%) 
+ MO     9 (    5) HAS LZ(WEIGHT)=-1.00( 50.0%)  1.00( 50.0%) 
+ MO    10 (    5) HAS LZ(WEIGHT)=-1.00( 50.0%)  1.00( 50.0%) 
+ MO    11 (    5) HAS LZ(WEIGHT)= 0.00(100.0%) 
+ MO    12 (    6) HAS LZ(WEIGHT)= 0.00(100.0%) 
+ ...... END OF RHF CALCULATION ......
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.0 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.7 SECONDS, CPU UTILIZATION IS     5.17%
+
+ TRUDGE ENERGY VALUE AT NSTEP=   4 IS      -11.3007410006
+ LOOKS =  4   ALF =  0.2000  FUNC =      -11.3007410006
+             AMIN =  0.2000  FMIN =      -11.3007410006
+            ANEXT =  0.1500 FNEXT =      -11.3006706167
+ ----- TRUDGE RESTART DATA AT NSTEP   5 --------
+ $TRUDGE OPTMIZ=BASIS     NPAR= 1
+         IEX(1)=    6,
+         P(1)=      0.025681,
+ $END
+ ...... END OF ONE-ELECTRON INTEGRALS ......
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.0 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.7 SECONDS, CPU UTILIZATION IS     5.22%
+ TOTAL NUMBER OF NONZERO TWO-ELECTRON INTEGRALS =                 570
+          1 INTEGRAL RECORDS WERE STORED ON DISK FILE  8.
+  ...... END OF TWO-ELECTRON INTEGRALS .....
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.0 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.7 SECONDS, CPU UTILIZATION IS     5.27%
+
+          --------------------------
+                 RHF SCF CALCULATION
+          --------------------------
+     DENSITY MATRIX CONV=  1.00E-05
+
+ ITER EX DEM     TOTAL ENERGY        E CHANGE  DENSITY CHANGE     ORB. GRAD
+          ---------------START SECOND ORDER SCF---------------
+   1  0  0      -11.3007677028   -11.3007677028   0.008170798   0.001276918
+   2  1  0      -11.3008003139    -0.0000326112   0.003374793   0.000355608
+   3  2  0      -11.3008029834    -0.0000026695   0.000175863   0.000040479
+   4  3  0      -11.3008029985    -0.0000000151   0.000033950   0.000008303
+   5  4  0      -11.3008029987    -0.0000000002   0.000003728   0.000000880
+   6  5  0      -11.3008029987    -0.0000000000   0.000000140   0.000000075
+
+          -----------------
+          DENSITY CONVERGED
+          -----------------
+     TIME TO FORM FOCK OPERATORS=       0.0 SECONDS (       0.0 SEC/ITER)
+     TIME TO SOLVE SCF EQUATIONS=       0.0 SECONDS (       0.0 SEC/ITER)
+
+ FINAL RHF ENERGY IS      -11.3008029987 AFTER   6 ITERATIONS
+
+ Alpha HOMO=    -3.375186 eV, LUMO=    5.652449 eV, gap=    9.027635 eV
+
+ LZ VALUE ANALYSIS FOR THE MOS
+ ----------------------------------------
+ MO     1 (    1) HAS LZ(WEIGHT)= 0.00(100.0%) 
+ MO     2 (    2) HAS LZ(WEIGHT)= 0.00(100.0%) 
+ MO     3 (    2) HAS LZ(WEIGHT)=-1.00( 50.0%)  1.00( 50.0%) 
+ MO     4 (    2) HAS LZ(WEIGHT)=-1.00( 50.0%)  1.00( 50.0%) 
+ MO     5 (    3) HAS LZ(WEIGHT)=-1.00( 50.0%)  1.00( 50.0%) 
+ MO     6 (    3) HAS LZ(WEIGHT)=-1.00( 50.0%)  1.00( 50.0%) 
+ MO     7 (    3) HAS LZ(WEIGHT)= 0.00(100.0%) 
+ MO     8 (    4) HAS LZ(WEIGHT)= 0.00(100.0%) 
+ MO     9 (    5) HAS LZ(WEIGHT)= 0.00(100.0%) 
+ MO    10 (    5) HAS LZ(WEIGHT)=-1.00( 50.0%)  1.00( 50.0%) 
+ MO    11 (    5) HAS LZ(WEIGHT)=-1.00( 50.0%)  1.00( 50.0%) 
+ MO    12 (    6) HAS LZ(WEIGHT)= 0.00(100.0%) 
+ ...... END OF RHF CALCULATION ......
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.0 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.8 SECONDS, CPU UTILIZATION IS     5.06%
+
+ TRUDGE ENERGY VALUE AT NSTEP=   5 IS      -11.3008029987
+ LOOKS =  5   ALF =  0.2500  FUNC =      -11.3008029987
+             AMIN =  0.2500  FMIN =      -11.3008029987
+            ANEXT =  0.2000 FNEXT =      -11.3007410006
+ ----- TRUDGE RESTART DATA AT NSTEP   6 --------
+ $TRUDGE OPTMIZ=BASIS     NPAR= 1
+         IEX(1)=    6,
+         P(1)=      0.026997,
+ $END
+ ...... END OF ONE-ELECTRON INTEGRALS ......
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.0 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.8 SECONDS, CPU UTILIZATION IS     5.11%
+ TOTAL NUMBER OF NONZERO TWO-ELECTRON INTEGRALS =                 570
+          1 INTEGRAL RECORDS WERE STORED ON DISK FILE  8.
+  ...... END OF TWO-ELECTRON INTEGRALS .....
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.0 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.8 SECONDS, CPU UTILIZATION IS     5.17%
+
+          --------------------------
+                 RHF SCF CALCULATION
+          --------------------------
+     DENSITY MATRIX CONV=  1.00E-05
+
+ ITER EX DEM     TOTAL ENERGY        E CHANGE  DENSITY CHANGE     ORB. GRAD
+          ---------------START SECOND ORDER SCF---------------
+   1  0  0      -11.3008189260   -11.3008189260   0.009085187   0.001347130
+   2  1  0      -11.3008537336    -0.0000348076   0.003665503   0.000373731
+   3  2  0      -11.3008564564    -0.0000027228   0.000225246   0.000040178
+   4  3  0      -11.3008564750    -0.0000000186   0.000035918   0.000008412
+   5  4  0      -11.3008564752    -0.0000000002   0.000004737   0.000001034
+   6  5  0      -11.3008564752    -0.0000000000   0.000000137   0.000000069
+
+          -----------------
+          DENSITY CONVERGED
+          -----------------
+     TIME TO FORM FOCK OPERATORS=       0.0 SECONDS (       0.0 SEC/ITER)
+     TIME TO SOLVE SCF EQUATIONS=       0.0 SECONDS (       0.0 SEC/ITER)
+
+ FINAL RHF ENERGY IS      -11.3008564752 AFTER   6 ITERATIONS
+
+ Alpha HOMO=    -3.377854 eV, LUMO=    5.768286 eV, gap=    9.146139 eV
+
+ LZ VALUE ANALYSIS FOR THE MOS
+ ----------------------------------------
+ MO     1 (    1) HAS LZ(WEIGHT)= 0.00(100.0%) 
+ MO     2 (    2) HAS LZ(WEIGHT)= 0.00(100.0%) 
+ MO     3 (    2) HAS LZ(WEIGHT)=-1.00( 50.0%)  1.00( 50.0%) 
+ MO     4 (    2) HAS LZ(WEIGHT)=-1.00( 50.0%)  1.00( 50.0%) 
+ MO     5 (    3) HAS LZ(WEIGHT)= 0.00(100.0%) 
+ MO     6 (    4) HAS LZ(WEIGHT)=-1.00( 50.0%)  1.00( 50.0%) 
+ MO     7 (    4) HAS LZ(WEIGHT)=-1.00( 50.0%)  1.00( 50.0%) 
+ MO     8 (    4) HAS LZ(WEIGHT)= 0.00(100.0%) 
+ MO     9 (    5) HAS LZ(WEIGHT)= 0.00(100.0%) 
+ MO    10 (    5) HAS LZ(WEIGHT)=-1.00( 50.0%)  1.00( 50.0%) 
+ MO    11 (    5) HAS LZ(WEIGHT)=-1.00( 50.0%)  1.00( 50.0%) 
+ MO    12 (    6) HAS LZ(WEIGHT)= 0.00(100.0%) 
+ ...... END OF RHF CALCULATION ......
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.0 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.8 SECONDS, CPU UTILIZATION IS     5.34%
+
+ TRUDGE ENERGY VALUE AT NSTEP=   6 IS      -11.3008564752
+ LOOKS =  6   ALF =  0.3000  FUNC =      -11.3008564752
+             AMIN =  0.3000  FMIN =      -11.3008564752
+            ANEXT =  0.2500 FNEXT =      -11.3008029987
+ ----- TRUDGE RESTART DATA AT NSTEP   7 --------
+ $TRUDGE OPTMIZ=BASIS     NPAR= 1
+         IEX(1)=    6,
+         P(1)=      0.028381,
+ $END
+ ...... END OF ONE-ELECTRON INTEGRALS ......
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.0 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.8 SECONDS, CPU UTILIZATION IS     5.38%
+ TOTAL NUMBER OF NONZERO TWO-ELECTRON INTEGRALS =                 570
+          1 INTEGRAL RECORDS WERE STORED ON DISK FILE  8.
+  ...... END OF TWO-ELECTRON INTEGRALS .....
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.0 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.9 SECONDS, CPU UTILIZATION IS     5.13%
+
+          --------------------------
+                 RHF SCF CALCULATION
+          --------------------------
+     DENSITY MATRIX CONV=  1.00E-05
+
+ ITER EX DEM     TOTAL ENERGY        E CHANGE  DENSITY CHANGE     ORB. GRAD
+          ---------------START SECOND ORDER SCF---------------
+   1  0  0      -11.3008612164   -11.3008612164   0.010144663   0.001423838
+   2  1  0      -11.3008985774    -0.0000373610   0.003995207   0.000393319
+   3  2  0      -11.3009013639    -0.0000027865   0.000286084   0.000043363
+   4  3  0      -11.3009013867    -0.0000000228   0.000037895   0.000008470
+   5  4  0      -11.3009013869    -0.0000000002   0.000005787   0.000001170
+   6  5  0      -11.3009013869    -0.0000000000   0.000000127   0.000000062
+
+          -----------------
+          DENSITY CONVERGED
+          -----------------
+     TIME TO FORM FOCK OPERATORS=       0.0 SECONDS (       0.0 SEC/ITER)
+     TIME TO SOLVE SCF EQUATIONS=       0.0 SECONDS (       0.0 SEC/ITER)
+
+ FINAL RHF ENERGY IS      -11.3009013869 AFTER   6 ITERATIONS
+
+ Alpha HOMO=    -3.380009 eV, LUMO=    5.885101 eV, gap=    9.265110 eV
+
+ LZ VALUE ANALYSIS FOR THE MOS
+ ----------------------------------------
+ MO     1 (    1) HAS LZ(WEIGHT)= 0.00(100.0%) 
+ MO     2 (    2) HAS LZ(WEIGHT)= 0.00(100.0%) 
+ MO     3 (    2) HAS LZ(WEIGHT)=-1.00( 50.0%)  1.00( 50.0%) 
+ MO     4 (    2) HAS LZ(WEIGHT)=-1.00( 50.0%)  1.00( 50.0%) 
+ MO     5 (    3) HAS LZ(WEIGHT)= 0.00(100.0%) 
+ MO     6 (    4) HAS LZ(WEIGHT)=-1.00( 50.0%)  1.00( 50.0%) 
+ MO     7 (    4) HAS LZ(WEIGHT)=-1.00( 50.0%)  1.00( 50.0%) 
+ MO     8 (    4) HAS LZ(WEIGHT)= 0.00(100.0%) 
+ MO     9 (    5) HAS LZ(WEIGHT)=-1.00( 50.0%)  1.00( 50.0%) 
+ MO    10 (    5) HAS LZ(WEIGHT)= 0.00(100.0%) 
+ MO    11 (    5) HAS LZ(WEIGHT)=-1.00( 50.0%)  1.00( 50.0%) 
+ MO    12 (    6) HAS LZ(WEIGHT)= 0.00(100.0%) 
+ ...... END OF RHF CALCULATION ......
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.0 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.9 SECONDS, CPU UTILIZATION IS     5.30%
+
+ TRUDGE ENERGY VALUE AT NSTEP=   7 IS      -11.3009013869
+ LOOKS =  7   ALF =  0.3500  FUNC =      -11.3009013869
+             AMIN =  0.3500  FMIN =      -11.3009013869
+            ANEXT =  0.3000 FNEXT =      -11.3008564752
+ ----- TRUDGE RESTART DATA AT NSTEP   8 --------
+ $TRUDGE OPTMIZ=BASIS     NPAR= 1
+         IEX(1)=    6,
+         P(1)=      0.029836,
+ $END
+ ...... END OF ONE-ELECTRON INTEGRALS ......
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.0 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.9 SECONDS, CPU UTILIZATION IS     5.35%
+ TOTAL NUMBER OF NONZERO TWO-ELECTRON INTEGRALS =                 570
+          1 INTEGRAL RECORDS WERE STORED ON DISK FILE  8.
+  ...... END OF TWO-ELECTRON INTEGRALS .....
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.0 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.9 SECONDS, CPU UTILIZATION IS     5.39%
+
+          --------------------------
+                 RHF SCF CALCULATION
+          --------------------------
+     DENSITY MATRIX CONV=  1.00E-05
+
+ ITER EX DEM     TOTAL ENERGY        E CHANGE  DENSITY CHANGE     ORB. GRAD
+          ---------------START SECOND ORDER SCF---------------
+   1  0  0      -11.3008945417   -11.3008945417   0.011381161   0.001507954
+   2  1  0      -11.3009348915    -0.0000403499   0.004372670   0.000414579
+   3  2  0      -11.3009377547    -0.0000028632   0.000360789   0.000049419
+   4  3  0      -11.3009377825    -0.0000000278   0.000039878   0.000008474
+   5  4  0      -11.3009377828    -0.0000000002   0.000006856   0.000001287
+   6  5  0      -11.3009377828    -0.0000000000   0.000000111   0.000000053
+
+          -----------------
+          DENSITY CONVERGED
+          -----------------
+     TIME TO FORM FOCK OPERATORS=       0.0 SECONDS (       0.0 SEC/ITER)
+     TIME TO SOLVE SCF EQUATIONS=       0.0 SECONDS (       0.0 SEC/ITER)
+
+ FINAL RHF ENERGY IS      -11.3009377828 AFTER   6 ITERATIONS
+
+ Alpha HOMO=    -3.381658 eV, LUMO=    6.004421 eV, gap=    9.386079 eV
+
+ LZ VALUE ANALYSIS FOR THE MOS
+ ----------------------------------------
+ MO     1 (    1) HAS LZ(WEIGHT)= 0.00(100.0%) 
+ MO     2 (    2) HAS LZ(WEIGHT)=-1.00( 50.0%)  1.00( 50.0%) 
+ MO     3 (    2) HAS LZ(WEIGHT)= 0.00(100.0%) 
+ MO     4 (    2) HAS LZ(WEIGHT)=-1.00( 50.0%)  1.00( 50.0%) 
+ MO     5 (    3) HAS LZ(WEIGHT)= 0.00(100.0%) 
+ MO     6 (    4) HAS LZ(WEIGHT)= 0.00(100.0%) 
+ MO     7 (    4) HAS LZ(WEIGHT)=-1.00( 50.0%)  1.00( 50.0%) 
+ MO     8 (    4) HAS LZ(WEIGHT)=-1.00( 50.0%)  1.00( 50.0%) 
+ MO     9 (    5) HAS LZ(WEIGHT)= 0.00(100.0%) 
+ MO    10 (    5) HAS LZ(WEIGHT)=-1.00( 50.0%)  1.00( 50.0%) 
+ MO    11 (    5) HAS LZ(WEIGHT)=-1.00( 50.0%)  1.00( 50.0%) 
+ MO    12 (    6) HAS LZ(WEIGHT)= 0.00(100.0%) 
+ ...... END OF RHF CALCULATION ......
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.0 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.9 SECONDS, CPU UTILIZATION IS     5.26%
+
+ TRUDGE ENERGY VALUE AT NSTEP=   8 IS      -11.3009377828
+ LOOKS =  8   ALF =  0.4000  FUNC =      -11.3009377828
+             AMIN =  0.4000  FMIN =      -11.3009377828
+            ANEXT =  0.3500 FNEXT =      -11.3009013869
+ ----- TRUDGE RESTART DATA AT NSTEP   9 --------
+ $TRUDGE OPTMIZ=BASIS     NPAR= 1
+         IEX(1)=    6,
+         P(1)=      0.031366,
+ $END
+ ...... END OF ONE-ELECTRON INTEGRALS ......
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.0 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.9 SECONDS, CPU UTILIZATION IS     5.30%
+ TOTAL NUMBER OF NONZERO TWO-ELECTRON INTEGRALS =                 570
+          1 INTEGRAL RECORDS WERE STORED ON DISK FILE  8.
+  ...... END OF TWO-ELECTRON INTEGRALS .....
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.0 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.9 SECONDS, CPU UTILIZATION IS     5.35%
+
+          --------------------------
+                 RHF SCF CALCULATION
+          --------------------------
+     DENSITY MATRIX CONV=  1.00E-05
+
+ ITER EX DEM     TOTAL ENERGY        E CHANGE  DENSITY CHANGE     ORB. GRAD
+          ---------------START SECOND ORDER SCF---------------
+   1  0  0      -11.3009189388   -11.3009189388   0.012835584   0.001600574
+   2  1  0      -11.3009628120    -0.0000438733   0.004809233   0.000437754
+   3  2  0      -11.3009657678    -0.0000029557   0.000452353   0.000055695
+   4  3  0      -11.3009658014    -0.0000000337   0.000041860   0.000008424
+   5  4  0      -11.3009658017    -0.0000000002   0.000007933   0.000001381
+   6  5  0      -11.3009658017    -0.0000000000   0.000000092   0.000000043
+
+          -----------------
+          DENSITY CONVERGED
+          -----------------
+     TIME TO FORM FOCK OPERATORS=       0.0 SECONDS (       0.0 SEC/ITER)
+     TIME TO SOLVE SCF EQUATIONS=       0.0 SECONDS (       0.0 SEC/ITER)
+
+ FINAL RHF ENERGY IS      -11.3009658017 AFTER   6 ITERATIONS
+
+ Alpha HOMO=    -3.382811 eV, LUMO=    6.126305 eV, gap=    9.509115 eV
+
+ LZ VALUE ANALYSIS FOR THE MOS
+ ----------------------------------------
+ MO     1 (    1) HAS LZ(WEIGHT)= 0.00(100.0%) 
+ MO     2 (    2) HAS LZ(WEIGHT)= 0.00(100.0%) 
+ MO     3 (    2) HAS LZ(WEIGHT)=-1.00( 50.0%)  1.00( 50.0%) 
+ MO     4 (    2) HAS LZ(WEIGHT)=-1.00( 50.0%)  1.00( 50.0%) 
+ MO     5 (    3) HAS LZ(WEIGHT)= 0.00(100.0%) 
+ MO     6 (    4) HAS LZ(WEIGHT)= 0.00(100.0%) 
+ MO     7 (    4) HAS LZ(WEIGHT)=-1.00( 50.0%)  1.00( 50.0%) 
+ MO     8 (    4) HAS LZ(WEIGHT)=-1.00( 50.0%)  1.00( 50.0%) 
+ MO     9 (    5) HAS LZ(WEIGHT)= 0.00(100.0%) 
+ MO    10 (    5) HAS LZ(WEIGHT)=-1.00( 50.0%)  1.00( 50.0%) 
+ MO    11 (    5) HAS LZ(WEIGHT)=-1.00( 50.0%)  1.00( 50.0%) 
+ MO    12 (    6) HAS LZ(WEIGHT)= 0.00(100.0%) 
+ ...... END OF RHF CALCULATION ......
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.1 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          1.0 SECONDS, CPU UTILIZATION IS     5.28%
+
+ TRUDGE ENERGY VALUE AT NSTEP=   9 IS      -11.3009658017
+ LOOKS =  9   ALF =  0.4500  FUNC =      -11.3009658017
+             AMIN =  0.4500  FMIN =      -11.3009658017
+            ANEXT =  0.4000 FNEXT =      -11.3009377828
+ ----- TRUDGE RESTART DATA AT NSTEP  10 --------
+ $TRUDGE OPTMIZ=BASIS     NPAR= 1
+         IEX(1)=    6,
+         P(1)=      0.032974,
+ $END
+ ...... END OF ONE-ELECTRON INTEGRALS ......
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.1 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          1.0 SECONDS, CPU UTILIZATION IS     5.32%
+ TOTAL NUMBER OF NONZERO TWO-ELECTRON INTEGRALS =                 570
+          1 INTEGRAL RECORDS WERE STORED ON DISK FILE  8.
+  ...... END OF TWO-ELECTRON INTEGRALS .....
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.1 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          1.0 SECONDS, CPU UTILIZATION IS     5.36%
+
+          --------------------------
+                 RHF SCF CALCULATION
+          --------------------------
+     DENSITY MATRIX CONV=  1.00E-05
+
+ ITER EX DEM     TOTAL ENERGY        E CHANGE  DENSITY CHANGE     ORB. GRAD
+          ---------------START SECOND ORDER SCF---------------
+   1  0  0      -11.3009345030   -11.3009345030   0.014560941   0.001703023
+   2  1  0      -11.3009825601    -0.0000480571   0.005319722   0.000463127
+   3  2  0      -11.3009856278    -0.0000030677   0.000564548   0.000062170
+   4  3  0      -11.3009856683    -0.0000000405   0.000043847   0.000008326
+   5  4  0      -11.3009856685    -0.0000000002   0.000009019   0.000001455
+   6  5  0      -11.3009856685    -0.0000000000   0.000000078   0.000000033
+
+          -----------------
+          DENSITY CONVERGED
+          -----------------
+     TIME TO FORM FOCK OPERATORS=       0.0 SECONDS (       0.0 SEC/ITER)
+     TIME TO SOLVE SCF EQUATIONS=       0.0 SECONDS (       0.0 SEC/ITER)
+
+ FINAL RHF ENERGY IS      -11.3009856685 AFTER   6 ITERATIONS
+
+ Alpha HOMO=    -3.383481 eV, LUMO=    6.250808 eV, gap=    9.634289 eV
+
+ LZ VALUE ANALYSIS FOR THE MOS
+ ----------------------------------------
+ MO     1 (    1) HAS LZ(WEIGHT)= 0.00(100.0%) 
+ MO     2 (    2) HAS LZ(WEIGHT)= 0.00(100.0%) 
+ MO     3 (    2) HAS LZ(WEIGHT)=-1.00( 50.0%)  1.00( 50.0%) 
+ MO     4 (    2) HAS LZ(WEIGHT)=-1.00( 50.0%)  1.00( 50.0%) 
+ MO     5 (    3) HAS LZ(WEIGHT)= 0.00(100.0%) 
+ MO     6 (    4) HAS LZ(WEIGHT)=-1.00( 50.0%)  1.00( 50.0%) 
+ MO     7 (    4) HAS LZ(WEIGHT)=-1.00( 50.0%)  1.00( 50.0%) 
+ MO     8 (    4) HAS LZ(WEIGHT)= 0.00(100.0%) 
+ MO     9 (    5) HAS LZ(WEIGHT)=-1.00( 50.0%)  1.00( 50.0%) 
+ MO    10 (    5) HAS LZ(WEIGHT)=-1.00( 50.0%)  1.00( 50.0%) 
+ MO    11 (    5) HAS LZ(WEIGHT)= 0.00(100.0%) 
+ MO    12 (    6) HAS LZ(WEIGHT)= 0.00(100.0%) 
+ ...... END OF RHF CALCULATION ......
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.1 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          1.0 SECONDS, CPU UTILIZATION IS     5.21%
+
+ TRUDGE ENERGY VALUE AT NSTEP=  10 IS      -11.3009856685
+ LOOKS = 10   ALF =  0.5000  FUNC =      -11.3009856685
+             AMIN =  0.5000  FMIN =      -11.3009856685
+            ANEXT =  0.4500 FNEXT =      -11.3009658017
+ ----- TRUDGE RESTART DATA AT NSTEP  11 --------
+ $TRUDGE OPTMIZ=BASIS     NPAR= 1
+         IEX(1)=    6,
+         P(1)=      0.034665,
+ $END
+ ...... END OF ONE-ELECTRON INTEGRALS ......
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.1 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          1.0 SECONDS, CPU UTILIZATION IS     5.25%
+ TOTAL NUMBER OF NONZERO TWO-ELECTRON INTEGRALS =                 570
+          1 INTEGRAL RECORDS WERE STORED ON DISK FILE  8.
+  ...... END OF TWO-ELECTRON INTEGRALS .....
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.1 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          1.0 SECONDS, CPU UTILIZATION IS     5.30%
+
+          --------------------------
+                 RHF SCF CALCULATION
+          --------------------------
+     DENSITY MATRIX CONV=  1.00E-05
+
+ ITER EX DEM     TOTAL ENERGY        E CHANGE  DENSITY CHANGE     ORB. GRAD
+          ---------------START SECOND ORDER SCF---------------
+   1  0  0      -11.3009413726   -11.3009413726   0.016626850   0.001816926
+   2  1  0      -11.3009944367    -0.0000530641   0.005923754   0.000491029
+   3  2  0      -11.3009976401    -0.0000032034   0.000702228   0.000068832
+   4  3  0      -11.3009976884    -0.0000000483   0.000045864   0.000008188
+   5  4  0      -11.3009976886    -0.0000000002   0.000010121   0.000001509
+   6  5  0      -11.3009976886    -0.0000000000   0.000000065   0.000000024
+
+          -----------------
+          DENSITY CONVERGED
+          -----------------
+     TIME TO FORM FOCK OPERATORS=       0.0 SECONDS (       0.0 SEC/ITER)
+     TIME TO SOLVE SCF EQUATIONS=       0.0 SECONDS (       0.0 SEC/ITER)
+
+ FINAL RHF ENERGY IS      -11.3009976886 AFTER   6 ITERATIONS
+
+ Alpha HOMO=    -3.383686 eV, LUMO=    6.377985 eV, gap=    9.761671 eV
+
+ LZ VALUE ANALYSIS FOR THE MOS
+ ----------------------------------------
+ MO     1 (    1) HAS LZ(WEIGHT)= 0.00(100.0%) 
+ MO     2 (    2) HAS LZ(WEIGHT)= 0.00(100.0%) 
+ MO     3 (    2) HAS LZ(WEIGHT)=-1.00( 50.0%)  1.00( 50.0%) 
+ MO     4 (    2) HAS LZ(WEIGHT)=-1.00( 50.0%)  1.00( 50.0%) 
+ MO     5 (    3) HAS LZ(WEIGHT)= 0.00(100.0%) 
+ MO     6 (    4) HAS LZ(WEIGHT)= 0.00(100.0%) 
+ MO     7 (    4) HAS LZ(WEIGHT)=-1.00( 50.0%)  1.00( 50.0%) 
+ MO     8 (    4) HAS LZ(WEIGHT)=-1.00( 50.0%)  1.00( 50.0%) 
+ MO     9 (    5) HAS LZ(WEIGHT)=-1.00( 50.0%)  1.00( 50.0%) 
+ MO    10 (    5) HAS LZ(WEIGHT)= 0.00(100.0%) 
+ MO    11 (    5) HAS LZ(WEIGHT)=-1.00( 50.0%)  1.00( 50.0%) 
+ MO    12 (    6) HAS LZ(WEIGHT)= 0.00(100.0%) 
+ ...... END OF RHF CALCULATION ......
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.1 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          1.0 SECONDS, CPU UTILIZATION IS     5.44%
+
+ TRUDGE ENERGY VALUE AT NSTEP=  11 IS      -11.3009976886
+ LOOKS = 11   ALF =  0.5500  FUNC =      -11.3009976886
+             AMIN =  0.5500  FMIN =      -11.3009976886
+            ANEXT =  0.5000 FNEXT =      -11.3009856685
+ ----- TRUDGE RESTART DATA AT NSTEP  12 --------
+ $TRUDGE OPTMIZ=BASIS     NPAR= 1
+         IEX(1)=    6,
+         P(1)=      0.036442,
+ $END
+ ...... END OF ONE-ELECTRON INTEGRALS ......
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.1 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          1.1 SECONDS, CPU UTILIZATION IS     5.25%
+ TOTAL NUMBER OF NONZERO TWO-ELECTRON INTEGRALS =                 570
+          1 INTEGRAL RECORDS WERE STORED ON DISK FILE  8.
+  ...... END OF TWO-ELECTRON INTEGRALS .....
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.1 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          1.1 SECONDS, CPU UTILIZATION IS     5.30%
+
+          --------------------------
+                 RHF SCF CALCULATION
+          --------------------------
+     DENSITY MATRIX CONV=  1.00E-05
+
+ ITER EX DEM     TOTAL ENERGY        E CHANGE  DENSITY CHANGE     ORB. GRAD
+          ---------------START SECOND ORDER SCF---------------
+   1  0  0      -11.3009397074   -11.3009397074   0.019126102   0.001944301
+   2  1  0      -11.3009988152    -0.0000591078   0.006647644   0.000521858
+   3  2  0      -11.3010021837    -0.0000033685   0.000871746   0.000075678
+   4  3  0      -11.3010022408    -0.0000000571   0.000047964   0.000008022
+   5  4  0      -11.3010022410    -0.0000000002   0.000011258   0.000001547
+   6  5  0      -11.3010022410    -0.0000000000   0.000000017   0.000000015
+
+          -----------------
+          DENSITY CONVERGED
+          -----------------
+     TIME TO FORM FOCK OPERATORS=       0.0 SECONDS (       0.0 SEC/ITER)
+     TIME TO SOLVE SCF EQUATIONS=       0.0 SECONDS (       0.0 SEC/ITER)
+
+ FINAL RHF ENERGY IS      -11.3010022410 AFTER   6 ITERATIONS
+
+ Alpha HOMO=    -3.383446 eV, LUMO=    6.507883 eV, gap=    9.891330 eV
+
+ LZ VALUE ANALYSIS FOR THE MOS
+ ----------------------------------------
+ MO     1 (    1) HAS LZ(WEIGHT)= 0.00(100.0%) 
+ MO     2 (    2) HAS LZ(WEIGHT)= 0.00(100.0%) 
+ MO     3 (    2) HAS LZ(WEIGHT)=-1.00( 50.0%)  1.00( 50.0%) 
+ MO     4 (    2) HAS LZ(WEIGHT)=-1.00( 50.0%)  1.00( 50.0%) 
+ MO     5 (    3) HAS LZ(WEIGHT)= 0.00(100.0%) 
+ MO     6 (    4) HAS LZ(WEIGHT)=-1.00( 50.0%)  1.00( 50.0%) 
+ MO     7 (    4) HAS LZ(WEIGHT)= 0.00(100.0%) 
+ MO     8 (    4) HAS LZ(WEIGHT)=-1.00( 50.0%)  1.00( 50.0%) 
+ MO     9 (    5) HAS LZ(WEIGHT)= 0.00(100.0%) 
+ MO    10 (    5) HAS LZ(WEIGHT)=-1.00( 50.0%)  1.00( 50.0%) 
+ MO    11 (    5) HAS LZ(WEIGHT)=-1.00( 50.0%)  1.00( 50.0%) 
+ MO    12 (    6) HAS LZ(WEIGHT)= 0.00(100.0%) 
+ ...... END OF RHF CALCULATION ......
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.1 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          1.1 SECONDS, CPU UTILIZATION IS     5.43%
+
+ TRUDGE ENERGY VALUE AT NSTEP=  12 IS      -11.3010022410
+ LOOKS = 12   ALF =  0.6000  FUNC =      -11.3010022410
+             AMIN =  0.6000  FMIN =      -11.3010022410
+            ANEXT =  0.5500 FNEXT =      -11.3009976886
+ ----- TRUDGE RESTART DATA AT NSTEP  13 --------
+ $TRUDGE OPTMIZ=BASIS     NPAR= 1
+         IEX(1)=    6,
+         P(1)=      0.038311,
+ $END
+ ...... END OF ONE-ELECTRON INTEGRALS ......
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.1 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          1.1 SECONDS, CPU UTILIZATION IS     5.46%
+ TOTAL NUMBER OF NONZERO TWO-ELECTRON INTEGRALS =                 570
+          1 INTEGRAL RECORDS WERE STORED ON DISK FILE  8.
+  ...... END OF TWO-ELECTRON INTEGRALS .....
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.1 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          1.1 SECONDS, CPU UTILIZATION IS     5.27%
+
+          --------------------------
+                 RHF SCF CALCULATION
+          --------------------------
+     DENSITY MATRIX CONV=  1.00E-05
+
+ ITER EX DEM     TOTAL ENERGY        E CHANGE  DENSITY CHANGE     ORB. GRAD
+          ---------------START SECOND ORDER SCF---------------
+   1  0  0      -11.3009296596   -11.3009296596   0.022184483   0.002087688
+   2  1  0      -11.3009961327    -0.0000664730   0.007527268   0.000556088
+   3  2  0      -11.3009997024    -0.0000035698   0.001081577   0.000082717
+   4  3  0      -11.3009997695    -0.0000000671   0.000050242   0.000007842
+   5  4  0      -11.3009997697    -0.0000000002   0.000012458   0.000001572
+   6  5  0      -11.3009997697    -0.0000000000   0.000000000   0.000000000
+
+          -----------------
+          DENSITY CONVERGED
+          -----------------
+     TIME TO FORM FOCK OPERATORS=       0.0 SECONDS (       0.0 SEC/ITER)
+     TIME TO SOLVE SCF EQUATIONS=       0.0 SECONDS (       0.0 SEC/ITER)
+
+ FINAL RHF ENERGY IS      -11.3009997697 AFTER   6 ITERATIONS
+
+ Alpha HOMO=    -3.382784 eV, LUMO=    6.640549 eV, gap=   10.023333 eV
+
+ LZ VALUE ANALYSIS FOR THE MOS
+ ----------------------------------------
+ MO     1 (    1) HAS LZ(WEIGHT)= 0.00(100.0%) 
+ MO     2 (    2) HAS LZ(WEIGHT)= 0.00(100.0%) 
+ MO     3 (    2) HAS LZ(WEIGHT)=-1.00( 50.0%)  1.00( 50.0%) 
+ MO     4 (    2) HAS LZ(WEIGHT)=-1.00( 50.0%)  1.00( 50.0%) 
+ MO     5 (    3) HAS LZ(WEIGHT)= 0.00(100.0%) 
+ MO     6 (    4) HAS LZ(WEIGHT)=-1.00( 50.0%)  1.00( 50.0%) 
+ MO     7 (    4) HAS LZ(WEIGHT)= 0.00(100.0%) 
+ MO     8 (    4) HAS LZ(WEIGHT)=-1.00( 50.0%)  1.00( 50.0%) 
+ MO     9 (    5) HAS LZ(WEIGHT)=-1.00( 50.0%)  1.00( 50.0%) 
+ MO    10 (    5) HAS LZ(WEIGHT)= 0.00(100.0%) 
+ MO    11 (    5) HAS LZ(WEIGHT)=-1.00( 50.0%)  1.00( 50.0%) 
+ MO    12 (    6) HAS LZ(WEIGHT)= 0.00(100.0%) 
+ ...... END OF RHF CALCULATION ......
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.1 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          1.1 SECONDS, CPU UTILIZATION IS     5.42%
+
+ TRUDGE ENERGY VALUE AT NSTEP=  13 IS      -11.3009997697
+ LOOKS = 13   ALF =  0.6500  FUNC =      -11.3009997697
+             AMIN =  0.6000  FMIN =      -11.3010022410
+            ANEXT =  0.6500 FNEXT =      -11.3009997697
+ ----- TRUDGE RESTART DATA AT NSTEP  14 --------
+ $TRUDGE OPTMIZ=BASIS     NPAR= 1
+         IEX(1)=    6,
+         P(1)=      0.036713,
+ $END
+ ...... END OF ONE-ELECTRON INTEGRALS ......
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.1 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          1.1 SECONDS, CPU UTILIZATION IS     5.45%
+ TOTAL NUMBER OF NONZERO TWO-ELECTRON INTEGRALS =                 570
+          1 INTEGRAL RECORDS WERE STORED ON DISK FILE  8.
+  ...... END OF TWO-ELECTRON INTEGRALS .....
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.1 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          1.1 SECONDS, CPU UTILIZATION IS     5.49%
+
+          --------------------------
+                 RHF SCF CALCULATION
+          --------------------------
+     DENSITY MATRIX CONV=  1.00E-05
+
+ ITER EX DEM     TOTAL ENERGY        E CHANGE  DENSITY CHANGE     ORB. GRAD
+          ---------------START SECOND ORDER SCF---------------
+   1  0  0      -11.3009391710   -11.3009391710   0.018569293   0.001958876
+   2  1  0      -11.3009986736    -0.0000595026   0.006392713   0.000563327
+   3  2  0      -11.3010021940    -0.0000035204   0.001319338   0.000103459
+   4  3  0      -11.3010023062    -0.0000001123   0.000063615   0.000010104
+   5  4  0      -11.3010023066    -0.0000000003   0.000016046   0.000002111
+   6  5  0      -11.3010023066    -0.0000000000   0.000000124   0.000000116
+
+          -----------------
+          DENSITY CONVERGED
+          -----------------
+     TIME TO FORM FOCK OPERATORS=       0.0 SECONDS (       0.0 SEC/ITER)
+     TIME TO SOLVE SCF EQUATIONS=       0.0 SECONDS (       0.0 SEC/ITER)
+
+ FINAL RHF ENERGY IS      -11.3010023066 AFTER   6 ITERATIONS
+
+ Alpha HOMO=    -3.383375 eV, LUMO=    6.527362 eV, gap=    9.910736 eV
+
+ LZ VALUE ANALYSIS FOR THE MOS
+ ----------------------------------------
+ MO     1 (    1) HAS LZ(WEIGHT)= 0.00(100.0%) 
+ MO     2 (    2) HAS LZ(WEIGHT)=-1.00( 50.0%)  1.00( 50.0%) 
+ MO     3 (    2) HAS LZ(WEIGHT)= 0.00(100.0%) 
+ MO     4 (    2) HAS LZ(WEIGHT)=-1.00( 50.0%)  1.00( 50.0%) 
+ MO     5 (    3) HAS LZ(WEIGHT)= 0.00(100.0%) 
+ MO     6 (    4) HAS LZ(WEIGHT)=-1.00( 50.0%)  1.00( 50.0%) 
+ MO     7 (    4) HAS LZ(WEIGHT)= 0.00(100.0%) 
+ MO     8 (    4) HAS LZ(WEIGHT)=-1.00( 50.0%)  1.00( 50.0%) 
+ MO     9 (    5) HAS LZ(WEIGHT)=-1.00( 50.0%)  1.00( 50.0%) 
+ MO    10 (    5) HAS LZ(WEIGHT)= 0.00(100.0%) 
+ MO    11 (    5) HAS LZ(WEIGHT)=-1.00( 50.0%)  1.00( 50.0%) 
+ MO    12 (    6) HAS LZ(WEIGHT)= 0.00(100.0%) 
+ ...... END OF RHF CALCULATION ......
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.1 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          1.1 SECONDS, CPU UTILIZATION IS     5.41%
+
+ TRUDGE ENERGY VALUE AT NSTEP=  14 IS      -11.3010023066
+ LOOKS = 14   ALF =  0.6074  FUNC =      -11.3010023066
+             AMIN =  0.6074  FMIN =      -11.3010023066
+            ANEXT =  0.6000 FNEXT =      -11.3010022410
+  NEW CURVATURE =  0.14047E-02   ALPHA =   0.6074074
+  OLD CURVATURE =  0.00000E+00   ALFSET=   0.2000000
+ ----- TRUDGE RESTART DATA AT NSTEP  15 --------
+ $TRUDGE OPTMIZ=BASIS     NPAR= 1
+         IEX(1)=    6,
+         P(1)=      0.044842,
+ $END
+ ...... END OF ONE-ELECTRON INTEGRALS ......
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.1 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          1.1 SECONDS, CPU UTILIZATION IS     5.45%
+ TOTAL NUMBER OF NONZERO TWO-ELECTRON INTEGRALS =                 570
+          1 INTEGRAL RECORDS WERE STORED ON DISK FILE  8.
+  ...... END OF TWO-ELECTRON INTEGRALS .....
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.1 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          1.2 SECONDS, CPU UTILIZATION IS     5.48%
+
+          --------------------------
+                 RHF SCF CALCULATION
+          --------------------------
+     DENSITY MATRIX CONV=  1.00E-05
+
+ ITER EX DEM     TOTAL ENERGY        E CHANGE  DENSITY CHANGE     ORB. GRAD
+          ---------------START SECOND ORDER SCF---------------
+   1  0  0      -11.2999634408   -11.2999634408   0.125663725   0.008189303
+   2  1  0      -11.3009186631    -0.0009552223   0.038420165   0.001652779
+   3  2  0      -11.3009518469    -0.0000331838   0.001869635   0.000241258
+   4  3  0      -11.3009519893    -0.0000001424   0.000060052   0.000045951
+   5  4  0      -11.3009519901    -0.0000000008   0.000022316   0.000002614
+   6  5  0      -11.3009519901    -0.0000000000   0.000003270   0.000000402
+   7  6  0      -11.3009519901    -0.0000000000   0.000000000   0.000000000
+
+          -----------------
+          DENSITY CONVERGED
+          -----------------
+     TIME TO FORM FOCK OPERATORS=       0.0 SECONDS (       0.0 SEC/ITER)
+     TIME TO SOLVE SCF EQUATIONS=       0.0 SECONDS (       0.0 SEC/ITER)
+
+ FINAL RHF ENERGY IS      -11.3009519901 AFTER   7 ITERATIONS
+
+ Alpha HOMO=    -3.378235 eV, LUMO=    7.076676 eV, gap=   10.454911 eV
+
+ LZ VALUE ANALYSIS FOR THE MOS
+ ----------------------------------------
+ MO     1 (    1) HAS LZ(WEIGHT)= 0.00(100.0%) 
+ MO     2 (    2) HAS LZ(WEIGHT)= 0.00(100.0%) 
+ MO     3 (    2) HAS LZ(WEIGHT)=-1.00( 50.0%)  1.00( 50.0%) 
+ MO     4 (    2) HAS LZ(WEIGHT)=-1.00( 50.0%)  1.00( 50.0%) 
+ MO     5 (    3) HAS LZ(WEIGHT)= 0.00(100.0%) 
+ MO     6 (    4) HAS LZ(WEIGHT)=-1.00( 50.0%)  1.00( 50.0%) 
+ MO     7 (    4) HAS LZ(WEIGHT)=-1.00( 50.0%)  1.00( 50.0%) 
+ MO     8 (    4) HAS LZ(WEIGHT)= 0.00(100.0%) 
+ MO     9 (    5) HAS LZ(WEIGHT)=-1.00( 50.0%)  1.00( 50.0%) 
+ MO    10 (    5) HAS LZ(WEIGHT)=-1.00( 50.0%)  1.00( 50.0%) 
+ MO    11 (    5) HAS LZ(WEIGHT)= 0.00(100.0%) 
+ MO    12 (    6) HAS LZ(WEIGHT)= 0.00(100.0%) 
+ ...... END OF RHF CALCULATION ......
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.1 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          1.2 SECONDS, CPU UTILIZATION IS     5.48%
+
+ TRUDGE ENERGY VALUE AT NSTEP=  15 IS      -11.3009519901
+ LOOKS =  1   ALF =  0.2000  FUNC =      -11.3009519901
+             AMIN =  0.0000  FMIN =      -11.3010023066
+            ANEXT =  0.2000 FNEXT =      -11.3009519901
+ ----- TRUDGE RESTART DATA AT NSTEP  16 --------
+ $TRUDGE OPTMIZ=BASIS     NPAR= 1
+         IEX(1)=    6,
+         P(1)=      0.030058,
+ $END
+ ...... END OF ONE-ELECTRON INTEGRALS ......
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.1 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          1.2 SECONDS, CPU UTILIZATION IS     5.51%
+ TOTAL NUMBER OF NONZERO TWO-ELECTRON INTEGRALS =                 570
+          1 INTEGRAL RECORDS WERE STORED ON DISK FILE  8.
+  ...... END OF TWO-ELECTRON INTEGRALS .....
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.1 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          1.2 SECONDS, CPU UTILIZATION IS     5.55%
+
+          --------------------------
+                 RHF SCF CALCULATION
+          --------------------------
+     DENSITY MATRIX CONV=  1.00E-05
+
+ ITER EX DEM     TOTAL ENERGY        E CHANGE  DENSITY CHANGE     ORB. GRAD
+          ---------------START SECOND ORDER SCF---------------
+   1  0  0      -11.2880509569   -11.2880509569   0.166085198   0.027219313
+   2  1  0      -11.3000996160    -0.0120486591   0.048918019   0.009099891
+   3  2  0      -11.3008710326    -0.0007714166   0.022456037   0.002344050
+   4  3  0      -11.3009421271    -0.0000710945   0.000852546   0.000210608
+   5  4  0      -11.3009424389    -0.0000003118   0.000329558   0.000060856
+   6  5  0      -11.3009424578    -0.0000000189   0.000009196   0.000003449
+   7  6  0      -11.3009424578    -0.0000000000   0.000001218   0.000000946
+   8  7  0      -11.3009424578    -0.0000000000   0.000000143   0.000000145
+
+          -----------------
+          DENSITY CONVERGED
+          -----------------
+     TIME TO FORM FOCK OPERATORS=       0.0 SECONDS (       0.0 SEC/ITER)
+     TIME TO SOLVE SCF EQUATIONS=       0.0 SECONDS (       0.0 SEC/ITER)
+
+ FINAL RHF ENERGY IS      -11.3009424578 AFTER   8 ITERATIONS
+
+ Alpha HOMO=    -3.381860 eV, LUMO=    6.022315 eV, gap=    9.404175 eV
+
+ LZ VALUE ANALYSIS FOR THE MOS
+ ----------------------------------------
+ MO     1 (    1) HAS LZ(WEIGHT)= 0.00(100.0%) 
+ MO     2 (    2) HAS LZ(WEIGHT)=-1.00( 50.0%)  1.00( 50.0%) 
+ MO     3 (    2) HAS LZ(WEIGHT)= 0.00(100.0%) 
+ MO     4 (    2) HAS LZ(WEIGHT)=-1.00( 50.0%)  1.00( 50.0%) 
+ MO     5 (    3) HAS LZ(WEIGHT)= 0.00(100.0%) 
+ MO     6 (    4) HAS LZ(WEIGHT)=-1.00( 50.0%)  1.00( 50.0%) 
+ MO     7 (    4) HAS LZ(WEIGHT)= 0.00(100.0%) 
+ MO     8 (    4) HAS LZ(WEIGHT)=-1.00( 50.0%)  1.00( 50.0%) 
+ MO     9 (    5) HAS LZ(WEIGHT)=-1.00( 50.0%)  1.00( 50.0%) 
+ MO    10 (    5) HAS LZ(WEIGHT)=-1.00( 50.0%)  1.00( 50.0%) 
+ MO    11 (    5) HAS LZ(WEIGHT)= 0.00(100.0%) 
+ MO    12 (    6) HAS LZ(WEIGHT)= 0.00(100.0%) 
+ ...... END OF RHF CALCULATION ......
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.1 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          1.2 SECONDS, CPU UTILIZATION IS     5.50%
+
+ TRUDGE ENERGY VALUE AT NSTEP=  16 IS      -11.3009424578
+ LOOKS =  2   ALF = -0.2000  FUNC =      -11.3009424578
+             AMIN =  0.0000  FMIN =      -11.3010023066
+            ANEXT =  0.2000 FNEXT =      -11.3009519901
+ ----- TRUDGE RESTART DATA AT NSTEP  17 --------
+ $TRUDGE OPTMIZ=BASIS     NPAR= 1
+         IEX(1)=    6,
+         P(1)=      0.037032,
+ $END
+ ...... END OF ONE-ELECTRON INTEGRALS ......
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.1 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          1.2 SECONDS, CPU UTILIZATION IS     5.53%
+ TOTAL NUMBER OF NONZERO TWO-ELECTRON INTEGRALS =                 570
+          1 INTEGRAL RECORDS WERE STORED ON DISK FILE  8.
+  ...... END OF TWO-ELECTRON INTEGRALS .....
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.1 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          1.2 SECONDS, CPU UTILIZATION IS     5.57%
+
+          --------------------------
+                 RHF SCF CALCULATION
+          --------------------------
+     DENSITY MATRIX CONV=  1.00E-05
+
+ ITER EX DEM     TOTAL ENERGY        E CHANGE  DENSITY CHANGE     ORB. GRAD
+          ---------------START SECOND ORDER SCF---------------
+   1  0  0      -11.3002986031   -11.3002986031   0.071979372   0.006559306
+   2  1  0      -11.3009704507    -0.0006718476   0.023451693   0.001495642
+   3  2  0      -11.3010020779    -0.0000316272   0.000803721   0.000241875
+   4  3  0      -11.3010021890    -0.0000001111   0.000054416   0.000033819
+   5  4  0      -11.3010021899    -0.0000000009   0.000018316   0.000002321
+   6  5  0      -11.3010021899    -0.0000000000   0.000000250   0.000000061
+
+          -----------------
+          DENSITY CONVERGED
+          -----------------
+     TIME TO FORM FOCK OPERATORS=       0.0 SECONDS (       0.0 SEC/ITER)
+     TIME TO SOLVE SCF EQUATIONS=       0.0 SECONDS (       0.0 SEC/ITER)
+
+ FINAL RHF ENERGY IS      -11.3010021899 AFTER   6 ITERATIONS
+
+ Alpha HOMO=    -3.383279 eV, LUMO=    6.550192 eV, gap=    9.933471 eV
+
+ LZ VALUE ANALYSIS FOR THE MOS
+ ----------------------------------------
+ MO     1 (    1) HAS LZ(WEIGHT)= 0.00(100.0%) 
+ MO     2 (    2) HAS LZ(WEIGHT)= 0.00(100.0%) 
+ MO     3 (    2) HAS LZ(WEIGHT)=-1.00( 50.0%)  1.00( 50.0%) 
+ MO     4 (    2) HAS LZ(WEIGHT)=-1.00( 50.0%)  1.00( 50.0%) 
+ MO     5 (    3) HAS LZ(WEIGHT)= 0.00(100.0%) 
+ MO     6 (    4) HAS LZ(WEIGHT)=-1.00( 50.0%)  1.00( 50.0%) 
+ MO     7 (    4) HAS LZ(WEIGHT)= 0.00(100.0%) 
+ MO     8 (    4) HAS LZ(WEIGHT)=-1.00( 50.0%)  1.00( 50.0%) 
+ MO     9 (    5) HAS LZ(WEIGHT)=-1.00( 50.0%)  1.00( 50.0%) 
+ MO    10 (    5) HAS LZ(WEIGHT)=-1.00( 50.0%)  1.00( 50.0%) 
+ MO    11 (    5) HAS LZ(WEIGHT)= 0.00(100.0%) 
+ MO    12 (    6) HAS LZ(WEIGHT)= 0.00(100.0%) 
+ ...... END OF RHF CALCULATION ......
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.1 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          1.3 SECONDS, CPU UTILIZATION IS     5.52%
+
+ TRUDGE ENERGY VALUE AT NSTEP=  17 IS      -11.3010021899
+ LOOKS =  3   ALF =  0.0087  FUNC =      -11.3010021899
+             AMIN =  0.0000  FMIN =      -11.3010023066
+            ANEXT =  0.0087 FNEXT =      -11.3010021899
+  NEW CURVATURE =  0.13771E-02   ALPHA =   0.0000000
+  OLD CURVATURE =  0.14047E-02   ALFSET=   0.0500000
+ F=      -11.3010023066 DELTA F=0.00000E+00 DELTA R=0.00000E+00
+ ----- TRUDGE RESTART DATA AT NSTEP  18 --------
+ $TRUDGE OPTMIZ=BASIS     NPAR= 1
+         IEX(1)=    6,
+         P(1)=      0.036713,
+ $END
+ ...... END OF ONE-ELECTRON INTEGRALS ......
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.1 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          1.3 SECONDS, CPU UTILIZATION IS     5.56%
+ TOTAL NUMBER OF NONZERO TWO-ELECTRON INTEGRALS =                 570
+          1 INTEGRAL RECORDS WERE STORED ON DISK FILE  8.
+  ...... END OF TWO-ELECTRON INTEGRALS .....
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.1 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          1.3 SECONDS, CPU UTILIZATION IS     5.59%
+
+          --------------------------
+                 RHF SCF CALCULATION
+          --------------------------
+     DENSITY MATRIX CONV=  1.00E-05
+
+ ITER EX DEM     TOTAL ENERGY        E CHANGE  DENSITY CHANGE     ORB. GRAD
+          ---------------START SECOND ORDER SCF---------------
+   1  0  0      -11.3009999936   -11.3009999936   0.003615798   0.000374812
+   2  1  0      -11.3010021758    -0.0000021821   0.001251947   0.000105210
+   3  2  0      -11.3010023032    -0.0000001275   0.000222981   0.000017955
+   4  3  0      -11.3010023066    -0.0000000033   0.000011182   0.000001790
+   5  4  0      -11.3010023066    -0.0000000000   0.000002726   0.000000363
+   6  5  0      -11.3010023066    -0.0000000000   0.000000015   0.000000014
+
+          -----------------
+          DENSITY CONVERGED
+          -----------------
+     TIME TO FORM FOCK OPERATORS=       0.0 SECONDS (       0.0 SEC/ITER)
+     TIME TO SOLVE SCF EQUATIONS=       0.0 SECONDS (       0.0 SEC/ITER)
+
+ FINAL RHF ENERGY IS      -11.3010023066 AFTER   6 ITERATIONS
+
+ Alpha HOMO=    -3.383374 eV, LUMO=    6.527362 eV, gap=    9.910736 eV
+
+ LZ VALUE ANALYSIS FOR THE MOS
+ ----------------------------------------
+ MO     1 (    1) HAS LZ(WEIGHT)= 0.00(100.0%) 
+ MO     2 (    2) HAS LZ(WEIGHT)= 0.00(100.0%) 
+ MO     3 (    2) HAS LZ(WEIGHT)=-1.00( 50.0%)  1.00( 50.0%) 
+ MO     4 (    2) HAS LZ(WEIGHT)=-1.00( 50.0%)  1.00( 50.0%) 
+ MO     5 (    3) HAS LZ(WEIGHT)= 0.00(100.0%) 
+ MO     6 (    4) HAS LZ(WEIGHT)=-1.00( 50.0%)  1.00( 50.0%) 
+ MO     7 (    4) HAS LZ(WEIGHT)=-1.00( 50.0%)  1.00( 50.0%) 
+ MO     8 (    4) HAS LZ(WEIGHT)= 0.00(100.0%) 
+ MO     9 (    5) HAS LZ(WEIGHT)=-1.00( 50.0%)  1.00( 50.0%) 
+ MO    10 (    5) HAS LZ(WEIGHT)=-1.00( 50.0%)  1.00( 50.0%) 
+ MO    11 (    5) HAS LZ(WEIGHT)= 0.00(100.0%) 
+ MO    12 (    6) HAS LZ(WEIGHT)= 0.00(100.0%) 
+ ...... END OF RHF CALCULATION ......
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.1 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          1.3 SECONDS, CPU UTILIZATION IS     5.56%
+
+ TRUDGE ENERGY VALUE AT NSTEP=  18 IS      -11.3010023066
+
+ NON-GRADIENT ENERGY MINIMIZATION  ...  CONVERGED
+
+ CONJUGATE DIRECTION =     0
+ PARAMETER =     1
+ VALUE OF THE FUNCTION =       -11.3010023066
+                  FNOT =       -11.3010023066
+ $TRURST KSTART= 0  JSTART= 1  TOLF=  0.001000 TOLR=  0.050000
+         FNOISE=  0.000500  FNOT= -11.301002307
+         RNOT(1)=  0.607407
+         CURV(1)=  0.001377
+         ALPH(1)=  0.050000
+            V(1)=  1.000000
+ $END
+ ...... END OF NON-GRADIENT ENERGY MINIMIZATION ......
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.1 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          1.3 SECONDS, CPU UTILIZATION IS     5.58%
+               580000  WORDS OF DYNAMIC MEMORY USED
+ EXECUTION OF GAMESS TERMINATED NORMALLY 09:19:45 13-OCT-2026    
+ DDI: 263640 bytes (0.3 MB / 0 MWords) used by master data server.
+
+ ----------------------------------------
+ CPU timing information for all processes
+ ========================================
+ 0: 0.69 + 0.55 = 0.125
+ 1: 0.53 + 0.104 = 0.157
+ ----------------------------------------
+----- accounting info -----
+Files used on the parent node meyeri were:
+-rw-r--r-- 1 eric users   50003 Oct 13 09:19 /home/eric/data/development/forks/OpenChemistry/openchemistry-nix/openchemistry/avogadrodata/data/gamess/scratch/exam20.dat
+-rw-r--r-- 1 eric users     559 Oct 13 09:19 /home/eric/data/development/forks/OpenChemistry/openchemistry-nix/openchemistry/avogadrodata/data/gamess/scratch/exam20.F05
+-rw-r--r-- 1 eric users  180016 Oct 13 09:19 /home/eric/data/development/forks/OpenChemistry/openchemistry-nix/openchemistry/avogadrodata/data/gamess/scratch/exam20.F08
+-rw-r--r-- 1 eric users 1701440 Oct 13 09:19 /home/eric/data/development/forks/OpenChemistry/openchemistry-nix/openchemistry/avogadrodata/data/gamess/scratch/exam20.F10
+-rw-r--r-- 1 eric users       7 Oct 13 09:19 /home/eric/data/development/forks/OpenChemistry/openchemistry-nix/openchemistry/avogadrodata/data/gamess/scratch/exam20.nodes.mpd
+Tue Oct 13 09:19:45 AM EDT 2026
+1.065u 0.384s 0:05.33 27.2%	0+0k 0+64165io 267pf+0w
