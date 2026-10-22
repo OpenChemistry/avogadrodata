@@ -1,0 +1,88 @@
+# Known bond order perception failures for the corpus in this directory.
+#
+# <path relative to data/bondorders>  <charged|neutral|both>  <fail|wrong|kekule>  <reason>
+#
+# charged: formal charges as stored in the file; neutral: all formal charges
+# set to zero first. fail: perception reports failure (cleanly); wrong: it
+# reports success with valences that differ from the file; kekule: valid
+# valences but a different Kekule structure from the reference.
+# Generated from a run of tests/io/bondorderscorpustest.cpp. Delete a line
+# when perception starts passing the entry.
+carbon/nanotube-10-0-open.mol both fail open-ended nanotube without H caps: each rim carbon has two bonds and needs two more
+carbon/nanotube-5-5-defect-hcap.mol both fail odd number of sp2 carbons (a vacancy defect): no perfect matching exists
+ccd/0HV.sdf both fail nitro or N-oxide N=O: needs hypervalent or charge-separated nitrogen
+ccd/0RD.sdf both fail sulfonyl or sulfoxide S=O: sulfur valence 4 or 6 is not chosen
+ccd/1HZ.sdf both fail sulfonyl or sulfoxide S=O: sulfur valence 4 or 6 is not chosen
+ccd/2CX.sdf both fail sulfonyl or sulfoxide S=O: sulfur valence 4 or 6 is not chosen
+ccd/3BA.sdf both kekule fused aromatic ring system: valid alternative Kekule structure, not the file's
+ccd/3Z5.sdf both kekule fused aromatic ring system: valid alternative Kekule structure, not the file's
+ccd/4SX.sdf both fail sulfonyl or sulfoxide S=O: sulfur valence 4 or 6 is not chosen
+ccd/4TW.sdf both fail sulfonyl or sulfoxide S=O: sulfur valence 4 or 6 is not chosen
+ccd/5NU.sdf both fail nitro or N-oxide N=O: needs hypervalent or charge-separated nitrogen
+ccd/75D.sdf both fail sulfonyl or sulfoxide S=O: sulfur valence 4 or 6 is not chosen
+ccd/7L3.sdf both fail sulfonyl or sulfoxide S=O: sulfur valence 4 or 6 is not chosen
+ccd/87D.sdf both fail sulfonyl or sulfoxide S=O: sulfur valence 4 or 6 is not chosen
+ccd/A1E3B.sdf both fail sulfonyl or sulfoxide S=O: sulfur valence 4 or 6 is not chosen
+ccd/A1ECY.sdf both fail sulfonyl or sulfoxide S=O: sulfur valence 4 or 6 is not chosen
+ccd/A1MIQ.sdf both fail unsatisfied: N(C1 N2 ) N(N-2 N2 ) N-(N2 )
+ccd/ARG.sdf neutral fail formal charges stripped: C(N+2 N1 N1 )
+ccd/B12.sdf both fail metal complex: how bonds to the metal count toward ligand valence is not modelled
+ccd/B4W.sdf both kekule fused aromatic ring system: valid alternative Kekule structure, not the file's
+ccd/BCB.sdf charged fail metal complex: how bonds to the metal count toward ligand valence is not modelled
+ccd/BCB.sdf neutral wrong metal complex: how bonds to the metal count toward ligand valence is not modelled
+ccd/BCL.sdf charged fail metal complex: how bonds to the metal count toward ligand valence is not modelled
+ccd/BCL.sdf neutral wrong metal complex: how bonds to the metal count toward ligand valence is not modelled
+ccd/CHL.sdf charged fail metal complex: how bonds to the metal count toward ligand valence is not modelled
+ccd/CHL.sdf neutral wrong metal complex: how bonds to the metal count toward ligand valence is not modelled
+ccd/CLA.sdf charged fail metal complex: how bonds to the metal count toward ligand valence is not modelled
+ccd/CLA.sdf neutral wrong metal complex: how bonds to the metal count toward ligand valence is not modelled
+ccd/DY5.sdf both fail nitro or N-oxide N=O: needs hypervalent or charge-separated nitrogen
+ccd/E36.sdf both fail sulfonyl or sulfoxide S=O: sulfur valence 4 or 6 is not chosen
+ccd/ERL.sdf both fail sulfonyl or sulfoxide S=O: sulfur valence 4 or 6 is not chosen
+ccd/F43.sdf both fail metal complex: how bonds to the metal count toward ligand valence is not modelled
+ccd/HE6.sdf both wrong metal complex: how bonds to the metal count toward ligand valence is not modelled
+ccd/HEA.sdf both wrong metal complex: how bonds to the metal count toward ligand valence is not modelled
+ccd/HEB.sdf both wrong metal complex: how bonds to the metal count toward ligand valence is not modelled
+ccd/HEC.sdf both wrong metal complex: how bonds to the metal count toward ligand valence is not modelled
+ccd/HEM.sdf charged fail metal complex: how bonds to the metal count toward ligand valence is not modelled
+ccd/HEM.sdf neutral wrong metal complex: how bonds to the metal count toward ligand valence is not modelled
+ccd/HIS.sdf neutral fail formal charges stripped: C(H1 N+2 N1 )
+ccd/IMD.sdf neutral fail formal charges stripped: C(H1 N+2 N1 )
+ccd/IRE.sdf both kekule fused aromatic ring system: valid alternative Kekule structure, not the file's
+ccd/IYK.sdf both kekule fused aromatic ring system: valid alternative Kekule structure, not the file's
+ccd/J4J.sdf both fail nitro or N-oxide N=O: needs hypervalent or charge-separated nitrogen
+ccd/M57.sdf both fail sulfonyl or sulfoxide S=O: sulfur valence 4 or 6 is not chosen
+ccd/M98.sdf both fail unsatisfied: C(C1 C1 C2 ) C(C1 C2 H1 ) C(C1 H1 N+2 ) C(C2 H1 N+1 ) N+(C1 C2 O1 ) O(N+1 )
+ccd/MTX.sdf both kekule fused aromatic ring system: valid alternative Kekule structure, not the file's
+ccd/NAD.sdf both fail phosphate P=O: phosphorus valence 5 with ambiguous terminal oxygens
+ccd/NAP.sdf both fail phosphate P=O: phosphorus valence 5 with ambiguous terminal oxygens
+ccd/NE7.sdf both fail sulfonyl or sulfoxide S=O: sulfur valence 4 or 6 is not chosen
+ccd/R43.sdf both fail sulfonyl or sulfoxide S=O: sulfur valence 4 or 6 is not chosen
+ccd/R9R.sdf both fail sulfonyl or sulfoxide S=O: sulfur valence 4 or 6 is not chosen
+ccd/RRU.sdf both fail sulfonyl or sulfoxide S=O: sulfur valence 4 or 6 is not chosen
+ccd/SAM.sdf both fail unsatisfied: C(C1 O1 O2 ) O(C1 ) O(C2 )
+ccd/SKU.sdf both fail sulfonyl or sulfoxide S=O: sulfur valence 4 or 6 is not chosen
+ccd/SRM.sdf charged fail metal complex: how bonds to the metal count toward ligand valence is not modelled
+ccd/SRM.sdf neutral wrong metal complex: how bonds to the metal count toward ligand valence is not modelled
+ccd/TAU.sdf both fail sulfonyl or sulfoxide S=O: sulfur valence 4 or 6 is not chosen
+ccd/TPP.sdf neutral fail formal charges stripped: C(H1 N+2 S1 )
+ccd/TRR.sdf neutral fail formal charges stripped: C(C1 C1 C2 ) C(C1 N1 N2 ) C(C2 H1 N+1 ) C(N+2 N1 N1 ) N(C1 C2 )
+ccd/YKS.sdf both fail sulfonyl or sulfoxide S=O: sulfur valence 4 or 6 is not chosen
+ccd/YUQ.sdf both fail sulfonyl or sulfoxide S=O: sulfur valence 4 or 6 is not chosen
+hetero/acridine.mol both kekule fused aromatic ring system: valid alternative Kekule structure, not the file's
+hetero/adenine-9H-heavy.mol both fail heavy atoms only: the missing hydrogens change every valence
+hetero/imidazole-heavy.mol both wrong heavy atoms only: the missing hydrogens change every valence
+hetero/indole-heavy.mol both fail heavy atoms only: the missing hydrogens change every valence
+hetero/phenazine.mol both kekule fused aromatic ring system: valid alternative Kekule structure, not the file's
+hetero/pteridine.mol both kekule fused aromatic ring system: valid alternative Kekule structure, not the file's
+hetero/purine-9H-heavy.mol both fail heavy atoms only: the missing hydrogens change every valence
+molecules/amino_acids/L-4-nitrophenylalanine.cjson both fail nitro group N=O: needs hypervalent or charge-separated nitrogen
+molecules/aromatics/acridine.cjson both kekule fused aromatic ring system: valid alternative Kekule structure, not the file's
+molecules/aromatics/anthracene.cjson both kekule fused aromatic ring system: valid alternative Kekule structure, not the file's
+molecules/aromatics/naphthalene.cjson both kekule fused aromatic ring system: valid alternative Kekule structure, not the file's
+molecules/aromatics/nitrobenzene.cjson both fail nitro group N=O: needs hypervalent or charge-separated nitrogen
+molecules/coordination/5-square-pyramidal.cjson both fail hypervalent sulfur (5 bonds to F): sulfur valence 6 is not chosen
+molecules/fullerenes/PC70BM.cjson both kekule fullerene derivative: valid alternative Kekule structure of the cage
+molecules/ligands/Cp-cyclopentadienyl.cjson neutral fail formal charges stripped: cyclopentadienyl anion
+molecules/macrocycles/phthalocyanine.cjson both kekule fused aromatic ring system: valid alternative Kekule structure, not the file's
+pyrene.mol both kekule fused aromatic ring system: valid alternative Kekule structure, not the file's
