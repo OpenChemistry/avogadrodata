@@ -1,0 +1,1476 @@
+1 : exam11.inp
+2 : 00
+3 : 1
+4 : 1
+----- GAMESS execution script 'rungms' -----
+This job is running on host meyeri
+under operating system Linux at Tue Oct 13 09:19:39 AM EDT 2026
+Available scratch disk space (Kbyte units) at beginning of the job is
+Filesystem       1K-blocks       Used   Available Use% Mounted on
+zraid/home     69573174272 6905928704 62667245568  10% /home
+GAMESS temporary binary files will be written to /home/eric/data/development/forks/OpenChemistry/openchemistry-nix/openchemistry/avogadrodata/data/gamess/scratch
+GAMESS supplementary output files will be written to /home/eric/data/development/forks/OpenChemistry/openchemistry-nix/openchemistry/avogadrodata/data/gamess/scratch
+Copying input file /home/eric/data/development/forks/OpenChemistry/openchemistry-nix/openchemistry/avogadrodata/data/gamess/exam11.inp to your run's scratch directory...
+MPI found 1 node, the current host.
+MPI kickoff will run GAMESS on 1 cores in 1 nodes.
+The binary to be executed is /nix/store/8ifmh5fpc19dw92jhpczcnjdzyvk9hqc-gamess-us-2024R2P1/bin/gamess.2024R2P1.x
+MPI will run 1 compute processes and 1 data servers,
+    placing 1 of each process type onto each node.
+The scratch disk space on each node is /home/eric/data/development/forks/OpenChemistry/openchemistry-nix/openchemistry/avogadrodata/data/gamess/scratch, with free space
+Filesystem       1K-blocks       Used   Available Use% Mounted on
+zraid/home     69573174272 6905928704 62667245568  10% /home
+          *******************************************************
+          *                                                     *
+          *      GAMESS VERSION = 15 JUL 2024 (R2 Patch 1)          *
+          *                                                     *
+          *              doi.org/10.1063/5.0005188              *
+          *                                                     *
+          **************** 64 BIT LINUX VERSION *****************
+
+  GAMESS HAS BEEN MADE POSSIBLE WITH IMPORTANT CONTRIBUTIONS FROM
+  THE FOLLOWING INDIVIDUALS (IN ALPHABETICAL ORDER):
+
+     IVANA ADAMOVIC, CHRISTINE AIKENS, TOMOKO AKAMA,
+     MELISA ALKAN, YURI ALEXEEV, YURIKO AOKI, POOJA ARORA,
+     TOSHIO ASADA, ANDREY ASADCHEV, KIM K. BALDRIDGE,
+     PRADIPTA BANDYOPADHYAY, TAYLOR A. BARNES, MARIA BARYSZ,
+     ROB BELL, JONATHAN BENTZ, COLLEEN BERTONI,
+     JERRY A. BOATZ, BRETT BODE, KURT BRORSEN, KURT R. BRORSEN,
+     LAIMUTIS BYTAUTAS, CALEB CARLIN, LAURA CARRINGTON,
+     GALINA CHABAN, BENOIT CHAMPAGNE, WEI CHEN, MAHITO CHIBA,
+     DAN CHIPMAN, CHEOL HO CHOI, TANNER CULPITT,
+     DIPAYAN DATTA, PAUL DAY, ALBERT DEFUSCO,
+     NUWAN DESILVA, J. EMILIANO DEUSTUA,
+     TIM DUDLEY, MICHEL DUPUIS, STEVEN T. ELBERT,
+     DMITRI FEDOROV, KATHERINE FERRERAS, MICHAEL FILATOV,
+     ALEX FINDLATER,GRAHAM FLETCHER, MARK FREITAG,
+     CHRISTIAN FRIEDL, DAVID GARMER, 
+     IGOR S. GERASIMOV, KURT GLAESEMANN,
+     MARK S. GORDON, JEFFREY R. GOUR, FENG LONG GU,
+     EMILIE B. GUIDEZ, ANASTASIA GUNINA, SHARON HAMMES-SCHIFFER,
+     MASATAKE HARUTA, KIMIHIKO HIRAO, YASUHIRO IKABATA,
+     TZVETELIN IORDANOV, STEPHAN IRLE, KAZUYA ISHIMURA,
+     JOE IVANIC, FRANK JENSEN, JAN H. JENSEN, VISVALDAS KAIRYS,
+     MUNEAKI KAMIYA, MICHIO KATOUDA, NAOAKI KAWAKAMI, DAN KEMP,
+     BERNARD KIRTMAN, KAZUO KITAURA, MARIUSZ KLOBUKOWSKI,
+     MASATO KOBAYASHI, KONSTANTIN KOMAROV, PRAKASHAN KORAMBATH,
+     JACEK KORCHOWIEC, SHIRO KOSEKI, KAROL KOWALSKI,
+     JIMMY KROMANN, STANISLAW A. KUCHARSKI, HENRY KURTZ,
+     SAROM SOK LEANG, SEUNGHOON LEE, HUI LI, SHUHUA LI, WEI LI,
+     JESSE J. LUTZ, ALEKSANDR O. LYKHIN,
+     ILIAS MAGOULAS, MARCIN MAKOWSKI,
+     JOANI MATO, NIKITA MATSUNAGA, BENEDETTA MENNUCCI,
+     GRANT MERRILL, NORIYUKI MINEZAWA, VLADIMIR MIRONOV,
+     EISAKU MIYOSHI, JOHN A. MONTGOMERY JR., HIROTOSHI MORI,
+     JONATHAN MULLIN, MONIKA MUSIAL, SHIGERU NAGASE,
+     TAKESHI NAGATA, HIROMI NAKAI, TAKAHITO NAKAJIMA,
+     YUYA NAKAJIMA, HARUYUKI NAKANO, HIROYA NAKATA, SEAN NEDD,
+     HEATHER NETZLOFF, KIET A. NGUYEN, YOSHIO NISHIMOTO,
+     BOSILJKA NJEGIC, RYAN OLSON, MIKE PAK, ROBERTO PEVERATI,
+     BUU PHAM, PIOTR PIECUCH, ANNA POMOGAEVA, DAVID POOLE,
+     SPENCER PRUITT, OLIVIER QUINET, LUKE ROSKOP,
+     KLAUS RUEDENBERG, ANDREW SAND, TOSAPORN SATTASATHUCHANA,
+     NOZOMI SAWADA, MICHAEL W. SCHMIDT, PATRICK E. SCHNEIDER,
+     JUNJI SEINO, PRACHI SHARMA, JUN SHEN, JIM SHOEMAKER,
+     GEORGE SCHOENDORFF, YINAN SHU, DEJUN SI, JONATHAN SKONE,
+     LYUDMILA SLIPCHENKO, TONY SMITH, JIE SONG, MARK SPACKMAN,
+     CASPER STEINMANN, WALT STEVENS, PEIFENG SU, SHUJUN SU,
+     CHET SWALINA, CHINAMI TAKASHIMA, TETSUYA TAKETSUGU,
+     ZHEN TAO, NANDUN THELLAMUREGE, ANANTA TIWARI,
+     SEIKEN TOKURA, JACOPO TOMASI,
+     TSUGUKI TOUMA, TAKAO TSUNEDA, HIROAKI UMEDA,
+     JORGE LUIS GALVEZ VALLEJO, YALI WANG, SIMON WEBB,
+     AARON WEST, THERESA L. WINDUS, MARTA WLOCH,
+     PENG XU, KIYOSHI YAGI, SUSUMU YANAGISAWA, YANG YANG,
+     SOOHAENG YOO, TAKESHI YOSHIKAWA, FEDERICO ZAHARIEV,
+     TOBY ZENG
+
+  WHO ARE SUPPORTED BY THEIR INSTITUTION/UNIVERSITY/COMPANY/GROUP
+  (IN ALPHABETICAL ORDER):
+
+     EP ANALYTICS,
+     FACULTES UNIVERSITAIRES NOTRE-DAME DE LA PAIX,
+     INSTITUTE FOR MOLECULAR SCIENCE, IOWA STATE UNIVERSITY,
+     JACKSON STATE UNIVERSITY, JOHANNES KEPLER UNIVERSITY LINZ,
+     KYUNGPOOK NATIONAL UNIVERSITY
+     KYUSHU UNIVERSITY, MICHIGAN STATE UNIVERSITY,
+     MIE UNIVERSITY, THE MOLECULAR SCIENCES SOFTWARE INSTITUTE,
+     MOSCOW STATE UNIVERSITY,
+     N. COPERNICUS UNIVERSITY, NAGOYA UNIVERSITY,
+     NANJING UNIVERSITY, NAT. INST. OF ADVANCED INDUSTRIAL
+     SCIENCE AND TECHNOLOGY, NATIONAL INST. OF STANDARDS AND
+     TECHNOLOGY, NESMEYANOV INSTITUTE OF ORGANOELEMENT COMPOUNDS
+     OF RUSSIAN ACADEMY OF SCIENCES, OSAKA PREFECTURE UNIVERSITY,
+     PENNSYLVANIA STATE UNIVERSITY, TOKYO INSTITUTE OF TECHNOLOGY,
+     UNIVERSITY OF AARHUS, UNIVERSITY OF ALBERTA,
+     UNIVERSITY OF CALIFORNIA AT SANTA BARBARA,
+     UNIVERSITY OF COPENHAGEN, UNIVERSITY OF IOWA,
+     UNIVERSITY OF MEMPHIS, UNIVERSITY OF MINNESOTA,
+     UNIVERSITY OF NEBRASKA, UNIVERSITY OF NEW ENGLAND,
+     UNIVERSITY OF NOTRE DAME, UNIVERSITY OF PISA,
+     UNIVERSITY OF SILESIA, UNIVERSITY OF TOKYO,
+     UNIVERSITY OF ZURICH, WASEDA UNIVERSITY,
+     YALE UNIVERSITY
+
+  GAMESS SOFTWARE MANAGEMENT TEAM FOR THIS RELEASE:
+     MARK S. GORDON (TEAM LEAD),
+     BRETT BODE (SENIOR ADVISOR),
+     GIUSEPPE BARCA,
+     COLLEEN BERTONI,
+     KRISTOPHER KEIPERT (ADVISOR),
+     SAROM S. LEANG (DEVELOPMENT LEAD),
+     BUU PHAM,
+     JACKSON HAYES (WEBSITE ADMINISTRATOR),
+     PENG XU
+
+ EXECUTION OF GAMESS BEGUN 09:19:43 13-OCT-2026    
+
+            ECHO OF THE FIRST FEW INPUT CARDS -
+ INPUT CARD>! EXAM 11.                                                                      
+ INPUT CARD>!   1A' HCN       RHF Intrinsic Reaction Coordinate                             
+ INPUT CARD>!   This job tests the reaction path finder.  The reaction                      
+ INPUT CARD>!   is followed back to the HNC isomer.  Four points on the                     
+ INPUT CARD>!   IRC (counting the saddle point) are found,                                  
+ INPUT CARD>!  Pt.   R(N-C)   R(N-H)   A(HNC)     Energy   distance                         
+ INPUT CARD>!  T.S.  1.22136  1.43764  52.993  -91.5648510  0.0                             
+ INPUT CARD>!   1    1.22533  1.33296  58.476  -91.5673097  0.29994                         
+ INPUT CARD>!   2    1.22802  1.23827  64.747  -91.5735346  0.59986                         
+ INPUT CARD>!   3    1.22974  1.16350  72.039  -91.5814775  0.89968                         
+ INPUT CARD>!                                                                               
+ INPUT CARD> $CONTRL SCFTYP=RHF RUNTYP=IRC NZVAR=3 $END                                     
+ INPUT CARD> $SYSTEM TIMLIM=1 $END                                                          
+ INPUT CARD> $IRC    PACE=GS2 SADDLE=.TRUE. TSENGY=.TRUE.                                   
+ INPUT CARD>         FORWRD=.FALSE. NPOINT=3 $END                                           
+ INPUT CARD> $GUESS  GUESS=HUCKEL $END                                                      
+ INPUT CARD> $ZMAT   IZMAT(1)=1,1,2  1,1,3  2,2,1,3 $END                                    
+ INPUT CARD> $BASIS  GBASIS=STO NGAUSS=3 $END                                               
+ INPUT CARD> $DATA                                                                          
+ INPUT CARD>HYDROGEN CYANIDE...STO-3G...INTRINSIC REACTION COORDINATE                       
+ INPUT CARD>CS                                                                              
+ INPUT CARD>                                                                                
+ INPUT CARD>NITROGEN    7.0   -.0004620071    .0002821165    .0000000000                    
+ INPUT CARD>CARBON      6.0   1.2208931990   -.0003427488    .0000000000                    
+ INPUT CARD>HYDROGEN    1.0    .8654562191   1.1478852258    .0000000000                    
+ INPUT CARD> $END                                                                           
+ INPUT CARD> $HESS                                                                          
+ INPUT CARD>ENERGY IS      -91.5648510307 E(NUC) IS       23.4154954113                     
+ INPUT CARD> 1  1 1.10665682E+00 1.58946320E-02 0.00000000E+00-1.09175948E+00-7.45732474E-03
+ INPUT CARD> 1  2 0.00000000E+00-1.48973429E-02-8.43730726E-03 0.00000000E+00               
+ INPUT CARD> 2  1 1.58946320E-02-2.42592305E-02 0.00000000E+00-6.70429689E-02 1.06160639E-01
+ INPUT CARD> 2  2 0.00000000E+00 5.11483369E-02-8.19014080E-02 0.00000000E+00               
+ INPUT CARD> 3  1 0.00000000E+00 0.00000000E+00-4.00371852E-08 0.00000000E+00 0.00000000E+00
+ INPUT CARD> 3  2 1.80347127E-08 0.00000000E+00 0.00000000E+00 2.22548371E-08               
+ INPUT CARD> 4  1-1.09175948E+00-6.70429689E-02 0.00000000E+00 1.02817204E+00 4.01673446E-02
+ INPUT CARD> 4  2 0.00000000E+00 6.35874416E-02 2.68756243E-02 0.00000000E+00               
+ INPUT CARD> 5  1-7.45732474E-03 1.06160639E-01 0.00000000E+00 4.01673446E-02 1.52947474E-01
+ INPUT CARD> 5  2 0.00000000E+00-3.27100199E-02-2.59108113E-01 0.00000000E+00               
+ INPUT CARD> 6  1 0.00000000E+00 0.00000000E+00 1.80347127E-08 0.00000000E+00 0.00000000E+00
+ INPUT CARD> 6  2-9.87519871E-09 0.00000000E+00 0.00000000E+00-8.04548379E-09               
+ INPUT CARD> 7  1-1.48973429E-02 5.11483369E-02 0.00000000E+00 6.35874416E-02-3.27100199E-02
+ INPUT CARD> 7  2 0.00000000E+00-4.86900987E-02-1.84383170E-02 0.00000000E+00               
+ INPUT CARD> 8  1-8.43730726E-03-8.19014080E-02 0.00000000E+00 2.68756243E-02-2.59108113E-01
+ INPUT CARD> 8  2 0.00000000E+00-1.84383170E-02 3.41009521E-01 0.00000000E+00               
+ INPUT CARD> 9  1 0.00000000E+00 0.00000000E+00 2.22548371E-08 0.00000000E+00 0.00000000E+00
+ INPUT CARD> 9  2-8.04548379E-09 0.00000000E+00 0.00000000E+00-1.42096449E-08               
+ INPUT CARD> $END                                                                           
+ INPUT CARD>! TRAVIS-CI SKIP                                                                
+ INPUT CARD>                                                                                
+ INPUT CARD>                                                                                
+      1000000 WORDS OF MEMORY AVAILABLE
+
+     BASIS OPTIONS
+     -------------
+     GBASIS=STO          IGAUSS=       3      POLAR=NONE    
+     NDFUNC=       0     NFFUNC=       0     DIFFSP=       F
+     NPFUNC=       0      DIFFS=       F     BASNAM=        
+
+
+     RUN TITLE
+     ---------
+ HYDROGEN CYANIDE...STO-3G...INTRINSIC REACTION COORDINATE                       
+
+ THE POINT GROUP OF THE MOLECULE IS CS      
+ THE ORDER OF THE PRINCIPAL AXIS IS     0
+
+ ATOM      ATOMIC                      COORDINATES (BOHR)
+           CHARGE         X                   Y                   Z
+ NITROGEN    7.0    -0.0008730668        0.0005331229        0.0000000000
+ CARBON      6.0     2.3071536064       -0.0006477013        0.0000000000
+ HYDROGEN    1.0     1.6354751085        2.1691885421        0.0000000000
+
+          INTERNUCLEAR DISTANCES (ANGS.)
+          ------------------------------
+
+                1 NITR       2 CARB       3 HYDR  
+
+   1 NITR    0.0000000    1.2213554 *  1.4376395 *
+   2 CARB    1.2213554 *  0.0000000    1.2019829 *
+   3 HYDR    1.4376395 *  1.2019829 *  0.0000000  
+
+  * ... LESS THAN  3.000
+
+
+     ATOMIC BASIS SET
+     ----------------
+ THE CONTRACTED PRIMITIVE FUNCTIONS HAVE BEEN UNNORMALIZED
+ THE CONTRACTED BASIS FUNCTIONS ARE NOW NORMALIZED TO UNITY
+
+  SHELL TYPE  PRIMITIVE        EXPONENT          CONTRACTION COEFFICIENT(S)
+
+ NITROGEN  
+
+      1   S       1            99.1061690    0.154328967295
+      1   S       2            18.0523124    0.535328142282
+      1   S       3             4.8856602    0.444634542185
+
+      2   L       4             3.7804559   -0.099967229187    0.155916274999
+      2   L       5             0.8784966    0.399512826089    0.607683718598
+      2   L       6             0.2857144    0.700115468880    0.391957393099
+
+ CARBON    
+
+      3   S       7            71.6168373    0.154328967295
+      3   S       8            13.0450963    0.535328142282
+      3   S       9             3.5305122    0.444634542185
+
+      4   L      10             2.9412494   -0.099967229187    0.155916274999
+      4   L      11             0.6834831    0.399512826089    0.607683718598
+      4   L      12             0.2222899    0.700115468880    0.391957393099
+
+ HYDROGEN  
+
+      5   S      13             3.4252509    0.154328967295
+      5   S      14             0.6239137    0.535328142282
+      5   S      15             0.1688554    0.444634542185
+
+ TOTAL NUMBER OF BASIS SET SHELLS             =    5
+ NUMBER OF CARTESIAN GAUSSIAN BASIS FUNCTIONS =   11
+ NUMBER OF ELECTRONS                          =   14
+ CHARGE OF MOLECULE                           =    0
+ SPIN MULTIPLICITY                            =    1
+ NUMBER OF OCCUPIED ORBITALS (ALPHA)          =    7
+ NUMBER OF OCCUPIED ORBITALS (BETA )          =    7
+ TOTAL NUMBER OF ATOMS                        =    3
+ THE NUCLEAR REPULSION ENERGY IS       23.4154954113
+
+     $CONTRL OPTIONS
+     ---------------
+ SCFTYP=RHF          RUNTYP=IRC          EXETYP=RUN     
+ MPLEVL=       0     CITYP =NONE         CCTYP =NONE         VBTYP =NONE    
+ DFTTYP=NONE         TDDFT =NONE    
+ MULT  =       1     ICHARG=       0     NZVAR =       3     COORD =UNIQUE  
+ PP    =NONE         RELWFN=NONE         LOCAL =NONE         NUMGRD=       F
+ ISPHER=      -1     NOSYM =       0     MAXIT =      30     UNITS =ANGS    
+ PLTORB=       F     MOLPLT=       F     AIMPAC=       F     FRIEND=        
+ NPRINT=       7     IREST =       0     GEOM  =INPUT   
+ NORMF =       0     NORMP =       0     ITOL  =      20     ICUT  =       9
+ INTTYP=BEST         GRDTYP=BEST         QMTTOL= 1.0E-06
+
+     $SYSTEM OPTIONS
+     ---------------
+  REPLICATED MEMORY=     1000000 WORDS (ON EVERY NODE).
+ DISTRIBUTED MEMDDI=           0 MILLION WORDS IN AGGREGATE,
+ MEMDDI DISTRIBUTED OVER   1 PROCESSORS IS           0 WORDS/PROCESSOR.
+ TOTAL MEMORY REQUESTED ON EACH PROCESSOR=     1000000 WORDS.
+ TIMLIM=           1.00 MINUTES, OR       0.0 DAYS.
+ PARALL= F  BALTYP=  DLB     KDIAG=    0  COREFL= F
+ MXSEQ2=     300 MXSEQ3=     150  mem10=         0  mem22=         0
+
+          ----------------
+          PROPERTIES INPUT
+          ----------------
+
+     MOMENTS            FIELD           POTENTIAL          DENSITY
+ IEMOM =       1   IEFLD =       0   IEPOT =       0   IEDEN =       0
+ WHERE =COMASS     WHERE =NUCLEI     WHERE =NUCLEI     WHERE =NUCLEI  
+ OUTPUT=BOTH       OUTPUT=BOTH       OUTPUT=BOTH       OUTPUT=BOTH    
+ IEMINT=       0   IEFINT=       0                     IEDINT=       0
+                                                       MORB  =       0
+          EXTRAPOLATION IN EFFECT
+          SOSCF IN EFFECT
+ ORBITAL PRINTING OPTION: NPREO=     1    11     2     1
+
+     ----------------------
+     TARGET OFFLOAD OPTIONS
+     ----------------------
+     RHF    =       F
+     CPHF    =       F
+     MAKEFP =       F
+
+     -------------------------------
+     INTEGRAL TRANSFORMATION OPTIONS
+     -------------------------------
+     NWORD  =            0
+     CUTTRF = 1.0E-09     MPTRAN =       0
+     DIRTRF =       F     AOINTS =DUP     
+
+          ----------------------
+          INTEGRAL INPUT OPTIONS
+          ----------------------
+ NOPK  =       1 NORDER=       0 SCHWRZ=       F
+
+   --- ENCODED Z MATRIX ---
+ COORD  TYPE   I   J   K   L   M   N
+    1      1    1   2
+    2      1    1   3
+    3      2    2   1   3
+
+ THE DETERMINANT OF THE G MATRIX IS 10**(    -2)
+
+
+                     --------------------
+                     INTERNAL COORDINATES
+                     --------------------
+
+                 - - ATOMS - -         COORDINATE      COORDINATE
+ NO.   TYPE    I  J  K  L  M  N        (BOHR,RAD)       (ANG,DEG)
+ ----------------------------------------------------------------
+   1 STRETCH   1  2                     2.3080270       1.2213554
+   2 STRETCH   1  3                     2.7167447       1.4376395
+   3 BEND      2  1  3                  0.9249044      52.9931159
+
+     ------------------------------------------
+     THE POINT GROUP IS CS , NAXIS= 0, ORDER= 2
+     ------------------------------------------
+
+     DIMENSIONS OF THE SYMMETRY SUBSPACES ARE
+ A'  =    9     A'' =    2
+
+ ..... DONE SETTING UP THE RUN .....
+ STEP CPU TIME =     0.01 TOTAL CPU TIME =          0.0 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.1 SECONDS, CPU UTILIZATION IS     7.85%
+
+          -----------------------------
+          INTRINSIC REACTION COORDINATE
+          -----------------------------
+          PACE   =GS2     
+          STRIDE = 0.30000 BOHR*SQRT(AMU)
+          NPOINT =       3
+          NEXTPT =       0
+          STOTAL =  0.0000 BOHR*SQRT(AMU)
+          SAB    =  0.0000 BOHR*SQRT(AMU)
+          NPRT   =       0
+          NPUN   =       0
+
+          SADDLE =       T
+          TSENGY =       T
+          FORWRD =       F
+          EVIB   = 0.00050 HARTREE
+          FREQ   =     0.0 CM**-1
+
+          STABLZ =       F
+          ELBOW  =  175.00 DEGREES
+          DELTA  = 0.02500 BOHR
+
+          READQB =       F
+          EB     =        0.0000000000 HARTREES
+          GBNORM =        0.0000000000 HARTREES/SQRT(AMU)-BOHR
+
+          GCUT   = 0.0001000 HARTREES/SQRT(AMU)-BOHR
+          RCUT   = 0.0010000 BOHR
+          ACUT   =    5.00 DEGREES
+          MXOPT  =      20
+          IHUPD  =       2
+
+ ATOMIC MASSES USED (IN AMU) ARE
+     NITROGEN      14.0031
+     CARBON        12.0000
+     HYDROGEN       1.0078
+
+ JUMP AWAY FROM SADDLE POINT WILL BE FOUND FROM THE INPUT HESSIAN MATRIX
+
+ COMPUTING WAVEFUNCTION AT TRANSITION STATE...
+
+          ********************
+          1 ELECTRON INTEGRALS
+          ********************
+ ...... END OF ONE-ELECTRON INTEGRALS ......
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.0 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.2 SECONDS, CPU UTILIZATION IS     7.24%
+
+          -------------
+          GUESS OPTIONS
+          -------------
+          GUESS =HUCKEL            NORB  =       0          NORDER=       0
+          MIX   =       F          PRTMO =       F          PUNMO =       F
+          TOLZ  = 1.0E-08          TOLE  = 1.0E-05
+          SYMDEN=       F          PURIFY=       F
+
+ INITIAL GUESS ORBITALS GENERATED BY HUCKEL   ROUTINE.
+ HUCKEL GUESS REQUIRES      3516 WORDS.
+
+ SYMMETRIES FOR INITIAL GUESS ORBITALS FOLLOW.   BOTH SET(S).
+     7 ORBITALS ARE OCCUPIED (    2 CORE ORBITALS).
+     3=A'       4=A'       5=A''      6=A'       7=A'       8=A'       9=A'' 
+    10=A'      11=A'  
+ ...... END OF INITIAL ORBITAL SELECTION ......
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.0 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.2 SECONDS, CPU UTILIZATION IS     6.22%
+
+                    ----------------------
+                    AO INTEGRAL TECHNOLOGY
+                    ----------------------
+     S,P,L SHELL ROTATED AXIS INTEGRALS, REPROGRAMMED BY
+        KAZUYA ISHIMURA (IMS) AND JOSE SIERRA (SYNSTAR).
+     S,P,D,L SHELL ROTATED AXIS INTEGRALS PROGRAMMED BY
+        KAZUYA ISHIMURA (INSTITUTE FOR MOLECULAR SCIENCE).
+     S,P,D,F,G SHELL TO TOTAL QUARTET ANGULAR MOMENTUM SUM 5,
+        ERIC PROGRAM BY GRAHAM FLETCHER (ELORET AND NASA ADVANCED
+        SUPERCOMPUTING DIVISION, AMES RESEARCH CENTER).
+     S,P,D,F,G,L SHELL GENERAL RYS QUADRATURE PROGRAMMED BY
+        MICHEL DUPUIS (PACIFIC NORTHWEST NATIONAL LABORATORY).
+
+          --------------------
+          2 ELECTRON INTEGRALS
+          --------------------
+
+ THE -PK- OPTION IS OFF, THE INTEGRALS ARE NOT IN SUPERMATRIX FORM.
+ STORING   15000 INTEGRALS/RECORD ON DISK, USING 12 BYTES/INTEGRAL.
+ TWO ELECTRON INTEGRAL EVALUATION REQUIRES   89371 WORDS OF MEMORY.
+ II,JST,KST,LST =  1  1  1  1 NREC =         1 INTLOC =    1
+ II,JST,KST,LST =  2  1  1  1 NREC =         1 INTLOC =    2
+ II,JST,KST,LST =  3  1  1  1 NREC =         1 INTLOC =   34
+ II,JST,KST,LST =  4  1  1  1 NREC =         1 INTLOC =  104
+ II,JST,KST,LST =  5  1  1  1 NREC =         1 INTLOC =  820
+ TOTAL NUMBER OF NONZERO TWO-ELECTRON INTEGRALS =                1250
+          1 INTEGRAL RECORDS WERE STORED ON DISK FILE  8.
+  ...... END OF TWO-ELECTRON INTEGRALS .....
+ STEP CPU TIME =     0.01 TOTAL CPU TIME =          0.0 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.5 SECONDS, CPU UTILIZATION IS     5.83%
+
+          --------------------------
+                 RHF SCF CALCULATION
+          --------------------------
+
+     NUCLEAR ENERGY =        23.4154954113
+     MAXIT =   30     NPUNCH=    2
+     EXTRAP=T  DAMP=F  SHIFT=F  RSTRCT=F  DIIS=F  DEM=F  SOSCF=T
+     DENSITY MATRIX CONV=  1.00E-05
+     SOSCF WILL OPTIMIZE      28 ORBITAL ROTATIONS, SOGTOL=   0.250
+     MEMORY REQUIRED FOR RHF ITERS=     31113 WORDS.
+
+ ITER EX DEM     TOTAL ENERGY        E CHANGE  DENSITY CHANGE     ORB. GRAD
+   1  0  0      -91.3853640324   -91.3853640324   0.565887531   0.000000000
+          ---------------START SECOND ORDER SCF---------------
+   2  1  0      -91.5504076973    -0.1650436649   0.153539912   0.041764773
+   3  2  0      -91.5610207331    -0.0106130357   0.077134566   0.028732538
+   4  3  0      -91.5639989919    -0.0029782589   0.018480832   0.006967910
+   5  4  0      -91.5645933181    -0.0005943261   0.023837783   0.003232040
+   6  5  0      -91.5648463214    -0.0002530034   0.001650240   0.000627352
+   7  6  0      -91.5648502003    -0.0000038789   0.001025837   0.000325316
+   8  7  0      -91.5648509896    -0.0000007893   0.000133607   0.000053925
+   9  8  0      -91.5648510188    -0.0000000291   0.000128688   0.000020773
+  10  9  0      -91.5648510300    -0.0000000113   0.000018668   0.000006813
+  11 10  0      -91.5648510305    -0.0000000005   0.000010263   0.000002573
+  12 11  0      -91.5648510306    -0.0000000000   0.000001802   0.000000587
+
+          -----------------
+          DENSITY CONVERGED
+          -----------------
+     TIME TO FORM FOCK OPERATORS=       0.0 SECONDS (       0.0 SEC/ITER)
+     TIME TO SOLVE SCF EQUATIONS=       0.0 SECONDS (       0.0 SEC/ITER)
+
+ FINAL RHF ENERGY IS      -91.5648510306 AFTER  12 ITERATIONS
+
+ Alpha HOMO=   -10.786660 eV, LUMO=    6.641364 eV, gap=   17.428024 eV
+
+          ------------
+          EIGENVECTORS
+          ------------
+
+                      1          2          3          4          5
+                  -15.4205   -11.0499    -1.2352    -0.6435    -0.5429
+                     A'         A'         A'         A'         A'  
+    1  N  1  S    0.994032  -0.000157  -0.194448  -0.154259   0.064623
+    2  N  1  S    0.028145  -0.008231   0.623368   0.696277  -0.328920
+    3  N  1  X    0.007353  -0.003721   0.224953  -0.267980   0.470491
+    4  N  1  Y    0.000468   0.000749   0.028479  -0.166313  -0.360294
+    5  N  1  Z   -0.000000   0.000000  -0.000000   0.000000   0.000000
+    6  C  2  S    0.000395   0.992930  -0.150084   0.129794  -0.099930
+    7  C  2  S   -0.008247   0.031320   0.336238  -0.458711   0.359627
+    8  C  2  X    0.006365  -0.008575  -0.192626  -0.108741  -0.121789
+    9  C  2  Y    0.000669   0.003533   0.041506  -0.250916  -0.343599
+   10  C  2  Z   -0.000000   0.000000  -0.000000   0.000000   0.000000
+   11  H  3  S   -0.001983  -0.006669   0.098523  -0.364515  -0.383890
+
+                      6          7          8          9         10
+                   -0.4545    -0.3964     0.2441     0.3107     0.4974
+                     A''        A'         A'         A''        A'  
+    1  N  1  S    0.000000  -0.017463  -0.016356  -0.000000   0.040657
+    2  N  1  S    0.000000   0.133580   0.107157  -0.000000  -0.233805
+    3  N  1  X    0.000000  -0.481842   0.088640  -0.000000  -0.130239
+    4  N  1  Y    0.000000  -0.212873   0.937098  -0.000000   0.096862
+    5  N  1  Z    0.760456  -0.000000   0.000000  -0.699816   0.000000
+    6  C  2  S    0.000000  -0.135789  -0.052884  -0.000000   0.059993
+    7  C  2  S    0.000000   0.640197   0.252941  -0.000000  -0.330271
+    8  C  2  X    0.000000   0.572830   0.132859  -0.000000  -0.135253
+    9  C  2  Y    0.000000  -0.161844  -0.324053  -0.000000  -0.985506
+   10  C  2  Z    0.485227  -0.000000   0.000000   0.912464   0.000000
+   11  H  3  S    0.000000  -0.006651  -0.523977  -0.000000   0.993013
+
+                     11
+                    1.0167
+                     A'  
+    1  N  1  S   -0.118504
+    2  N  1  S    1.040559
+    3  N  1  X    1.047786
+    4  N  1  Y   -0.060327
+    5  N  1  Z    0.000000
+    6  C  2  S    0.146680
+    7  C  2  S   -1.134197
+    8  C  2  X    1.201561
+    9  C  2  Y   -0.112411
+   10  C  2  Z    0.000000
+   11  H  3  S    0.285381
+ ...... END OF RHF CALCULATION ......
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.0 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.5 SECONDS, CPU UTILIZATION IS     5.71%
+
+     ----------------------------------------------------------------
+     PROPERTY VALUES FOR THE RHF   SELF-CONSISTENT FIELD WAVEFUNCTION
+     ----------------------------------------------------------------
+
+          -----------------
+          ENERGY COMPONENTS
+          -----------------
+
+         WAVEFUNCTION NORMALIZATION =       1.0000000000
+
+                ONE ELECTRON ENERGY =    -170.4749472863
+                TWO ELECTRON ENERGY =      55.4946008444
+           NUCLEAR REPULSION ENERGY =      23.4154954113
+                                      ------------------
+                       TOTAL ENERGY =     -91.5648510306
+
+ ELECTRON-ELECTRON POTENTIAL ENERGY =      55.4946008444
+  NUCLEUS-ELECTRON POTENTIAL ENERGY =    -261.7507706430
+   NUCLEUS-NUCLEUS POTENTIAL ENERGY =      23.4154954113
+                                      ------------------
+             TOTAL POTENTIAL ENERGY =    -182.8406743873
+               TOTAL KINETIC ENERGY =      91.2758233567
+                 VIRIAL RATIO (V/T) =       2.0031665304
+
+  ...... PI ENERGY ANALYSIS ......
+
+ ENERGY ANALYSIS:
+            FOCK ENERGY=    -59.4857464552
+          BARE H ENERGY=   -170.4749472863
+     ELECTRONIC ENERGY =   -114.9803468707
+         KINETIC ENERGY=     91.2758233567
+          N-N REPULSION=     23.4154954113
+           TOTAL ENERGY=    -91.5648514594
+        SIGMA PART(1+2)=   -107.0754687367
+               (K,V1,2)=     88.2085303264   -243.7827755363     48.4987764732
+           PI PART(1+2)=     -7.9048781340
+               (K,V1,2)=      3.0672930303    -17.9679951067      6.9958239424
+  SIGMA SKELETON, ERROR=    -83.6599733254      0.0000000000
+             MIXED PART= 0.00000E+00 0.00000E+00 0.00000E+00 0.00000E+00
+ ...... END OF PI ENERGY ANALYSIS ......
+
+          ---------------------------------------
+          MULLIKEN AND LOWDIN POPULATION ANALYSES
+          ---------------------------------------
+
+     ATOMIC MULLIKEN POPULATION IN EACH MOLECULAR ORBITAL
+
+                      1          2          3          4          5
+
+                  2.000000   2.000000   2.000000   2.000000   2.000000
+
+    1             2.001970  -0.001537   1.226704   0.948995   1.070690
+    2            -0.001873   2.002260   0.677808   0.656711   0.585492
+    3            -0.000098  -0.000723   0.095488   0.394294   0.343818
+
+                      6          7
+
+                  2.000000   2.000000
+
+    1             1.342848   0.556781
+    2             0.657152   1.443621
+    3             0.000000  -0.000402
+
+               ----- POPULATIONS IN EACH AO -----
+                             MULLIKEN      LOWDIN
+              1  N  1  S      1.99788     1.99720
+              2  N  1  S      1.81225     1.67813
+              3  N  1  X      1.39427     1.44220
+              4  N  1  Y      0.59920     0.60483
+              5  N  1  Z      1.34285     1.33175
+              6  C  2  S      1.99626     1.99390
+              7  C  2  S      1.60502     1.51860
+              8  C  2  X      1.05709     1.18147
+              9  C  2  Y      0.70565     0.73572
+             10  C  2  Z      0.65715     0.66825
+             11  H  3  S      0.83238     0.84796
+
+          ----- MULLIKEN ATOMIC OVERLAP POPULATIONS -----
+          (OFF-DIAGONAL ELEMENTS NEED TO BE MULTIPLIED BY 2)
+
+             1           2           3
+
+    1    6.6139463
+    2    0.4971061   5.3071717
+    3    0.0353993   0.2168941   0.5800832
+
+          TOTAL MULLIKEN AND LOWDIN ATOMIC POPULATIONS
+       ATOM         MULL.POP.    CHARGE          LOW.POP.     CHARGE
+    1 NITROGEN      7.146452   -0.146452         7.054099   -0.054099
+    2 CARBON        6.021172   -0.021172         6.097945   -0.097945
+    3 HYDROGEN      0.832377    0.167623         0.847957    0.152043
+
+          -------------------------------
+          BOND ORDER AND VALENCE ANALYSIS     BOND ORDER THRESHOLD=0.050
+          -------------------------------
+
+                   BOND                       BOND                       BOND
+  ATOM PAIR DIST  ORDER      ATOM PAIR DIST  ORDER      ATOM PAIR DIST  ORDER
+    1   2  1.221  2.340        1   3  1.438  0.338        2   3  1.202  0.634
+
+                       TOTAL       BONDED        FREE
+      ATOM            VALENCE     VALENCE     VALENCE
+    1 NITROGEN          2.678       2.678       0.000
+    2 CARBON            2.974       2.974       0.000
+    3 HYDROGEN          0.972       0.972       0.000
+
+          ---------------------
+          ELECTROSTATIC MOMENTS
+          ---------------------
+
+ POINT   1           X           Y           Z (BOHR)    CHARGE
+                 1.085558    0.080925    0.000000        0.00 (A.U.)
+         DX          DY          DZ         /D/  (DEBYE)
+    -0.033148    1.199809    0.000000    1.200267
+ ...... END OF PROPERTY EVALUATION ......
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.0 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.6 SECONDS, CPU UTILIZATION IS     5.69%
+
+
+ JUMPING OFF SADDLE POINT ALONG THE IMAGINARY NORMAL MODE...
+
+ $HESS GROUP READ FROM CARDS
+ ENERGY IS      -91.5648510307 E(NUC) IS       23.4154954113                     
+ INITIAL DISPLACEMENT=  0.15 ALONG MODE WITH FREQUENCY=    1248.638 I CM**-1
+ THE COMPONENTS OF THE DISPLACEMENT ARE (BOHR) -
+    0.003186   0.009524   0.000000
+    0.007810  -0.010157   0.000000
+   -0.137257  -0.011400   0.000000
+
+ *********************************************
+ ***** STARTING CONSTRAINED OPTIMIZATION *****
+ *** TO FIND THE NEXT REACTION PATH POINT ****
+ *********************************************
+ CONSTRAINED OPTIMIZATION POINT   1 FOR PATH POINT   1
+ COORDINATES OF SYMMETRY UNIQUE ATOMS (ANGS)
+   ATOM   CHARGE       X              Y              Z
+ ------------------------------------------------------------
+ NITROGEN    7.0   0.0029099768   0.0103621822   0.0000000000
+ CARBON      6.0   1.2291586094  -0.0110920950   0.0000000000
+ HYDROGEN    1.0   0.7201898771   1.1358199260   0.0000000000
+ ...... END OF ONE-ELECTRON INTEGRALS ......
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.0 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.6 SECONDS, CPU UTILIZATION IS     5.80%
+ TOTAL NUMBER OF NONZERO TWO-ELECTRON INTEGRALS =                1260
+          1 INTEGRAL RECORDS WERE STORED ON DISK FILE  8.
+  ...... END OF TWO-ELECTRON INTEGRALS .....
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.0 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.6 SECONDS, CPU UTILIZATION IS     5.94%
+
+          --------------------------
+                 RHF SCF CALCULATION
+          --------------------------
+     DENSITY MATRIX CONV=  1.00E-05
+
+ ITER EX DEM     TOTAL ENERGY        E CHANGE  DENSITY CHANGE     ORB. GRAD
+          ---------------START SECOND ORDER SCF---------------
+   1  0  0      -91.5617744951   -91.5617744951   0.059829014   0.020523245
+   2  1  0      -91.5660891599    -0.0043146649   0.064970062   0.008085305
+   3  2  0      -91.5671239630    -0.0010348030   0.012485357   0.005174049
+   4  3  0      -91.5672841651    -0.0001602021   0.003742785   0.001581607
+   5  4  0      -91.5672996075    -0.0000154424   0.003270860   0.000754999
+   6  5  0      -91.5673036258    -0.0000040183   0.000453122   0.000112955
+   7  6  0      -91.5673037597    -0.0000001339   0.000239892   0.000066088
+   8  7  0      -91.5673037882    -0.0000000285   0.000042514   0.000009094
+   9  8  0      -91.5673037894    -0.0000000011   0.000018271   0.000004090
+  10  9  0      -91.5673037896    -0.0000000002   0.000005428   0.000001658
+  11 10  0      -91.5673037896    -0.0000000000   0.000002553   0.000000860
+
+          -----------------
+          DENSITY CONVERGED
+          -----------------
+     TIME TO FORM FOCK OPERATORS=       0.0 SECONDS (       0.0 SEC/ITER)
+     TIME TO SOLVE SCF EQUATIONS=       0.0 SECONDS (       0.0 SEC/ITER)
+
+ FINAL RHF ENERGY IS      -91.5673037896 AFTER  11 ITERATIONS
+
+ Alpha HOMO=   -10.872488 eV, LUMO=    7.670466 eV, gap=   18.542954 eV
+ ...... END OF RHF CALCULATION ......
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.0 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.6 SECONDS, CPU UTILIZATION IS     5.79%
+ ..... END OF 1-ELECTRON GRADIENT ......
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.0 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.6 SECONDS, CPU UTILIZATION IS     5.90%
+ ...... END OF 2-ELECTRON GRADIENT ......
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.0 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.7 SECONDS, CPU UTILIZATION IS     5.59%
+
+ UNITS ARE HARTREE/BOHR    E'X               E'Y               E'Z 
+    1 NITROGEN        -0.008320900      -0.014314925      -0.000000000
+    2 CARBON          -0.006003296       0.011754276       0.000000000
+    3 HYDROGEN         0.014324195       0.002560649       0.000000000
+
+ CURRENT OPTIMIZATION POINT :
+ ENERGY                                 =   -91.5673038 HARTREE
+ MASS WEIGHTED TANGENT GRADIENT NORM    =     0.0020159 HARTREE/BOHR-SQRT(AMU)
+ NEXT GEOMETRY STEP HAS PREDICTED ANGLE =         2.321 DEGREES
+ AND CARTESIAN RMS DISPLACEMENT         =     0.0032601 BOHR
+
+ CONSTRAINED OPTIMIZATION POINT   2 FOR PATH POINT   1
+ COORDINATES OF SYMMETRY UNIQUE ATOMS (ANGS)
+   ATOM   CHARGE       X              Y              Z
+ ------------------------------------------------------------
+ NITROGEN    7.0   0.0034215422   0.0104036528   0.0000000000
+ CARBON      6.0   1.2285673982  -0.0110116805   0.0000000000
+ HYDROGEN    1.0   0.7201214605   1.1342862379   0.0000000000
+ ...... END OF ONE-ELECTRON INTEGRALS ......
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.0 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.7 SECONDS, CPU UTILIZATION IS     5.64%
+ TOTAL NUMBER OF NONZERO TWO-ELECTRON INTEGRALS =                1260
+          1 INTEGRAL RECORDS WERE STORED ON DISK FILE  8.
+  ...... END OF TWO-ELECTRON INTEGRALS .....
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.0 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.7 SECONDS, CPU UTILIZATION IS     5.75%
+
+          --------------------------
+                 RHF SCF CALCULATION
+          --------------------------
+     DENSITY MATRIX CONV=  1.00E-05
+
+ ITER EX DEM     TOTAL ENERGY        E CHANGE  DENSITY CHANGE     ORB. GRAD
+          ---------------START SECOND ORDER SCF---------------
+   1  0  0      -91.5673093583   -91.5673093583   0.000615095   0.000207677
+   2  1  0      -91.5673096320    -0.0000002737   0.000382271   0.000085187
+   3  2  0      -91.5673096926    -0.0000000606   0.000096433   0.000040427
+   4  3  0      -91.5673097021    -0.0000000095   0.000054171   0.000019590
+   5  4  0      -91.5673097045    -0.0000000024   0.000032055   0.000007256
+   6  5  0      -91.5673097050    -0.0000000004   0.000003315   0.000001379
+   7  6  0      -91.5673097050    -0.0000000000   0.000001630   0.000000551
+
+          -----------------
+          DENSITY CONVERGED
+          -----------------
+     TIME TO FORM FOCK OPERATORS=       0.0 SECONDS (       0.0 SEC/ITER)
+     TIME TO SOLVE SCF EQUATIONS=       0.0 SECONDS (       0.0 SEC/ITER)
+
+ FINAL RHF ENERGY IS      -91.5673097050 AFTER   7 ITERATIONS
+
+ Alpha HOMO=   -10.876904 eV, LUMO=    7.677853 eV, gap=   18.554757 eV
+ ...... END OF RHF CALCULATION ......
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.0 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.8 SECONDS, CPU UTILIZATION IS     5.60%
+ ..... END OF 1-ELECTRON GRADIENT ......
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.0 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.8 SECONDS, CPU UTILIZATION IS     5.67%
+ ...... END OF 2-ELECTRON GRADIENT ......
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.0 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.8 SECONDS, CPU UTILIZATION IS     5.83%
+
+ UNITS ARE HARTREE/BOHR    E'X               E'Y               E'Z 
+    1 NITROGEN        -0.005941267      -0.013965632      -0.000000000
+    2 CARBON          -0.008422973       0.012420795       0.000000000
+    3 HYDROGEN         0.014364240       0.001544837       0.000000000
+
+ ANGLE TO PREVIOUS OPTIMIZATION POINT IS   2.321
+ LINEAR INTERPOLATION GIVES ANGLE          2.313
+
+ CURRENT OPTIMIZATION POINT :
+ ENERGY                                 =   -91.5673097 HARTREE
+ MASS WEIGHTED TANGENT GRADIENT NORM    =     0.0000621 HARTREE/BOHR-SQRT(AMU)
+ NEXT GEOMETRY STEP HAS PREDICTED ANGLE =         0.064 DEGREES
+ AND CARTESIAN RMS DISPLACEMENT         =     0.0001261 BOHR
+
+ *******************************************
+ ***** END OF CONSTRAINED OPTIMIZATION *****
+ *******************************************
+
+ ANGLE BETWEEN GRADIENTS AT CURRENT AND PREVIOUS IRC POINT =   2.313
+ ENERGY WAS LOWERED BY      0.0000059153 HARTREE DURING OPTIMIZATION
+
+ ***** NEXT POINT ON IRC FOUND *****
+ STEP DISTANCE IS   0.29994 SQRT(AMU)-BOHR)
+
+1         POINT   1 ON THE REACTION PATH
+          ******************************
+          AT PATH DISTANCE STOTAL =   0.29994     SQRT(AMU)-BOHR
+          TOTAL ENERGY            =   -91.5673097 HARTREE
+            2 CONSTRAINED OPTIMIZATION STEPS WERE PERFORMED
+  
+ COORDINATES OF ALL ATOMS ARE (ANGS)
+   ATOM   CHARGE       X              Y              Z
+ ------------------------------------------------------------
+ NITROGEN    7.0   0.0034215422   0.0104036528   0.0000000000
+ CARBON      6.0   1.2285673982  -0.0110116805   0.0000000000
+ HYDROGEN    1.0   0.7201214605   1.1342862379   0.0000000000
+  
+ COORDINATES OF SYMMETRY UNIQUE ATOMS (ANGS)
+   ATOM   CHARGE       X              Y              Z
+ ------------------------------------------------------------
+ NITROGEN    7.0   0.0034215422   0.0104036528   0.0000000000
+ CARBON      6.0   1.2285673982  -0.0110116805   0.0000000000
+ HYDROGEN    1.0   0.7201214605   1.1342862379   0.0000000000
+
+          INTERNUCLEAR DISTANCES (ANGS.)
+          ------------------------------
+
+                1 NITR       2 CARB       3 HYDR  
+
+   1 NITR    0.0000000    1.2253330 *  1.3329557 *
+   2 CARB    1.2253330 *  0.0000000    1.2530860 *
+   3 HYDR    1.3329557 *  1.2530860 *  0.0000000  
+
+  * ... LESS THAN  3.000
+
+
+          CURRENT CARTESIAN GRADIENT
+          ATOM               DE/DX          DE/DY          DE/DZ
+          -----------------------------------------------------------
+          NITROGEN        -0.0059493286  -0.0139668156  -0.0000000000
+          CARBON          -0.0084147758   0.0124185371   0.0000000000
+          HYDROGEN         0.0143641044   0.0015482785   0.0000000000
+  
+ CONVERGED ORBITALS AT IRC POINT                    1
+
+                      1          2          3          4          5
+                  -15.4156   -11.0558    -1.2443    -0.6223    -0.5601
+                     A'         A'         A'         A'         A'  
+    1  N  1  S    0.993978  -0.000190   0.194288   0.159486  -0.048650
+    2  N  1  S    0.028400  -0.007788  -0.621865  -0.729140   0.248463
+    3  N  1  X    0.007407  -0.003582  -0.225565   0.315160  -0.396624
+    4  N  1  Y    0.000795   0.001080  -0.033446   0.175162   0.412936
+    5  N  1  Z    0.000000   0.000000   0.000000   0.000000   0.000000
+    6  C  2  S    0.000368   0.993051   0.146989  -0.135545   0.106275
+    7  C  2  S   -0.007994   0.030439  -0.327824   0.488439  -0.389208
+    8  C  2  X    0.006248  -0.008562   0.191277   0.102883   0.106564
+    9  C  2  Y    0.000730   0.002914  -0.040335   0.225242   0.324147
+   10  C  2  Z    0.000000   0.000000   0.000000   0.000000   0.000000
+   11  H  3  S   -0.002898  -0.005979  -0.108044   0.318267   0.428384
+
+                      6          7          8          9         10
+                   -0.4538    -0.3997     0.2822     0.3074     0.4459
+                     A''        A'         A'         A''        A'  
+    1  N  1  S    0.000000  -0.021592   0.018750   0.000000  -0.049287
+    2  N  1  S    0.000000   0.153868  -0.123226   0.000000   0.278753
+    3  N  1  X    0.000000  -0.508779  -0.110865   0.000000   0.111462
+    4  N  1  Y    0.000000  -0.140139  -0.940277   0.000000   0.099369
+    5  N  1  Z    0.756051   0.000000   0.000000   0.703813   0.000000
+    6  C  2  S    0.000000  -0.135674   0.036366   0.000000  -0.057468
+    7  C  2  S    0.000000   0.642834  -0.161806   0.000000   0.304081
+    8  C  2  X    0.000000   0.585165  -0.080681   0.000000   0.078445
+    9  C  2  Y    0.000000  -0.109662   0.485208   0.000000   0.907283
+   10  C  2  Z    0.491959   0.000000   0.000000  -0.908263   0.000000
+   11  H  3  S    0.000000  -0.008703   0.445585   0.000000  -1.026464
+
+                     11
+                    0.9951
+                     A'  
+    1  N  1  S   -0.117817
+    2  N  1  S    1.024403
+    3  N  1  X    1.046711
+    4  N  1  Y   -0.095857
+    5  N  1  Z    0.000000
+    6  C  2  S    0.140747
+    7  C  2  S   -1.084868
+    8  C  2  X    1.201745
+    9  C  2  Y   -0.078423
+   10  C  2  Z    0.000000
+   11  H  3  S    0.215103
+
+
+                     --------------------
+                     INTERNAL COORDINATES
+                     --------------------
+
+                 - - ATOMS - -         COORDINATE      COORDINATE
+ NO.   TYPE    I  J  K  L  M  N        (BOHR,RAD)       (ANG,DEG)
+ ----------------------------------------------------------------
+   1 STRETCH   1  2                     2.3155436       1.2253330
+   2 STRETCH   1  3                     2.5189210       1.3329557
+   3 BEND      2  1  3                  1.0205946      58.4757606
+
+ THE NUCLEAR REPULSION AT THE IRC POINT IS       23.4510521579
+
+ * * * IRC RESTART INFORMATION * * *
+ COORDINATES FOR $DATA AND ENTIRE $IRC GROUP FOLLOW
+
+ COORDINATES OF SYMMETRY UNIQUE ATOMS (ANGS)
+   ATOM   CHARGE       X              Y              Z
+ ------------------------------------------------------------
+ NITROGEN    7.0   0.0034215422   0.0104036528   0.0000000000
+ CARBON      6.0   1.2285673982  -0.0110116805   0.0000000000
+ HYDROGEN    1.0   0.7201214605   1.1342862379   0.0000000000
+ $IRC   PACE=GS2        STRIDE= 0.30000   NPOINT=??
+        STOTAL=  0.299939   NEXTPT=   2
+        NPRT= 0   NPUN= 0   SADDLE=.FALSE.
+        GA(   1)=-5.949328598E-03,-1.396681562E-02,-0.000000000E+00
+        GA(   4)=-8.414775837E-03, 1.241853708E-02, 0.000000000E+00
+        GA(   7)= 1.436410444E-02, 1.548278538E-03, 0.000000000E+00
+ $END   
+ A GS2 RESTART ALSO REQUIRES THE UPDATED $HESS GROUP FROM THE PUNCH FILE
+
+ *********************************************
+ ***** STARTING CONSTRAINED OPTIMIZATION *****
+ *** TO FIND THE NEXT REACTION PATH POINT ****
+ *********************************************
+ CONSTRAINED OPTIMIZATION POINT   1 FOR PATH POINT   2
+ COORDINATES OF SYMMETRY UNIQUE ATOMS (ANGS)
+   ATOM   CHARGE       X              Y              Z
+ ------------------------------------------------------------
+ NITROGEN    7.0   0.0077527002   0.0205755333   0.0000000000
+ CARBON      6.0   1.2357208567  -0.0215660798   0.0000000000
+ HYDROGEN    1.0   0.5747678421   1.1186240303   0.0000000000
+ ...... END OF ONE-ELECTRON INTEGRALS ......
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.0 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.8 SECONDS, CPU UTILIZATION IS     5.65%
+ TOTAL NUMBER OF NONZERO TWO-ELECTRON INTEGRALS =                1260
+          1 INTEGRAL RECORDS WERE STORED ON DISK FILE  8.
+  ...... END OF TWO-ELECTRON INTEGRALS .....
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.0 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.8 SECONDS, CPU UTILIZATION IS     5.75%
+
+          --------------------------
+                 RHF SCF CALCULATION
+          --------------------------
+     DENSITY MATRIX CONV=  1.00E-05
+
+ ITER EX DEM     TOTAL ENERGY        E CHANGE  DENSITY CHANGE     ORB. GRAD
+          ---------------START SECOND ORDER SCF---------------
+   1  0  0      -91.5680997625   -91.5680997625   0.056985834   0.020378312
+   2  1  0      -91.5723575118    -0.0042577493   0.057136297   0.009454969
+   3  2  0      -91.5733439039    -0.0009863921   0.011522161   0.004736007
+   4  3  0      -91.5734972343    -0.0001533305   0.005027439   0.001584745
+   5  4  0      -91.5735198180    -0.0000225837   0.003929904   0.000945558
+   6  5  0      -91.5735240723    -0.0000042543   0.000658032   0.000169888
+   7  6  0      -91.5735242934    -0.0000002211   0.000265639   0.000073896
+   8  7  0      -91.5735243267    -0.0000000334   0.000055027   0.000016610
+   9  8  0      -91.5735243286    -0.0000000018   0.000014553   0.000005667
+  10  9  0      -91.5735243289    -0.0000000003   0.000006720   0.000001902
+  11 10  0      -91.5735243289    -0.0000000000   0.000002851   0.000001001
+
+          -----------------
+          DENSITY CONVERGED
+          -----------------
+     TIME TO FORM FOCK OPERATORS=       0.0 SECONDS (       0.0 SEC/ITER)
+     TIME TO SOLVE SCF EQUATIONS=       0.0 SECONDS (       0.0 SEC/ITER)
+
+ FINAL RHF ENERGY IS      -91.5735243289 AFTER  11 ITERATIONS
+
+ Alpha HOMO=   -10.947279 eV, LUMO=    8.307314 eV, gap=   19.254593 eV
+ ...... END OF RHF CALCULATION ......
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.0 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.9 SECONDS, CPU UTILIZATION IS     5.63%
+ ..... END OF 1-ELECTRON GRADIENT ......
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.0 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.9 SECONDS, CPU UTILIZATION IS     5.69%
+ ...... END OF 2-ELECTRON GRADIENT ......
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.1 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.9 SECONDS, CPU UTILIZATION IS     5.47%
+
+ UNITS ARE HARTREE/BOHR    E'X               E'Y               E'Z 
+    1 NITROGEN        -0.012259337      -0.020716332      -0.000000000
+    2 CARBON          -0.010737153       0.021117268       0.000000000
+    3 HYDROGEN         0.022996490      -0.000400936       0.000000000
+
+ CURRENT OPTIMIZATION POINT :
+ ENERGY                                 =   -91.5735243 HARTREE
+ MASS WEIGHTED TANGENT GRADIENT NORM    =     0.0030950 HARTREE/BOHR-SQRT(AMU)
+ NEXT GEOMETRY STEP HAS PREDICTED ANGLE =         2.536 DEGREES
+ AND CARTESIAN RMS DISPLACEMENT         =     0.0057490 BOHR
+
+ CONSTRAINED OPTIMIZATION POINT   2 FOR PATH POINT   2
+ COORDINATES OF SYMMETRY UNIQUE ATOMS (ANGS)
+   ATOM   CHARGE       X              Y              Z
+ ------------------------------------------------------------
+ NITROGEN    7.0   0.0080743094   0.0204691297   0.0000000000
+ CARBON      6.0   1.2353710365  -0.0216926119   0.0000000000
+ HYDROGEN    1.0   0.5744645420   1.1216090353   0.0000000000
+ ...... END OF ONE-ELECTRON INTEGRALS ......
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.1 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.9 SECONDS, CPU UTILIZATION IS     5.50%
+ TOTAL NUMBER OF NONZERO TWO-ELECTRON INTEGRALS =                1260
+          1 INTEGRAL RECORDS WERE STORED ON DISK FILE  8.
+  ...... END OF TWO-ELECTRON INTEGRALS .....
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.1 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.9 SECONDS, CPU UTILIZATION IS     5.59%
+
+          --------------------------
+                 RHF SCF CALCULATION
+          --------------------------
+     DENSITY MATRIX CONV=  1.00E-05
+
+ ITER EX DEM     TOTAL ENERGY        E CHANGE  DENSITY CHANGE     ORB. GRAD
+          ---------------START SECOND ORDER SCF---------------
+   1  0  0      -91.5735339926   -91.5735339926   0.000580795   0.000271134
+   2  1  0      -91.5735345595    -0.0000005669   0.000361785   0.000098049
+   3  2  0      -91.5735346407    -0.0000000811   0.000078604   0.000026952
+   4  3  0      -91.5735346451    -0.0000000044   0.000028794   0.000016801
+   5  4  0      -91.5735346462    -0.0000000011   0.000006701   0.000001570
+   6  5  0      -91.5735346463    -0.0000000000   0.000003369   0.000000878
+
+          -----------------
+          DENSITY CONVERGED
+          -----------------
+     TIME TO FORM FOCK OPERATORS=       0.0 SECONDS (       0.0 SEC/ITER)
+     TIME TO SOLVE SCF EQUATIONS=       0.0 SECONDS (       0.0 SEC/ITER)
+
+ FINAL RHF ENERGY IS      -91.5735346463 AFTER   6 ITERATIONS
+
+ Alpha HOMO=   -10.943894 eV, LUMO=    8.320671 eV, gap=   19.264565 eV
+ ...... END OF RHF CALCULATION ......
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.1 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.9 SECONDS, CPU UTILIZATION IS     5.71%
+ ..... END OF 1-ELECTRON GRADIENT ......
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.1 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          1.0 SECONDS, CPU UTILIZATION IS     5.46%
+ ...... END OF 2-ELECTRON GRADIENT ......
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.1 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          1.0 SECONDS, CPU UTILIZATION IS     5.58%
+
+ UNITS ARE HARTREE/BOHR    E'X               E'Y               E'Z 
+    1 NITROGEN        -0.010948990      -0.021755863      -0.000000000
+    2 CARBON          -0.011949570       0.020270323       0.000000000
+    3 HYDROGEN         0.022898560       0.001485540       0.000000000
+
+ ANGLE TO PREVIOUS OPTIMIZATION POINT IS   2.536
+ LINEAR INTERPOLATION GIVES ANGLE          2.579
+
+ CURRENT OPTIMIZATION POINT :
+ ENERGY                                 =   -91.5735346 HARTREE
+ MASS WEIGHTED TANGENT GRADIENT NORM    =     0.0000599 HARTREE/BOHR-SQRT(AMU)
+ NEXT GEOMETRY STEP HAS PREDICTED ANGLE =         0.026 DEGREES
+ AND CARTESIAN RMS DISPLACEMENT         =     0.0000290 BOHR
+
+ *******************************************
+ ***** END OF CONSTRAINED OPTIMIZATION *****
+ *******************************************
+
+ ANGLE BETWEEN GRADIENTS AT CURRENT AND PREVIOUS IRC POINT =   2.579
+ ENERGY WAS LOWERED BY      0.0000103174 HARTREE DURING OPTIMIZATION
+
+ ***** NEXT POINT ON IRC FOUND *****
+ STEP DISTANCE IS   0.29992 SQRT(AMU)-BOHR)
+
+1         POINT   2 ON THE REACTION PATH
+          ******************************
+          AT PATH DISTANCE STOTAL =   0.59986     SQRT(AMU)-BOHR
+          TOTAL ENERGY            =   -91.5735346 HARTREE
+            2 CONSTRAINED OPTIMIZATION STEPS WERE PERFORMED
+  
+ COORDINATES OF ALL ATOMS ARE (ANGS)
+   ATOM   CHARGE       X              Y              Z
+ ------------------------------------------------------------
+ NITROGEN    7.0   0.0080743094   0.0204691297   0.0000000000
+ CARBON      6.0   1.2353710365  -0.0216926119   0.0000000000
+ HYDROGEN    1.0   0.5744645420   1.1216090353   0.0000000000
+  
+ COORDINATES OF SYMMETRY UNIQUE ATOMS (ANGS)
+   ATOM   CHARGE       X              Y              Z
+ ------------------------------------------------------------
+ NITROGEN    7.0   0.0080743094   0.0204691297   0.0000000000
+ CARBON      6.0   1.2353710365  -0.0216926119   0.0000000000
+ HYDROGEN    1.0   0.5744645420   1.1216090353   0.0000000000
+
+          INTERNUCLEAR DISTANCES (ANGS.)
+          ------------------------------
+
+                1 NITR       2 CARB       3 HYDR  
+
+   1 NITR    0.0000000    1.2280207 *  1.2382677 *
+   2 CARB    1.2280207 *  0.0000000    1.3205817 *
+   3 HYDR    1.2382677 *  1.3205817 *  0.0000000  
+
+  * ... LESS THAN  3.000
+
+
+          CURRENT CARTESIAN GRADIENT
+          ATOM               DE/DX          DE/DY          DE/DZ
+          -----------------------------------------------------------
+          NITROGEN        -0.0109265749  -0.0217736451   0.0000000000
+          CARBON          -0.0119703098   0.0202558354   0.0000000000
+          HYDROGEN         0.0228968847   0.0015178097   0.0000000000
+
+
+                     --------------------
+                     INTERNAL COORDINATES
+                     --------------------
+
+                 - - ATOMS - -         COORDINATE      COORDINATE
+ NO.   TYPE    I  J  K  L  M  N        (BOHR,RAD)       (ANG,DEG)
+ ----------------------------------------------------------------
+   1 STRETCH   1  2                     2.3206227       1.2280207
+   2 STRETCH   1  3                     2.3399867       1.2382677
+   3 BEND      2  1  3                  1.1300610      64.7477247
+
+ THE NUCLEAR REPULSION AT THE IRC POINT IS       23.4943524438
+
+ * * * IRC RESTART INFORMATION * * *
+ COORDINATES FOR $DATA AND ENTIRE $IRC GROUP FOLLOW
+
+ COORDINATES OF SYMMETRY UNIQUE ATOMS (ANGS)
+   ATOM   CHARGE       X              Y              Z
+ ------------------------------------------------------------
+ NITROGEN    7.0   0.0080743094   0.0204691297   0.0000000000
+ CARBON      6.0   1.2353710365  -0.0216926119   0.0000000000
+ HYDROGEN    1.0   0.5744645420   1.1216090353   0.0000000000
+ $IRC   PACE=GS2        STRIDE= 0.30000   NPOINT=??
+        STOTAL=  0.599863   NEXTPT=   3
+        NPRT= 0   NPUN= 0   SADDLE=.FALSE.
+        GA(   1)=-1.092657490E-02,-2.177364508E-02, 0.000000000E+00
+        GA(   4)=-1.197030977E-02, 2.025583543E-02, 0.000000000E+00
+        GA(   7)= 2.289688467E-02, 1.517809653E-03, 0.000000000E+00
+ $END   
+ A GS2 RESTART ALSO REQUIRES THE UPDATED $HESS GROUP FROM THE PUNCH FILE
+
+ *********************************************
+ ***** STARTING CONSTRAINED OPTIMIZATION *****
+ *** TO FIND THE NEXT REACTION PATH POINT ****
+ *********************************************
+ CONSTRAINED OPTIMIZATION POINT   1 FOR PATH POINT   3
+ COORDINATES OF SYMMETRY UNIQUE ATOMS (ANGS)
+   ATOM   CHARGE       X              Y              Z
+ ------------------------------------------------------------
+ NITROGEN    7.0   0.0130912226   0.0304536641   0.0000000000
+ CARBON      6.0   1.2417715861  -0.0325357446   0.0000000000
+ HYDROGEN    1.0   0.4285475610   1.1119877791   0.0000000000
+ ...... END OF ONE-ELECTRON INTEGRALS ......
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.1 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          1.0 SECONDS, CPU UTILIZATION IS     5.69%
+ TOTAL NUMBER OF NONZERO TWO-ELECTRON INTEGRALS =                1260
+          1 INTEGRAL RECORDS WERE STORED ON DISK FILE  8.
+  ...... END OF TWO-ELECTRON INTEGRALS .....
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.1 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          1.0 SECONDS, CPU UTILIZATION IS     5.51%
+
+          --------------------------
+                 RHF SCF CALCULATION
+          --------------------------
+     DENSITY MATRIX CONV=  1.00E-05
+
+ ITER EX DEM     TOTAL ENERGY        E CHANGE  DENSITY CHANGE     ORB. GRAD
+          ---------------START SECOND ORDER SCF---------------
+   1  0  0      -91.5763105576   -91.5763105576   0.051041124   0.026522872
+   2  1  0      -91.5803556733    -0.0040451157   0.044276961   0.010774696
+   3  2  0      -91.5812954623    -0.0009397890   0.010316061   0.004292610
+   4  3  0      -91.5814251548    -0.0001296925   0.004683008   0.001348504
+   5  4  0      -91.5814445078    -0.0000193529   0.003278971   0.000816146
+   6  5  0      -91.5814476930    -0.0000031852   0.000653191   0.000161390
+   7  6  0      -91.5814479119    -0.0000002189   0.000193032   0.000058569
+   8  7  0      -91.5814479378    -0.0000000259   0.000045328   0.000014529
+   9  8  0      -91.5814479396    -0.0000000019   0.000022311   0.000007579
+  10  9  0      -91.5814479400    -0.0000000003   0.000006895   0.000002290
+  11 10  0      -91.5814479400    -0.0000000000   0.000002784   0.000001063
+
+          -----------------
+          DENSITY CONVERGED
+          -----------------
+     TIME TO FORM FOCK OPERATORS=       0.0 SECONDS (       0.0 SEC/ITER)
+     TIME TO SOLVE SCF EQUATIONS=       0.0 SECONDS (       0.0 SEC/ITER)
+
+ FINAL RHF ENERGY IS      -91.5814479400 AFTER  11 ITERATIONS
+
+ Alpha HOMO=   -10.952244 eV, LUMO=    8.197560 eV, gap=   19.149804 eV
+ ...... END OF RHF CALCULATION ......
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.1 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          1.0 SECONDS, CPU UTILIZATION IS     5.71%
+ ..... END OF 1-ELECTRON GRADIENT ......
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.1 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          1.1 SECONDS, CPU UTILIZATION IS     5.54%
+ ...... END OF 2-ELECTRON GRADIENT ......
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.1 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          1.1 SECONDS, CPU UTILIZATION IS     5.66%
+
+ UNITS ARE HARTREE/BOHR    E'X               E'Y               E'Z 
+    1 NITROGEN        -0.014275783      -0.020439541      -0.000000000
+    2 CARBON          -0.011206171       0.024315609       0.000000000
+    3 HYDROGEN         0.025481954      -0.003876069       0.000000000
+
+ CURRENT OPTIMIZATION POINT :
+ ENERGY                                 =   -91.5814479 HARTREE
+ MASS WEIGHTED TANGENT GRADIENT NORM    =     0.0056998 HARTREE/BOHR-SQRT(AMU)
+ NEXT GEOMETRY STEP HAS PREDICTED ANGLE =         4.310 DEGREES
+ AND CARTESIAN RMS DISPLACEMENT         =     0.0107414 BOHR
+
+ CONSTRAINED OPTIMIZATION POINT   2 FOR PATH POINT   3
+ COORDINATES OF SYMMETRY UNIQUE ATOMS (ANGS)
+   ATOM   CHARGE       X              Y              Z
+ ------------------------------------------------------------
+ NITROGEN    7.0   0.0133589274   0.0301881582   0.0000000000
+ CARBON      6.0   1.2414812803  -0.0327009122   0.0000000000
+ HYDROGEN    1.0   0.4282845983   1.1176434330   0.0000000000
+ ...... END OF ONE-ELECTRON INTEGRALS ......
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.1 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          1.1 SECONDS, CPU UTILIZATION IS     5.69%
+ TOTAL NUMBER OF NONZERO TWO-ELECTRON INTEGRALS =                1260
+          1 INTEGRAL RECORDS WERE STORED ON DISK FILE  8.
+  ...... END OF TWO-ELECTRON INTEGRALS .....
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.1 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          1.1 SECONDS, CPU UTILIZATION IS     5.52%
+
+          --------------------------
+                 RHF SCF CALCULATION
+          --------------------------
+     DENSITY MATRIX CONV=  1.00E-05
+
+ ITER EX DEM     TOTAL ENERGY        E CHANGE  DENSITY CHANGE     ORB. GRAD
+          ---------------START SECOND ORDER SCF---------------
+   1  0  0      -91.5814755251   -91.5814755251   0.000836858   0.000632282
+   2  1  0      -91.5814770462    -0.0000015212   0.000521337   0.000165053
+   3  2  0      -91.5814772652    -0.0000002190   0.000188575   0.000105054
+   4  3  0      -91.5814773014    -0.0000000362   0.000049172   0.000023226
+   5  4  0      -91.5814773048    -0.0000000034   0.000040230   0.000009800
+   6  5  0      -91.5814773056    -0.0000000008   0.000010030   0.000002555
+   7  6  0      -91.5814773057    -0.0000000001   0.000003398   0.000001235
+
+          -----------------
+          DENSITY CONVERGED
+          -----------------
+     TIME TO FORM FOCK OPERATORS=       0.0 SECONDS (       0.0 SEC/ITER)
+     TIME TO SOLVE SCF EQUATIONS=       0.0 SECONDS (       0.0 SEC/ITER)
+
+ FINAL RHF ENERGY IS      -91.5814773057 AFTER   7 ITERATIONS
+
+ Alpha HOMO=   -10.944660 eV, LUMO=    8.211793 eV, gap=   19.156453 eV
+ ...... END OF RHF CALCULATION ......
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.1 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          1.1 SECONDS, CPU UTILIZATION IS     5.64%
+ ..... END OF 1-ELECTRON GRADIENT ......
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.1 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          1.1 SECONDS, CPU UTILIZATION IS     5.68%
+ ...... END OF 2-ELECTRON GRADIENT ......
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.1 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          1.2 SECONDS, CPU UTILIZATION IS     5.53%
+
+ UNITS ARE HARTREE/BOHR    E'X               E'Y               E'Z 
+    1 NITROGEN        -0.013409582      -0.023302289      -0.000000000
+    2 CARBON          -0.012072555       0.023119800       0.000000000
+    3 HYDROGEN         0.025482137       0.000182490       0.000000000
+
+ ANGLE TO PREVIOUS OPTIMIZATION POINT IS   4.310
+ LINEAR INTERPOLATION GIVES ANGLE          3.984
+
+ CURRENT OPTIMIZATION POINT :
+ ENERGY                                 =   -91.5814773 HARTREE
+ MASS WEIGHTED TANGENT GRADIENT NORM    =     0.0004802 HARTREE/BOHR-SQRT(AMU)
+ NEXT GEOMETRY STEP HAS PREDICTED ANGLE =         0.065 DEGREES
+ AND CARTESIAN RMS DISPLACEMENT         =     0.0000517 BOHR
+
+ CONSTRAINED OPTIMIZATION POINT   3 FOR PATH POINT   3
+ COORDINATES OF SYMMETRY UNIQUE ATOMS (ANGS)
+   ATOM   CHARGE       X              Y              Z
+ ------------------------------------------------------------
+ NITROGEN    7.0   0.0133555100   0.0302090204   0.0000000000
+ CARBON      6.0   1.2414849668  -0.0326883632   0.0000000000
+ HYDROGEN    1.0   0.4282881862   1.1172041475   0.0000000000
+ ...... END OF ONE-ELECTRON INTEGRALS ......
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.1 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          1.2 SECONDS, CPU UTILIZATION IS     5.56%
+ TOTAL NUMBER OF NONZERO TWO-ELECTRON INTEGRALS =                1260
+          1 INTEGRAL RECORDS WERE STORED ON DISK FILE  8.
+  ...... END OF TWO-ELECTRON INTEGRALS .....
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.1 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          1.2 SECONDS, CPU UTILIZATION IS     5.63%
+
+          --------------------------
+                 RHF SCF CALCULATION
+          --------------------------
+     DENSITY MATRIX CONV=  1.00E-05
+
+ ITER EX DEM     TOTAL ENERGY        E CHANGE  DENSITY CHANGE     ORB. GRAD
+          ---------------START SECOND ORDER SCF---------------
+   1  0  0      -91.5814775072   -91.5814775072   0.000052881   0.000050726
+   2  1  0      -91.5814775151    -0.0000000079   0.000034535   0.000011771
+   3  2  0      -91.5814775164    -0.0000000013   0.000013080   0.000010883
+   4  3  0      -91.5814775166    -0.0000000002   0.000004072   0.000001390
+   5  4  0      -91.5814775166    -0.0000000000   0.000003518   0.000000822
+
+          -----------------
+          DENSITY CONVERGED
+          -----------------
+     TIME TO FORM FOCK OPERATORS=       0.0 SECONDS (       0.0 SEC/ITER)
+     TIME TO SOLVE SCF EQUATIONS=       0.0 SECONDS (       0.0 SEC/ITER)
+
+ FINAL RHF ENERGY IS      -91.5814775166 AFTER   5 ITERATIONS
+
+ Alpha HOMO=   -10.945305 eV, LUMO=    8.210947 eV, gap=   19.156252 eV
+ ...... END OF RHF CALCULATION ......
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.1 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          1.2 SECONDS, CPU UTILIZATION IS     5.51%
+ ..... END OF 1-ELECTRON GRADIENT ......
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.1 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          1.2 SECONDS, CPU UTILIZATION IS     5.56%
+ ...... END OF 2-ELECTRON GRADIENT ......
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.1 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          1.2 SECONDS, CPU UTILIZATION IS     5.66%
+
+ UNITS ARE HARTREE/BOHR    E'X               E'Y               E'Z 
+    1 NITROGEN        -0.013400171      -0.023085647      -0.000000000
+    2 CARBON          -0.012081959       0.023217285       0.000000000
+    3 HYDROGEN         0.025482130      -0.000131638       0.000000000
+
+ ANGLE TO PREVIOUS OPTIMIZATION POINT IS   0.065
+ LINEAR INTERPOLATION GIVES ANGLE          0.065
+
+ CURRENT OPTIMIZATION POINT :
+ ENERGY                                 =   -91.5814775 HARTREE
+ MASS WEIGHTED TANGENT GRADIENT NORM    =     0.0000454 HARTREE/BOHR-SQRT(AMU)
+ NEXT GEOMETRY STEP HAS PREDICTED ANGLE =         0.002 DEGREES
+ AND CARTESIAN RMS DISPLACEMENT         =     0.0000049 BOHR
+
+ *******************************************
+ ***** END OF CONSTRAINED OPTIMIZATION *****
+ *******************************************
+
+ ANGLE BETWEEN GRADIENTS AT CURRENT AND PREVIOUS IRC POINT =   3.992
+ ENERGY WAS LOWERED BY      0.0000295766 HARTREE DURING OPTIMIZATION
+
+ ***** NEXT POINT ON IRC FOUND *****
+ STEP DISTANCE IS   0.29982 SQRT(AMU)-BOHR)
+
+1         POINT   3 ON THE REACTION PATH
+          ******************************
+          AT PATH DISTANCE STOTAL =   0.89968     SQRT(AMU)-BOHR
+          TOTAL ENERGY            =   -91.5814775 HARTREE
+            3 CONSTRAINED OPTIMIZATION STEPS WERE PERFORMED
+  
+ COORDINATES OF ALL ATOMS ARE (ANGS)
+   ATOM   CHARGE       X              Y              Z
+ ------------------------------------------------------------
+ NITROGEN    7.0   0.0133555100   0.0302090204   0.0000000000
+ CARBON      6.0   1.2414849668  -0.0326883632   0.0000000000
+ HYDROGEN    1.0   0.4282881862   1.1172041475   0.0000000000
+  
+ COORDINATES OF SYMMETRY UNIQUE ATOMS (ANGS)
+   ATOM   CHARGE       X              Y              Z
+ ------------------------------------------------------------
+ NITROGEN    7.0   0.0133555100   0.0302090204   0.0000000000
+ CARBON      6.0   1.2414849668  -0.0326883632   0.0000000000
+ HYDROGEN    1.0   0.4282881862   1.1172041475   0.0000000000
+
+          INTERNUCLEAR DISTANCES (ANGS.)
+          ------------------------------
+
+                1 NITR       2 CARB       3 HYDR  
+
+   1 NITR    0.0000000    1.2297390 *  1.1634980 *
+   2 CARB    1.2297390 *  0.0000000    1.4083827 *
+   3 HYDR    1.1634980 *  1.4083827 *  0.0000000  
+
+  * ... LESS THAN  3.000
+
+
+          CURRENT CARTESIAN GRADIENT
+          ATOM               DE/DX          DE/DY          DE/DZ
+          -----------------------------------------------------------
+          NITROGEN        -0.0133999313  -0.0230856468   0.0000000000
+          CARBON          -0.0120821991   0.0232173072   0.0000000000
+          HYDROGEN         0.0254821304  -0.0001316604   0.0000000000
+  
+ CONVERGED ORBITALS AT IRC POINT                    3
+
+                      1          2          3          4          5
+                  -15.3929   -11.0640    -1.2469    -0.6116    -0.5689
+                     A'         A'         A'         A'         A'  
+    1  N  1  S   -0.993791   0.000214   0.196588   0.089491  -0.131633
+    2  N  1  S   -0.029616   0.007084  -0.628240  -0.420565   0.608879
+    3  N  1  X   -0.007598   0.003372  -0.223910   0.406622  -0.217649
+    4  N  1  Y   -0.001883  -0.001435  -0.052275  -0.339985  -0.400408
+    5  N  1  Z    0.000000   0.000000   0.000000   0.000000   0.000000
+    6  C  2  S   -0.000358  -0.993295   0.140537  -0.167984   0.087907
+    7  C  2  S    0.008039  -0.028791  -0.311028   0.613109  -0.332366
+    8  C  2  X   -0.006255   0.008006   0.184086  -0.046653  -0.154424
+    9  C  2  Y   -0.000479  -0.001668  -0.034677  -0.143074  -0.284188
+   10  C  2  Z    0.000000   0.000000   0.000000   0.000000   0.000000
+   11  H  3  S    0.004781   0.004321  -0.120540  -0.345386  -0.397421
+
+                      6          7          8          9         10
+                   -0.4447    -0.4022     0.3017     0.3065     0.4532
+                     A''        A'         A'         A''        A'  
+    1  N  1  S    0.000000  -0.029046   0.022396   0.000000  -0.069853
+    2  N  1  S    0.000000   0.190430  -0.110615   0.000000   0.432546
+    3  N  1  X    0.000000  -0.539648   0.074858   0.000000   0.090140
+    4  N  1  Y    0.000000  -0.070957   0.474516   0.000000   0.838400
+    5  N  1  Z    0.737617   0.000000   0.000000  -0.722303   0.000000
+    6  C  2  S    0.000000  -0.126864   0.009280   0.000000  -0.043570
+    7  C  2  S    0.000000   0.608306  -0.064900   0.000000   0.201184
+    8  C  2  X    0.000000   0.595799   0.012826   0.000000   0.017500
+    9  C  2  Y    0.000000  -0.077027  -0.996866   0.000000   0.162389
+   10  C  2  Z    0.516375   0.000000   0.000000   0.893955   0.000000
+   11  H  3  S    0.000000   0.008502   0.301409   0.000000  -1.098929
+
+                     11
+                    0.9768
+                     A'  
+    1  N  1  S    0.121509
+    2  N  1  S   -1.031051
+    3  N  1  X   -1.052805
+    4  N  1  Y    0.120012
+    5  N  1  Z    0.000000
+    6  C  2  S   -0.131302
+    7  C  2  S    1.017615
+    8  C  2  X   -1.188208
+    9  C  2  Y    0.041618
+   10  C  2  Z    0.000000
+   11  H  3  S   -0.057955
+
+
+                     --------------------
+                     INTERNAL COORDINATES
+                     --------------------
+
+                 - - ATOMS - -         COORDINATE      COORDINATE
+ NO.   TYPE    I  J  K  L  M  N        (BOHR,RAD)       (ANG,DEG)
+ ----------------------------------------------------------------
+   1 STRETCH   1  2                     2.3238698       1.2297390
+   2 STRETCH   1  3                     2.1986924       1.1634980
+   3 BEND      2  1  3                  1.2573125      72.0387019
+
+ THE NUCLEAR REPULSION AT THE IRC POINT IS       23.5114163837
+
+ * * * IRC RESTART INFORMATION * * *
+ COORDINATES FOR $DATA AND ENTIRE $IRC GROUP FOLLOW
+
+ COORDINATES OF SYMMETRY UNIQUE ATOMS (ANGS)
+   ATOM   CHARGE       X              Y              Z
+ ------------------------------------------------------------
+ NITROGEN    7.0   0.0133555100   0.0302090204   0.0000000000
+ CARBON      6.0   1.2414849668  -0.0326883632   0.0000000000
+ HYDROGEN    1.0   0.4282881862   1.1172041475   0.0000000000
+ $IRC   PACE=GS2        STRIDE= 0.30000   NPOINT=??
+        STOTAL=  0.899681   NEXTPT=   4
+        NPRT= 0   NPUN= 0   SADDLE=.FALSE.
+        GA(   1)=-1.339993132E-02,-2.308564677E-02, 0.000000000E+00
+        GA(   4)=-1.208219906E-02, 2.321730720E-02, 0.000000000E+00
+        GA(   7)= 2.548213039E-02,-1.316604227E-04, 0.000000000E+00
+ $END   
+ A GS2 RESTART ALSO REQUIRES THE UPDATED $HESS GROUP FROM THE PUNCH FILE
+ ......DONE WITH THIS PORTION OF THE IRC......
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.1 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          1.3 SECONDS, CPU UTILIZATION IS     5.62%
+               580000  WORDS OF DYNAMIC MEMORY USED
+ EXECUTION OF GAMESS TERMINATED NORMALLY 09:19:44 13-OCT-2026    
+ DDI: 263640 bytes (0.3 MB / 0 MWords) used by master data server.
+
+ ----------------------------------------
+ CPU timing information for all processes
+ ========================================
+ 0: 0.72 + 0.54 = 0.126
+ 1: 0.51 + 0.105 = 0.156
+ ----------------------------------------
+----- accounting info -----
+Files used on the parent node meyeri were:
+-rw-r--r-- 1 eric users   15197 Oct 13 09:19 /home/eric/data/development/forks/OpenChemistry/openchemistry-nix/openchemistry/avogadrodata/data/gamess/scratch/exam11.dat
+-rw-r--r-- 1 eric users    2438 Oct 13 09:19 /home/eric/data/development/forks/OpenChemistry/openchemistry-nix/openchemistry/avogadrodata/data/gamess/scratch/exam11.F05
+-rw-r--r-- 1 eric users  180016 Oct 13 09:19 /home/eric/data/development/forks/OpenChemistry/openchemistry-nix/openchemistry/avogadrodata/data/gamess/scratch/exam11.F08
+-rw-r--r-- 1 eric users 1832320 Oct 13 09:19 /home/eric/data/development/forks/OpenChemistry/openchemistry-nix/openchemistry/avogadrodata/data/gamess/scratch/exam11.F10
+-rw-r--r-- 1 eric users       7 Oct 13 09:19 /home/eric/data/development/forks/OpenChemistry/openchemistry-nix/openchemistry/avogadrodata/data/gamess/scratch/exam11.nodes.mpd
+-rw-r--r-- 1 eric users    2968 Oct 13 09:19 /home/eric/data/development/forks/OpenChemistry/openchemistry-nix/openchemistry/avogadrodata/data/gamess/scratch/exam11.trj
+Tue Oct 13 09:19:45 AM EDT 2026
+1.136u 0.338s 0:05.36 27.4%	0+0k 0+38111io 250pf+0w

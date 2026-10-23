@@ -1,0 +1,1442 @@
+1 : exam27.inp
+2 : 00
+3 : 1
+4 : 1
+----- GAMESS execution script 'rungms' -----
+This job is running on host meyeri
+under operating system Linux at Tue Oct 13 09:19:39 AM EDT 2026
+Available scratch disk space (Kbyte units) at beginning of the job is
+Filesystem       1K-blocks       Used   Available Use% Mounted on
+zraid/home     69573174272 6905928704 62667245568  10% /home
+GAMESS temporary binary files will be written to /home/eric/data/development/forks/OpenChemistry/openchemistry-nix/openchemistry/avogadrodata/data/gamess/scratch
+GAMESS supplementary output files will be written to /home/eric/data/development/forks/OpenChemistry/openchemistry-nix/openchemistry/avogadrodata/data/gamess/scratch
+Copying input file /home/eric/data/development/forks/OpenChemistry/openchemistry-nix/openchemistry/avogadrodata/data/gamess/exam27.inp to your run's scratch directory...
+MPI found 1 node, the current host.
+MPI kickoff will run GAMESS on 1 cores in 1 nodes.
+The binary to be executed is /nix/store/8ifmh5fpc19dw92jhpczcnjdzyvk9hqc-gamess-us-2024R2P1/bin/gamess.2024R2P1.x
+MPI will run 1 compute processes and 1 data servers,
+    placing 1 of each process type onto each node.
+The scratch disk space on each node is /home/eric/data/development/forks/OpenChemistry/openchemistry-nix/openchemistry/avogadrodata/data/gamess/scratch, with free space
+Filesystem       1K-blocks       Used   Available Use% Mounted on
+zraid/home     69573174272 6905928704 62667245568  10% /home
+          *******************************************************
+          *                                                     *
+          *      GAMESS VERSION = 15 JUL 2024 (R2 Patch 1)          *
+          *                                                     *
+          *              doi.org/10.1063/5.0005188              *
+          *                                                     *
+          **************** 64 BIT LINUX VERSION *****************
+
+  GAMESS HAS BEEN MADE POSSIBLE WITH IMPORTANT CONTRIBUTIONS FROM
+  THE FOLLOWING INDIVIDUALS (IN ALPHABETICAL ORDER):
+
+     IVANA ADAMOVIC, CHRISTINE AIKENS, TOMOKO AKAMA,
+     MELISA ALKAN, YURI ALEXEEV, YURIKO AOKI, POOJA ARORA,
+     TOSHIO ASADA, ANDREY ASADCHEV, KIM K. BALDRIDGE,
+     PRADIPTA BANDYOPADHYAY, TAYLOR A. BARNES, MARIA BARYSZ,
+     ROB BELL, JONATHAN BENTZ, COLLEEN BERTONI,
+     JERRY A. BOATZ, BRETT BODE, KURT BRORSEN, KURT R. BRORSEN,
+     LAIMUTIS BYTAUTAS, CALEB CARLIN, LAURA CARRINGTON,
+     GALINA CHABAN, BENOIT CHAMPAGNE, WEI CHEN, MAHITO CHIBA,
+     DAN CHIPMAN, CHEOL HO CHOI, TANNER CULPITT,
+     DIPAYAN DATTA, PAUL DAY, ALBERT DEFUSCO,
+     NUWAN DESILVA, J. EMILIANO DEUSTUA,
+     TIM DUDLEY, MICHEL DUPUIS, STEVEN T. ELBERT,
+     DMITRI FEDOROV, KATHERINE FERRERAS, MICHAEL FILATOV,
+     ALEX FINDLATER,GRAHAM FLETCHER, MARK FREITAG,
+     CHRISTIAN FRIEDL, DAVID GARMER, 
+     IGOR S. GERASIMOV, KURT GLAESEMANN,
+     MARK S. GORDON, JEFFREY R. GOUR, FENG LONG GU,
+     EMILIE B. GUIDEZ, ANASTASIA GUNINA, SHARON HAMMES-SCHIFFER,
+     MASATAKE HARUTA, KIMIHIKO HIRAO, YASUHIRO IKABATA,
+     TZVETELIN IORDANOV, STEPHAN IRLE, KAZUYA ISHIMURA,
+     JOE IVANIC, FRANK JENSEN, JAN H. JENSEN, VISVALDAS KAIRYS,
+     MUNEAKI KAMIYA, MICHIO KATOUDA, NAOAKI KAWAKAMI, DAN KEMP,
+     BERNARD KIRTMAN, KAZUO KITAURA, MARIUSZ KLOBUKOWSKI,
+     MASATO KOBAYASHI, KONSTANTIN KOMAROV, PRAKASHAN KORAMBATH,
+     JACEK KORCHOWIEC, SHIRO KOSEKI, KAROL KOWALSKI,
+     JIMMY KROMANN, STANISLAW A. KUCHARSKI, HENRY KURTZ,
+     SAROM SOK LEANG, SEUNGHOON LEE, HUI LI, SHUHUA LI, WEI LI,
+     JESSE J. LUTZ, ALEKSANDR O. LYKHIN,
+     ILIAS MAGOULAS, MARCIN MAKOWSKI,
+     JOANI MATO, NIKITA MATSUNAGA, BENEDETTA MENNUCCI,
+     GRANT MERRILL, NORIYUKI MINEZAWA, VLADIMIR MIRONOV,
+     EISAKU MIYOSHI, JOHN A. MONTGOMERY JR., HIROTOSHI MORI,
+     JONATHAN MULLIN, MONIKA MUSIAL, SHIGERU NAGASE,
+     TAKESHI NAGATA, HIROMI NAKAI, TAKAHITO NAKAJIMA,
+     YUYA NAKAJIMA, HARUYUKI NAKANO, HIROYA NAKATA, SEAN NEDD,
+     HEATHER NETZLOFF, KIET A. NGUYEN, YOSHIO NISHIMOTO,
+     BOSILJKA NJEGIC, RYAN OLSON, MIKE PAK, ROBERTO PEVERATI,
+     BUU PHAM, PIOTR PIECUCH, ANNA POMOGAEVA, DAVID POOLE,
+     SPENCER PRUITT, OLIVIER QUINET, LUKE ROSKOP,
+     KLAUS RUEDENBERG, ANDREW SAND, TOSAPORN SATTASATHUCHANA,
+     NOZOMI SAWADA, MICHAEL W. SCHMIDT, PATRICK E. SCHNEIDER,
+     JUNJI SEINO, PRACHI SHARMA, JUN SHEN, JIM SHOEMAKER,
+     GEORGE SCHOENDORFF, YINAN SHU, DEJUN SI, JONATHAN SKONE,
+     LYUDMILA SLIPCHENKO, TONY SMITH, JIE SONG, MARK SPACKMAN,
+     CASPER STEINMANN, WALT STEVENS, PEIFENG SU, SHUJUN SU,
+     CHET SWALINA, CHINAMI TAKASHIMA, TETSUYA TAKETSUGU,
+     ZHEN TAO, NANDUN THELLAMUREGE, ANANTA TIWARI,
+     SEIKEN TOKURA, JACOPO TOMASI,
+     TSUGUKI TOUMA, TAKAO TSUNEDA, HIROAKI UMEDA,
+     JORGE LUIS GALVEZ VALLEJO, YALI WANG, SIMON WEBB,
+     AARON WEST, THERESA L. WINDUS, MARTA WLOCH,
+     PENG XU, KIYOSHI YAGI, SUSUMU YANAGISAWA, YANG YANG,
+     SOOHAENG YOO, TAKESHI YOSHIKAWA, FEDERICO ZAHARIEV,
+     TOBY ZENG
+
+  WHO ARE SUPPORTED BY THEIR INSTITUTION/UNIVERSITY/COMPANY/GROUP
+  (IN ALPHABETICAL ORDER):
+
+     EP ANALYTICS,
+     FACULTES UNIVERSITAIRES NOTRE-DAME DE LA PAIX,
+     INSTITUTE FOR MOLECULAR SCIENCE, IOWA STATE UNIVERSITY,
+     JACKSON STATE UNIVERSITY, JOHANNES KEPLER UNIVERSITY LINZ,
+     KYUNGPOOK NATIONAL UNIVERSITY
+     KYUSHU UNIVERSITY, MICHIGAN STATE UNIVERSITY,
+     MIE UNIVERSITY, THE MOLECULAR SCIENCES SOFTWARE INSTITUTE,
+     MOSCOW STATE UNIVERSITY,
+     N. COPERNICUS UNIVERSITY, NAGOYA UNIVERSITY,
+     NANJING UNIVERSITY, NAT. INST. OF ADVANCED INDUSTRIAL
+     SCIENCE AND TECHNOLOGY, NATIONAL INST. OF STANDARDS AND
+     TECHNOLOGY, NESMEYANOV INSTITUTE OF ORGANOELEMENT COMPOUNDS
+     OF RUSSIAN ACADEMY OF SCIENCES, OSAKA PREFECTURE UNIVERSITY,
+     PENNSYLVANIA STATE UNIVERSITY, TOKYO INSTITUTE OF TECHNOLOGY,
+     UNIVERSITY OF AARHUS, UNIVERSITY OF ALBERTA,
+     UNIVERSITY OF CALIFORNIA AT SANTA BARBARA,
+     UNIVERSITY OF COPENHAGEN, UNIVERSITY OF IOWA,
+     UNIVERSITY OF MEMPHIS, UNIVERSITY OF MINNESOTA,
+     UNIVERSITY OF NEBRASKA, UNIVERSITY OF NEW ENGLAND,
+     UNIVERSITY OF NOTRE DAME, UNIVERSITY OF PISA,
+     UNIVERSITY OF SILESIA, UNIVERSITY OF TOKYO,
+     UNIVERSITY OF ZURICH, WASEDA UNIVERSITY,
+     YALE UNIVERSITY
+
+  GAMESS SOFTWARE MANAGEMENT TEAM FOR THIS RELEASE:
+     MARK S. GORDON (TEAM LEAD),
+     BRETT BODE (SENIOR ADVISOR),
+     GIUSEPPE BARCA,
+     COLLEEN BERTONI,
+     KRISTOPHER KEIPERT (ADVISOR),
+     SAROM S. LEANG (DEVELOPMENT LEAD),
+     BUU PHAM,
+     JACKSON HAYES (WEBSITE ADMINISTRATOR),
+     PENG XU
+
+ EXECUTION OF GAMESS BEGUN 09:19:42 13-OCT-2026    
+
+            ECHO OF THE FIRST FEW INPUT CARDS -
+ INPUT CARD>! EXAM27.                                                                       
+ INPUT CARD>!    NH3   semi-empirical DRC calculation                                       
+ INPUT CARD>!                                                                               
+ INPUT CARD>!    The dynamic reaction coordinate is initiated at the                        
+ INPUT CARD>!    planar inversion transition state, with a velocity                         
+ INPUT CARD>!    parallel to the mode with imaginary frequency.  The                        
+ INPUT CARD>!    reactive trajectory is given one kcal/mole energy in                       
+ INPUT CARD>!    excess of the amount needed to traverse the barrier.                       
+ INPUT CARD>!    The trajectory is analyzed in terms of the equilibrium                     
+ INPUT CARD>!    geometry's coordinates and normal modes.  Because                          
+ INPUT CARD>!    this is a test run, the trajectory is stopped after                        
+ INPUT CARD>!    a much too short time interval.                                            
+ INPUT CARD>!                                                                               
+ INPUT CARD>!    The last point on the trajectory has                                       
+ INPUT CARD>!    T=0.00163, V=-9.12874, E=-9.12710,                                         
+ INPUT CARD>!    q(L6)=-0.153112, p(L6)=-0.014313,                                          
+ INPUT CARD>!    velocity(H,z)=0.028857623667                                               
+ INPUT CARD>!                                                                               
+ INPUT CARD> $CONTRL SCFTYP=RHF RUNTYP=DRC $END                                             
+ INPUT CARD> $SYSTEM timlim=1 $END                                                          
+ INPUT CARD> $BASIS  GBASIS=AM1 $END                                                        
+ INPUT CARD> $DATA                                                                          
+ INPUT CARD>ammonia...DRC starting from the planar transition state                         
+ INPUT CARD>C1                                                                              
+ INPUT CARD>NITROGEN    7.0   0.0000000000   0.0000000000   0.0000000000                    
+ INPUT CARD>HYDROGEN    1.0  -0.4882960784   0.8457536168   0.0000000000                    
+ INPUT CARD>HYDROGEN    1.0  -0.4882960784  -0.8457536168   0.0000000000                    
+ INPUT CARD>HYDROGEN    1.0   0.9765921567   0.0000000000   0.0000000000                    
+ INPUT CARD> $END                                                                           
+ INPUT CARD> $DRC NPRTSM=1 NSTEP=10 DELTAT=0.1 NMANAL=.TRUE. EKIN=1.0 HESS2=MIN             
+ INPUT CARD>      VEL(1)=0.0 0.0 -0.1128,                                                   
+ INPUT CARD>             0.0 0.0 0.5213,                                                    
+ INPUT CARD>             0.0 0.0 0.5213,                                                    
+ INPUT CARD>             0.0 0.0 0.5213                                                     
+ INPUT CARD>      C0(1)=0.0000000000   0.0000000000   0.0291576578                          
+ INPUT CARD>           -0.4692651161   0.8127910232  -0.3097192193                          
+ INPUT CARD>           -0.4692651161  -0.8127910232  -0.3097192193                          
+ INPUT CARD>            0.9385302321   0.0000000000  -0.3097192193 $END                     
+ INPUT CARD>                                                                                
+ INPUT CARD>------ hessian at the reference geometry, which is the                          
+ INPUT CARD>------ pyramidal minimum given as C0 above.                                     
+ INPUT CARD>                                                                                
+ INPUT CARD> $HESS2                                                                         
+ INPUT CARD>ENERGY IS       -9.1354556210 E(NUC) IS        6.8369847904                     
+ INPUT CARD> 1  1 6.16231432E-01 3.45452916E-11-1.03923982E-05-1.35977630E-01 1.20300561E-01
+ INPUT CARD> 1  2-7.41222813E-02-1.35977630E-01-1.20300561E-01-7.41222814E-02-3.44360253E-01
+ INPUT CARD> 1  3 0.00000000E+00 1.48254955E-01                                             
+ INPUT CARD> 2  1 3.45452916E-11 6.16231430E-01 2.07271754E-10 1.20308981E-01-2.74894516E-01
+ INPUT CARD> 2  2 1.28389557E-01-1.20308981E-01-2.74894516E-01-1.28389558E-01-6.90905830E-11
+ INPUT CARD> 2  3-6.65264796E-02 0.00000000E+00                                             
+      1000000 WORDS OF MEMORY AVAILABLE
+
+     BASIS OPTIONS
+     -------------
+     GBASIS=AM1          IGAUSS=       0      POLAR=NONE    
+     NDFUNC=       0     NFFUNC=       0     DIFFSP=       F
+     NPFUNC=       0      DIFFS=       F     BASNAM=        
+
+
+     RUN TITLE
+     ---------
+ ammonia...DRC starting from the planar transition state                         
+
+ THE POINT GROUP OF THE MOLECULE IS C1      
+ THE ORDER OF THE PRINCIPAL AXIS IS     0
+
+ ATOM      ATOMIC                      COORDINATES (BOHR)
+           CHARGE         X                   Y                   Z
+ NITROGEN    7.0     0.0000000000        0.0000000000        0.0000000000
+ HYDROGEN    1.0    -0.9227457891        1.5982425889        0.0000000000
+ HYDROGEN    1.0    -0.9227457891       -1.5982425889        0.0000000000
+ HYDROGEN    1.0     1.8454915779        0.0000000000        0.0000000000
+
+          INTERNUCLEAR DISTANCES (ANGS.)
+          ------------------------------
+
+                1 NITR       2 HYDR       3 HYDR       4 HYDR  
+
+   1 NITR    0.0000000    0.9765922 *  0.9765922 *  0.9765922 *
+   2 HYDR    0.9765922 *  0.0000000    1.6915072 *  1.6915072 *
+   3 HYDR    0.9765922 *  1.6915072 *  0.0000000    1.6915072 *
+   4 HYDR    0.9765922 *  1.6915072 *  1.6915072 *  0.0000000  
+
+  * ... LESS THAN  3.000
+
+
+ TOTAL NUMBER OF BASIS SET SHELLS             =    4
+ NUMBER OF CARTESIAN GAUSSIAN BASIS FUNCTIONS =    7
+ NUMBER OF ELECTRONS                          =    8
+ CHARGE OF MOLECULE                           =    0
+ SPIN MULTIPLICITY                            =    1
+ NUMBER OF OCCUPIED ORBITALS (ALPHA)          =    4
+ NUMBER OF OCCUPIED ORBITALS (BETA )          =    4
+ TOTAL NUMBER OF ATOMS                        =    4
+ THE NUCLEAR REPULSION ENERGY IS       12.3176128678
+
+ THE PARAMETERS USED IN THIS CALCULATION ARE DESCRIBED IN:
+
+  H: (AM1): M.J.S. DEWAR ET AL, J. AM. CHEM. SOC. 107 3902-3909 (1985)          
+  N: (AM1): M.J.S. DEWAR ET AL, J. AM. CHEM. SOC. 107 3902-3909 (1985)          
+
+ THERE ARE    1 HEAVY AND    3 LIGHT ATOMS,
+ YIELDING A TOTAL OF        33 MOPAC 2E- INTEGRALS.
+
+     $CONTRL OPTIONS
+     ---------------
+ SCFTYP=RHF          RUNTYP=DRC          EXETYP=RUN     
+ MPLEVL=       0     CITYP =NONE         CCTYP =NONE         VBTYP =NONE    
+ DFTTYP=NONE         TDDFT =NONE    
+ MULT  =       1     ICHARG=       0     NZVAR =       0     COORD =UNIQUE  
+ PP    =NONE         RELWFN=NONE         LOCAL =NONE         NUMGRD=       F
+ ISPHER=      -1     NOSYM =       0     MAXIT =      30     UNITS =ANGS    
+ PLTORB=       F     MOLPLT=       F     AIMPAC=       F     FRIEND=        
+ NPRINT=       7     IREST =       0     GEOM  =INPUT   
+ NORMF =       0     NORMP =       0     ITOL  =      20     ICUT  =       9
+ INTTYP=BEST         GRDTYP=BEST         QMTTOL= 1.0E-06
+
+     $SYSTEM OPTIONS
+     ---------------
+  REPLICATED MEMORY=     1000000 WORDS (ON EVERY NODE).
+ DISTRIBUTED MEMDDI=           0 MILLION WORDS IN AGGREGATE,
+ MEMDDI DISTRIBUTED OVER   1 PROCESSORS IS           0 WORDS/PROCESSOR.
+ TOTAL MEMORY REQUESTED ON EACH PROCESSOR=     1000000 WORDS.
+ TIMLIM=           1.00 MINUTES, OR       0.0 DAYS.
+ PARALL= F  BALTYP=  DLB     KDIAG=    0  COREFL= F
+ MXSEQ2=     300 MXSEQ3=     150  mem10=         0  mem22=         0
+
+          ----------------
+          PROPERTIES INPUT
+          ----------------
+
+     MOMENTS            FIELD           POTENTIAL          DENSITY
+ IEMOM =       1   IEFLD =       0   IEPOT =       0   IEDEN =       0
+ WHERE =COMASS     WHERE =NUCLEI     WHERE =NUCLEI     WHERE =NUCLEI  
+ OUTPUT=BOTH       OUTPUT=BOTH       OUTPUT=BOTH       OUTPUT=BOTH    
+ IEMINT=       0   IEFINT=       0                     IEDINT=       0
+                                                       MORB  =       0
+          EXTRAPOLATION IN EFFECT
+ ORBITAL PRINTING OPTION: NPREO=     1     7     2     1
+
+     ----------------------
+     TARGET OFFLOAD OPTIONS
+     ----------------------
+     RHF    =       F
+     CPHF    =       F
+     MAKEFP =       F
+
+     -------------------------------
+     INTEGRAL TRANSFORMATION OPTIONS
+     -------------------------------
+     NWORD  =            0
+     CUTTRF = 1.0E-09     MPTRAN =       0
+     DIRTRF =       F     AOINTS =DUP     
+
+          ----------------------
+          INTEGRAL INPUT OPTIONS
+          ----------------------
+ NOPK  =       1 NORDER=       0 SCHWRZ=       F
+
+     ------------------------------------------
+     THE POINT GROUP IS C1 , NAXIS= 0, ORDER= 1
+     ------------------------------------------
+
+     DIMENSIONS OF THE SYMMETRY SUBSPACES ARE
+ A   =    7
+
+ ..... DONE SETTING UP THE RUN .....
+ STEP CPU TIME =     0.01 TOTAL CPU TIME =          0.0 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.1 SECONDS, CPU UTILIZATION IS    12.59%
+
+ $HESS2 GROUP READ FROM CARDS
+ ENERGY IS       -9.1354556210 E(NUC) IS        6.8369847904                     
+
+ ------------------------------
+ PARAMETERS FOR DRC CALCULATION
+ ------------------------------
+     NSTEP  =    10     DELTAT = 0.1000 FS   TOTIME =    0.0000 FS
+     NPRT   =     0     NPUN   =    0        NPRTSM =    1
+     NMANAL =   T       NHESTS =    0        VIBLVL =   F
+     NFRGPR =     0
+     NVEL   =     F     EKIN   = .00159 HARTREE
+
+ NORMALIZED INITIAL VELOCITY VECTOR
+     ATOM    1  VEL=     0.00000000     0.00000000    -0.11261035
+     ATOM    2  VEL=     0.00000000     0.00000000     0.52154907
+     ATOM    3  VEL=     0.00000000     0.00000000     0.52154907
+     ATOM    4  VEL=     0.00000000     0.00000000     0.52154907
+ EQUILIBRIUM GEOMETRY EXPANSION CENTER
+     ATOM    1   C0=     0.00000000     0.00000000     0.11371575 BOHR
+     ATOM    2   C0=    -0.88678249     1.53595232    -0.52666869 BOHR
+     ATOM    3   C0=    -0.88678249    -1.53595232    -0.52666869 BOHR
+     ATOM    4   C0=     1.77356497     0.00000000    -0.52666869 BOHR
+ 
+
+ ATOMIC ISOTOPES USED DURING THIS CALCULATION ARE
+    1=    14.003070    2=     1.007825    3=     1.007825    4=     1.007825
+
+          ********************
+          1 ELECTRON INTEGRALS
+          ********************
+
+          **************************
+          1 AND 2 ELECTRON INTEGRALS
+          **************************
+
+ MOPAC ONE- AND TWO-ELECTRON INTEGRALS REQUIRE        89 WORDS.
+ ...... END OF ONE- AND TWO-ELECTRON INTEGRALS......
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.0 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.1 SECONDS, CPU UTILIZATION IS    12.42%
+ ...... END OF ONE-ELECTRON INTEGRALS ......
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.0 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.1 SECONDS, CPU UTILIZATION IS    12.47%
+
+          -------------
+          GUESS OPTIONS
+          -------------
+          GUESS =HUCKEL            NORB  =       0          NORDER=       0
+          MIX   =       F          PRTMO =       F          PUNMO =       F
+          TOLZ  = 1.0E-08          TOLE  = 1.0E-05
+          SYMDEN=       F          PURIFY=       F
+
+ INITIAL GUESS ORBITALS GENERATED BY HUCKEL   ROUTINE.
+
+ SYMMETRIES FOR INITIAL GUESS ORBITALS FOLLOW.   BOTH SET(S).
+     4 ORBITALS ARE OCCUPIED (    0 CORE ORBITALS).
+     1=A        2=A        3=A        4=A        5=A        6=A        7=A   
+ ...... END OF INITIAL ORBITAL SELECTION ......
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.0 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.1 SECONDS, CPU UTILIZATION IS    13.03%
+
+          --------------------------
+               R-AM1 SCF CALCULATION
+          --------------------------
+
+     NUCLEAR ENERGY =         6.9005995655
+     MAXIT =   30     NPUNCH=    2
+     EXTRAP=T  DAMP=F  SHIFT=F  RSTRCT=F  DIIS=F  DEM=F  SOSCF=F
+     DENSITY MATRIX CONV=  1.00E-05
+     MEMORY REQUIRED FOR RHF ITERS=       538 WORDS.
+
+ ITER EX DEM     TOTAL ENERGY        E CHANGE  DENSITY CHANGE    DIIS ERROR
+   1  0  0       -9.0224221816    -9.0224221816   0.310702892   0.000000000
+   2  1  0       -9.1223308115    -0.0999086299   0.064202254   0.000000000
+   3  2  0       -9.1282370096    -0.0059061980   0.013946184   0.000000000
+   4  3  0       -9.1286552210    -0.0004182115   0.004857838   0.000000000
+   5  0  0       -9.1286916880    -0.0000364670   0.002704712   0.000000000
+   6  1  0       -9.1286961082    -0.0000044202   0.000007350   0.000000000
+   7  2  0       -9.1286961082    -0.0000000001   0.000002746   0.000000000
+   8  3  0       -9.1286961082    -0.0000000000   0.000001024   0.000000000
+
+          -----------------
+          DENSITY CONVERGED
+          -----------------
+     TIME TO FORM FOCK OPERATORS=       0.0 SECONDS (       0.0 SEC/ITER)
+     TIME TO SOLVE SCF EQUATIONS=       0.0 SECONDS (       0.0 SEC/ITER)
+
+ FINAL R-AM1 ENERGY IS       -9.1286961082 AFTER   8 ITERATIONS
+
+ HEAT OF FORMATION IS        -3.04162 KCAL/MOL
+
+
+ Alpha HOMO=    -9.565885 eV, LUMO=    4.158176 eV, gap=   13.724062 eV
+
+          ------------
+          EIGENVECTORS
+          ------------
+
+                      1          2          3          4          5
+                   -1.1849    -0.5938    -0.5938    -0.3515     0.1528
+                     A          A          A          A          A   
+    1  N  1  S    0.844456   0.000000  -0.000000   0.000000   0.535625
+    2  N  1  X   -0.000000   0.735233  -0.000001  -0.000000   0.000000
+    3  N  1  Y    0.000000   0.000001   0.735233  -0.000000   0.000000
+    4  N  1  Z    0.000000  -0.000000   0.000000   1.000000   0.000000
+    5  H  2  S    0.309243  -0.276716   0.479288  -0.000000  -0.487547
+    6  H  3  S    0.309243  -0.276717  -0.479287  -0.000000  -0.487547
+    7  H  4  S    0.309243   0.553433  -0.000001   0.000000  -0.487547
+
+                      6          7
+                    0.2654     0.2654
+                     A          A   
+    1  N  1  S   -0.000000  -0.000000
+    2  N  1  X   -0.000006   0.677814
+    3  N  1  Y    0.677814   0.000006
+    4  N  1  Z   -0.000000  -0.000000
+    5  H  2  S   -0.519891   0.300153
+    6  H  3  S    0.519886   0.300162
+    7  H  4  S    0.000005  -0.600315
+ ...... END OF RHF CALCULATION ......
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.0 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.1 SECONDS, CPU UTILIZATION IS    11.91%
+
+     ----------------------------------------------------------------
+     PROPERTY VALUES FOR THE RHF   SELF-CONSISTENT FIELD WAVEFUNCTION
+     ----------------------------------------------------------------
+
+                    -------------
+                    MOPAC CHARGES
+                    -------------
+         ATOM NO.   TYPE          CHARGE        ATOM  ELECTRON DENSITY
+           1         N             -0.5885          5.5885
+           2         H              0.1962          0.8038
+           3         H              0.1962          0.8038
+           4         H              0.1962          0.8038
+
+          ---------------------
+          ELECTROSTATIC MOMENTS
+          ---------------------
+
+ POINT   1           X           Y           Z (ANGS)      CHARGE
+                 0.000000    0.000000    0.000000        0.00 (A.U.)
+         DX          DY          DZ         /D/  (DEBYE)
+    -0.000000   -0.000000   -0.000000    0.000000
+ ...... END OF PROPERTY EVALUATION ......
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.0 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.1 SECONDS, CPU UTILIZATION IS    13.08%
+ ************************
+ START OF DRC CALCULATION
+ ************************
+ ---------------------------------------------------------------------------
+   TIME     MODE     Q              P     KINETIC      POTENTIAL          TOTAL
+    FS       BOHR*SQRT(AMU) BOHR*SQRT(AMU)/FS   E         ENERGY         ENERGY
+    0.0000  L 1      1.007997  0.052824   0.00159       -9.12870       -9.12710
+            L 2      0.000000  0.000000
+            L 3     -0.000004 -0.000000
+            L 4      0.000000  0.000000
+            L 5      0.000005  0.000001
+            L 6     -0.138966 -0.014065
+ ---------------------------------------------------------------------------
+           CARTESIAN COORDINATES (BOHR)               VELOCITY (BOHR/FS)
+ ---------------------------------------------------------------------------
+  7.0     0.00000    0.00000    0.00000       0.00000    0.00000   -0.00616
+  1.0    -0.92275    1.59824    0.00000       0.00000    0.00000    0.02851
+  1.0    -0.92275   -1.59824    0.00000       0.00000    0.00000    0.02851
+  1.0     1.84549    0.00000    0.00000       0.00000    0.00000    0.02851
+ ---------------------------------------------------------------------------
+
+                         ----------------------
+                         GRADIENT OF THE ENERGY
+                         ----------------------
+
+ UNITS ARE HARTREE/BOHR    E'X               E'Y               E'Z 
+    1 NITROGEN         0.000000002       0.000000000       0.000000000
+    2 HYDROGEN        -0.000006912       0.000011971       0.000000000
+    3 HYDROGEN        -0.000006912      -0.000011971       0.000000000
+    4 HYDROGEN         0.000013823       0.000000000       0.000000000
+
+
+ MOPAC ONE- AND TWO-ELECTRON INTEGRALS REQUIRE        89 WORDS.
+ ...... END OF ONE- AND TWO-ELECTRON INTEGRALS......
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.0 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.2 SECONDS, CPU UTILIZATION IS    12.18%
+ ...... END OF ONE-ELECTRON INTEGRALS ......
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.0 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.2 SECONDS, CPU UTILIZATION IS    12.20%
+
+          --------------------------
+               R-AM1 SCF CALCULATION
+          --------------------------
+     DENSITY MATRIX CONV=  1.00E-05
+
+ ITER EX DEM     TOTAL ENERGY        E CHANGE  DENSITY CHANGE    DIIS ERROR
+   1  0  0       -9.1286939794    -9.1286939794   0.001130523   0.000000000
+   2  1  0       -9.1286957249    -0.0000017455   0.000626011   0.000000000
+   3  2  0       -9.1286962601    -0.0000005352   0.000346646   0.000000000
+   4  3  0       -9.1286964243    -0.0000001641   0.000191952   0.000000000
+   5  4  0       -9.1286964746    -0.0000000503   0.000106291   0.000000000
+   6  5  0       -9.1286964900    -0.0000000154   0.000058858   0.000000000
+   7  6  0       -9.1286964947    -0.0000000047   0.000032592   0.000000000
+   8  7  0       -9.1286964962    -0.0000000015   0.000018048   0.000000000
+   9  8  0       -9.1286964966    -0.0000000004   0.000009994   0.000000000
+  10  9  0       -9.1286964968    -0.0000000001   0.000005534   0.000000000
+
+          -----------------
+          DENSITY CONVERGED
+          -----------------
+     TIME TO FORM FOCK OPERATORS=       0.0 SECONDS (       0.0 SEC/ITER)
+     TIME TO SOLVE SCF EQUATIONS=       0.0 SECONDS (       0.0 SEC/ITER)
+
+ FINAL R-AM1 ENERGY IS       -9.1286964968 AFTER  10 ITERATIONS
+
+ HEAT OF FORMATION IS        -3.04186 KCAL/MOL
+
+
+ Alpha HOMO=    -9.565912 eV, LUMO=    4.158160 eV, gap=   13.724072 eV
+ ...... END OF RHF CALCULATION ......
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.0 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.2 SECONDS, CPU UTILIZATION IS    12.83%
+ ---------------------------------------------------------------------------
+   TIME     MODE     Q              P     KINETIC      POTENTIAL          TOTAL
+    FS       BOHR*SQRT(AMU) BOHR*SQRT(AMU)/FS   E         ENERGY         ENERGY
+    0.1000  L 1      1.013279  0.052823   0.00159       -9.12870       -9.12710
+            L 2      0.000000  0.000000
+            L 3     -0.000004 -0.000000
+            L 4      0.000000  0.000000
+            L 5      0.000005  0.000001
+            L 6     -0.140372 -0.014067
+ ---------------------------------------------------------------------------
+           CARTESIAN COORDINATES (BOHR)               VELOCITY (BOHR/FS)
+ ---------------------------------------------------------------------------
+  7.0    -0.00000    0.00000   -0.00062      -0.00000    0.00000   -0.00616
+  1.0    -0.92275    1.59824    0.00285       0.00000   -0.00000    0.02851
+  1.0    -0.92275   -1.59824    0.00285       0.00000    0.00000    0.02851
+  1.0     1.84549   -0.00000    0.00285      -0.00000   -0.00000    0.02851
+ ---------------------------------------------------------------------------
+
+                         ----------------------
+                         GRADIENT OF THE ENERGY
+                         ----------------------
+
+ UNITS ARE HARTREE/BOHR    E'X               E'Y               E'Z 
+    1 NITROGEN         0.000000002      -0.000000000       0.000220255
+    2 HYDROGEN        -0.000007456       0.000012914      -0.000073418
+    3 HYDROGEN        -0.000007456      -0.000012914      -0.000073418
+    4 HYDROGEN         0.000014911       0.000000000      -0.000073418
+
+ ----- RESTART INFORMATION FOR NEXT DRC RUN:
+ COORDINATES (IN ANGSTROM) FOR $DATA GROUP ARE
+ NITROGEN    7.0       -0.0000000000        0.0000000000       -0.0003257502
+ HYDROGEN    1.0       -0.4882960614        0.8457535873        0.0015086954
+ HYDROGEN    1.0       -0.4882960614       -0.8457535873        0.0015086954
+ HYDROGEN    1.0        0.9765921227       -0.0000000000        0.0015086954
+ $END
+ $DRC NSTEP=??  DELTAT=0.1000  TOTIME=   0.1000
+      NPRTSM= 1  NMANAL=.T.  NPRT= 0  NPUN= 0  NVEL=.TRUE.
+  VEL(1)=  -0.000000000011   0.000000000000  -0.006155786115
+            0.000000643037  -0.000001113681   0.028510208905
+            0.000000643037   0.000001113681   0.028510208905
+           -0.000001285920  -0.000000000000   0.028510208905
+  HESS2=MIN     
+  C0(1) =      0.000000000      0.000000000      0.060175788
+              -0.469265116      0.812791023     -0.278701089
+              -0.469265116     -0.812791023     -0.278701089
+               0.938530232      0.000000000     -0.278701089
+ $END
+
+ MOPAC ONE- AND TWO-ELECTRON INTEGRALS REQUIRE        89 WORDS.
+ ...... END OF ONE- AND TWO-ELECTRON INTEGRALS......
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.0 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.2 SECONDS, CPU UTILIZATION IS    13.09%
+ ...... END OF ONE-ELECTRON INTEGRALS ......
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.0 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.2 SECONDS, CPU UTILIZATION IS    13.10%
+
+          --------------------------
+               R-AM1 SCF CALCULATION
+          --------------------------
+     DENSITY MATRIX CONV=  1.00E-05
+
+ ITER EX DEM     TOTAL ENERGY        E CHANGE  DENSITY CHANGE    DIIS ERROR
+   1  0  0       -9.1286951309    -9.1286951309   0.001133714   0.000000000
+   2  1  0       -9.1286968864    -0.0000017555   0.000627777   0.000000000
+   3  2  0       -9.1286974247    -0.0000005383   0.000347626   0.000000000
+   4  3  0       -9.1286975898    -0.0000001651   0.000192496   0.000000000
+   5  4  0       -9.1286976404    -0.0000000506   0.000106595   0.000000000
+   6  5  0       -9.1286976559    -0.0000000155   0.000059027   0.000000000
+   7  6  0       -9.1286976606    -0.0000000048   0.000032686   0.000000000
+   8  7  0       -9.1286976621    -0.0000000015   0.000018100   0.000000000
+   9  8  0       -9.1286976626    -0.0000000004   0.000010023   0.000000000
+  10  9  0       -9.1286976627    -0.0000000001   0.000005550   0.000000000
+
+          -----------------
+          DENSITY CONVERGED
+          -----------------
+     TIME TO FORM FOCK OPERATORS=       0.0 SECONDS (       0.0 SEC/ITER)
+     TIME TO SOLVE SCF EQUATIONS=       0.0 SECONDS (       0.0 SEC/ITER)
+
+ FINAL R-AM1 ENERGY IS       -9.1286976627 AFTER  10 ITERATIONS
+
+ HEAT OF FORMATION IS        -3.04259 KCAL/MOL
+
+
+ Alpha HOMO=    -9.565970 eV, LUMO=    4.158127 eV, gap=   13.724097 eV
+ ...... END OF RHF CALCULATION ......
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.0 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.2 SECONDS, CPU UTILIZATION IS    12.12%
+ ---------------------------------------------------------------------------
+   TIME     MODE     Q              P     KINETIC      POTENTIAL          TOTAL
+    FS       BOHR*SQRT(AMU) BOHR*SQRT(AMU)/FS   E         ENERGY         ENERGY
+    0.2000  L 1      1.018562  0.052848   0.00160       -9.12870       -9.12710
+            L 2      0.000000  0.000000
+            L 3     -0.000004 -0.000000
+            L 4      0.000000  0.000000
+            L 5      0.000005  0.000001
+            L 6     -0.141779 -0.014076
+ ---------------------------------------------------------------------------
+           CARTESIAN COORDINATES (BOHR)               VELOCITY (BOHR/FS)
+ ---------------------------------------------------------------------------
+  7.0    -0.00000    0.00000   -0.00123      -0.00000    0.00000   -0.00616
+  1.0    -0.92275    1.59824    0.00570       0.00000   -0.00000    0.02852
+  1.0    -0.92275   -1.59824    0.00570       0.00000    0.00000    0.02852
+  1.0     1.84549   -0.00000    0.00570      -0.00000   -0.00000    0.02852
+ ---------------------------------------------------------------------------
+
+                         ----------------------
+                         GRADIENT OF THE ENERGY
+                         ----------------------
+
+ UNITS ARE HARTREE/BOHR    E'X               E'Y               E'Z 
+    1 NITROGEN         0.000000002      -0.000000000       0.000444411
+    2 HYDROGEN        -0.000009084       0.000015733      -0.000148137
+    3 HYDROGEN        -0.000009084      -0.000015733      -0.000148137
+    4 HYDROGEN         0.000018166       0.000000000      -0.000148137
+
+ ----- RESTART INFORMATION FOR NEXT DRC RUN:
+ COORDINATES (IN ANGSTROM) FOR $DATA GROUP ARE
+ NITROGEN    7.0       -0.0000000000        0.0000000000       -0.0006515524
+ HYDROGEN    1.0       -0.4882960086        0.8457534958        0.0030176317
+ HYDROGEN    1.0       -0.4882960086       -0.8457534958        0.0030176317
+ HYDROGEN    1.0        0.9765920170       -0.0000000000        0.0030176317
+ $END
+ $DRC NSTEP=??  DELTAT=0.1000  TOTIME=   0.2000
+      NPRTSM= 1  NMANAL=.T.  NPRT= 0  NPUN= 0  NVEL=.TRUE.
+  VEL(1)=  -0.000000000022   0.000000000000  -0.006158748814
+            0.000001362155  -0.000002359141   0.028523930497
+            0.000001362156   0.000002359141   0.028523930497
+           -0.000002724004  -0.000000000000   0.028523930496
+  HESS2=MIN     
+  C0(1) =      0.000000000      0.000000000      0.060175788
+              -0.469265116      0.812791023     -0.278701089
+              -0.469265116     -0.812791023     -0.278701089
+               0.938530232      0.000000000     -0.278701089
+ $END
+
+ MOPAC ONE- AND TWO-ELECTRON INTEGRALS REQUIRE        89 WORDS.
+ ...... END OF ONE- AND TWO-ELECTRON INTEGRALS......
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.0 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.2 SECONDS, CPU UTILIZATION IS    12.61%
+ ...... END OF ONE-ELECTRON INTEGRALS ......
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.0 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.2 SECONDS, CPU UTILIZATION IS    12.62%
+
+          --------------------------
+               R-AM1 SCF CALCULATION
+          --------------------------
+     DENSITY MATRIX CONV=  1.00E-05
+
+ ITER EX DEM     TOTAL ENERGY        E CHANGE  DENSITY CHANGE    DIIS ERROR
+   1  0  0       -9.1286970722    -9.1286970722   0.001134287   0.000000000
+   2  1  0       -9.1286988298    -0.0000017576   0.000628102   0.000000000
+   3  2  0       -9.1286993687    -0.0000005389   0.000347813   0.000000000
+   4  3  0       -9.1286995340    -0.0000001653   0.000192604   0.000000000
+   5  4  0       -9.1286995847    -0.0000000507   0.000106657   0.000000000
+   6  5  0       -9.1286996002    -0.0000000155   0.000059063   0.000000000
+   7  6  0       -9.1286996050    -0.0000000048   0.000032707   0.000000000
+   8  7  0       -9.1286996065    -0.0000000015   0.000018112   0.000000000
+   9  8  0       -9.1286996069    -0.0000000004   0.000010030   0.000000000
+  10  9  0       -9.1286996070    -0.0000000001   0.000005554   0.000000000
+
+          -----------------
+          DENSITY CONVERGED
+          -----------------
+     TIME TO FORM FOCK OPERATORS=       0.0 SECONDS (       0.0 SEC/ITER)
+     TIME TO SOLVE SCF EQUATIONS=       0.0 SECONDS (       0.0 SEC/ITER)
+
+ FINAL R-AM1 ENERGY IS       -9.1286996070 AFTER  10 ITERATIONS
+
+ HEAT OF FORMATION IS        -3.04381 KCAL/MOL
+
+
+ Alpha HOMO=    -9.566067 eV, LUMO=    4.158071 eV, gap=   13.724138 eV
+ ...... END OF RHF CALCULATION ......
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.0 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.2 SECONDS, CPU UTILIZATION IS    12.02%
+ ---------------------------------------------------------------------------
+   TIME     MODE     Q              P     KINETIC      POTENTIAL          TOTAL
+    FS       BOHR*SQRT(AMU) BOHR*SQRT(AMU)/FS   E         ENERGY         ENERGY
+    0.3000  L 1      1.023849  0.052880   0.00160       -9.12870       -9.12710
+            L 2      0.000000  0.000000
+            L 3     -0.000004 -0.000000
+            L 4      0.000000  0.000000
+            L 5      0.000005  0.000001
+            L 6     -0.143187 -0.014088
+ ---------------------------------------------------------------------------
+           CARTESIAN COORDINATES (BOHR)               VELOCITY (BOHR/FS)
+ ---------------------------------------------------------------------------
+  7.0    -0.00000    0.00000   -0.00185      -0.00000    0.00000   -0.00616
+  1.0    -0.92275    1.59824    0.00856       0.00000   -0.00000    0.02854
+  1.0    -0.92275   -1.59824    0.00856       0.00000    0.00000    0.02854
+  1.0     1.84549   -0.00000    0.00856      -0.00000   -0.00000    0.02854
+ ---------------------------------------------------------------------------
+
+                         ----------------------
+                         GRADIENT OF THE ENERGY
+                         ----------------------
+
+ UNITS ARE HARTREE/BOHR    E'X               E'Y               E'Z 
+    1 NITROGEN         0.000000002       0.000000000       0.000668593
+    2 HYDROGEN        -0.000011790       0.000020419      -0.000222864
+    3 HYDROGEN        -0.000011790      -0.000020419      -0.000222864
+    4 HYDROGEN         0.000023578      -0.000000000      -0.000222864
+
+ ----- RESTART INFORMATION FOR NEXT DRC RUN:
+ COORDINATES (IN ANGSTROM) FOR $DATA GROUP ARE
+ NITROGEN    7.0       -0.0000000000        0.0000000000       -0.0009775515
+ HYDROGEN    1.0       -0.4882959121        0.8457533288        0.0045274800
+ HYDROGEN    1.0       -0.4882959121       -0.8457533288        0.0045274800
+ HYDROGEN    1.0        0.9765918242       -0.0000000000        0.0045274800
+ $END
+ $DRC NSTEP=??  DELTAT=0.1000  TOTIME=   0.3000
+      NPRTSM= 1  NMANAL=.T.  NPRT= 0  NPUN= 0  NVEL=.TRUE.
+  VEL(1)=  -0.000000000033   0.000000000000  -0.006162524524
+            0.000002324919  -0.000004026607   0.028541417502
+            0.000002324919   0.000004026606   0.028541417501
+           -0.000004649379  -0.000000000000   0.028541417503
+  HESS2=MIN     
+  C0(1) =      0.000000000      0.000000000      0.060175788
+              -0.469265116      0.812791023     -0.278701089
+              -0.469265116     -0.812791023     -0.278701089
+               0.938530232      0.000000000     -0.278701089
+ $END
+
+ MOPAC ONE- AND TWO-ELECTRON INTEGRALS REQUIRE        89 WORDS.
+ ...... END OF ONE- AND TWO-ELECTRON INTEGRALS......
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.0 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.2 SECONDS, CPU UTILIZATION IS    12.23%
+ ...... END OF ONE-ELECTRON INTEGRALS ......
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.0 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.2 SECONDS, CPU UTILIZATION IS    12.24%
+
+          --------------------------
+               R-AM1 SCF CALCULATION
+          --------------------------
+     DENSITY MATRIX CONV=  1.00E-05
+
+ ITER EX DEM     TOTAL ENERGY        E CHANGE  DENSITY CHANGE    DIIS ERROR
+   1  0  0       -9.1286997927    -9.1286997927   0.001134935   0.000000000
+   2  1  0       -9.1287015527    -0.0000017600   0.000628477   0.000000000
+   3  2  0       -9.1287020925    -0.0000005397   0.000348031   0.000000000
+   4  3  0       -9.1287022580    -0.0000001655   0.000192732   0.000000000
+   5  4  0       -9.1287023088    -0.0000000508   0.000106732   0.000000000
+   6  5  0       -9.1287023243    -0.0000000156   0.000059107   0.000000000
+   7  6  0       -9.1287023291    -0.0000000048   0.000032733   0.000000000
+   8  7  0       -9.1287023306    -0.0000000015   0.000018127   0.000000000
+   9  8  0       -9.1287023310    -0.0000000004   0.000010039   0.000000000
+  10  9  0       -9.1287023312    -0.0000000001   0.000005559   0.000000000
+
+          -----------------
+          DENSITY CONVERGED
+          -----------------
+     TIME TO FORM FOCK OPERATORS=       0.0 SECONDS (       0.0 SEC/ITER)
+     TIME TO SOLVE SCF EQUATIONS=       0.0 SECONDS (       0.0 SEC/ITER)
+
+ FINAL R-AM1 ENERGY IS       -9.1287023312 AFTER  10 ITERATIONS
+
+ HEAT OF FORMATION IS        -3.04552 KCAL/MOL
+
+
+ Alpha HOMO=    -9.566204 eV, LUMO=    4.157993 eV, gap=   13.724197 eV
+ ...... END OF RHF CALCULATION ......
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.0 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.2 SECONDS, CPU UTILIZATION IS    12.69%
+ ---------------------------------------------------------------------------
+   TIME     MODE     Q              P     KINETIC      POTENTIAL          TOTAL
+    FS       BOHR*SQRT(AMU) BOHR*SQRT(AMU)/FS   E         ENERGY         ENERGY
+    0.4000  L 1      1.029139  0.052924   0.00160       -9.12870       -9.12710
+            L 2      0.000001  0.000000
+            L 3     -0.000004 -0.000000
+            L 4      0.000000  0.000000
+            L 5      0.000005  0.000001
+            L 6     -0.144597 -0.014104
+ ---------------------------------------------------------------------------
+           CARTESIAN COORDINATES (BOHR)               VELOCITY (BOHR/FS)
+ ---------------------------------------------------------------------------
+  7.0    -0.00000    0.00000   -0.00246      -0.00000    0.00000   -0.00617
+  1.0    -0.92275    1.59824    0.01141       0.00000   -0.00001    0.02857
+  1.0    -0.92275   -1.59824    0.01141       0.00000    0.00001    0.02857
+  1.0     1.84549   -0.00000    0.01141      -0.00001   -0.00000    0.02857
+ ---------------------------------------------------------------------------
+
+                         ----------------------
+                         GRADIENT OF THE ENERGY
+                         ----------------------
+
+ UNITS ARE HARTREE/BOHR    E'X               E'Y               E'Z 
+    1 NITROGEN         0.000000002      -0.000000000       0.000892761
+    2 HYDROGEN        -0.000015562       0.000026953      -0.000297587
+    3 HYDROGEN        -0.000015562      -0.000026953      -0.000297587
+    4 HYDROGEN         0.000031122       0.000000000      -0.000297587
+
+ ----- RESTART INFORMATION FOR NEXT DRC RUN:
+ COORDINATES (IN ANGSTROM) FOR $DATA GROUP ARE
+ NITROGEN    7.0       -0.0000000000        0.0000000000       -0.0013037900
+ HYDROGEN    1.0       -0.4882957572        0.8457530605        0.0060384367
+ HYDROGEN    1.0       -0.4882957572       -0.8457530605        0.0060384367
+ HYDROGEN    1.0        0.9765915143       -0.0000000000        0.0060384367
+ $END
+ $DRC NSTEP=??  DELTAT=0.1000  TOTIME=   0.4000
+      NPRTSM= 1  NMANAL=.T.  NPRT= 0  NPUN= 0  NVEL=.TRUE.
+  VEL(1)=  -0.000000000044   0.000000000000  -0.006167767137
+            0.000003589368  -0.000006216608   0.028565698400
+            0.000003589368   0.000006216607   0.028565698400
+           -0.000007178129  -0.000000000000   0.028565698400
+  HESS2=MIN     
+  C0(1) =      0.000000000      0.000000000      0.060175788
+              -0.469265116      0.812791023     -0.278701089
+              -0.469265116     -0.812791023     -0.278701089
+               0.938530232      0.000000000     -0.278701089
+ $END
+
+ MOPAC ONE- AND TWO-ELECTRON INTEGRALS REQUIRE        89 WORDS.
+ ...... END OF ONE- AND TWO-ELECTRON INTEGRALS......
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.0 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.2 SECONDS, CPU UTILIZATION IS    12.70%
+ ...... END OF ONE-ELECTRON INTEGRALS ......
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.0 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.2 SECONDS, CPU UTILIZATION IS    12.71%
+
+          --------------------------
+               R-AM1 SCF CALCULATION
+          --------------------------
+     DENSITY MATRIX CONV=  1.00E-05
+
+ ITER EX DEM     TOTAL ENERGY        E CHANGE  DENSITY CHANGE    DIIS ERROR
+   1  0  0       -9.1287032937    -9.1287032937   0.001135787   0.000000000
+   2  1  0       -9.1287050570    -0.0000017633   0.000628974   0.000000000
+   3  2  0       -9.1287055978    -0.0000005408   0.000348322   0.000000000
+   4  3  0       -9.1287057636    -0.0000001659   0.000192903   0.000000000
+   5  4  0       -9.1287058145    -0.0000000509   0.000106832   0.000000000
+   6  5  0       -9.1287058301    -0.0000000156   0.000059166   0.000000000
+   7  6  0       -9.1287058349    -0.0000000048   0.000032767   0.000000000
+   8  7  0       -9.1287058364    -0.0000000015   0.000018147   0.000000000
+   9  8  0       -9.1287058368    -0.0000000005   0.000010050   0.000000000
+  10  9  0       -9.1287058370    -0.0000000001   0.000005566   0.000000000
+
+          -----------------
+          DENSITY CONVERGED
+          -----------------
+     TIME TO FORM FOCK OPERATORS=       0.0 SECONDS (       0.0 SEC/ITER)
+     TIME TO SOLVE SCF EQUATIONS=       0.0 SECONDS (       0.0 SEC/ITER)
+
+ FINAL R-AM1 ENERGY IS       -9.1287058370 AFTER  10 ITERATIONS
+
+ HEAT OF FORMATION IS        -3.04772 KCAL/MOL
+
+
+ Alpha HOMO=    -9.566380 eV, LUMO=    4.157893 eV, gap=   13.724274 eV
+ ...... END OF RHF CALCULATION ......
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.0 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.2 SECONDS, CPU UTILIZATION IS    12.18%
+ ---------------------------------------------------------------------------
+   TIME     MODE     Q              P     KINETIC      POTENTIAL          TOTAL
+    FS       BOHR*SQRT(AMU) BOHR*SQRT(AMU)/FS   E         ENERGY         ENERGY
+    0.5000  L 1      1.034434  0.052980   0.00160       -9.12871       -9.12710
+            L 2      0.000001  0.000000
+            L 3     -0.000004 -0.000000
+            L 4      0.000000  0.000000
+            L 5      0.000005  0.000001
+            L 6     -0.146008 -0.014125
+ ---------------------------------------------------------------------------
+           CARTESIAN COORDINATES (BOHR)               VELOCITY (BOHR/FS)
+ ---------------------------------------------------------------------------
+  7.0    -0.00000    0.00000   -0.00308      -0.00000    0.00000   -0.00617
+  1.0    -0.92274    1.59824    0.01427       0.00001   -0.00001    0.02860
+  1.0    -0.92274   -1.59824    0.01427       0.00001    0.00001    0.02860
+  1.0     1.84549   -0.00000    0.01427      -0.00001   -0.00000    0.02860
+ ---------------------------------------------------------------------------
+
+                         ----------------------
+                         GRADIENT OF THE ENERGY
+                         ----------------------
+
+ UNITS ARE HARTREE/BOHR    E'X               E'Y               E'Z 
+    1 NITROGEN         0.000000002      -0.000000000       0.001116908
+    2 HYDROGEN        -0.000020386       0.000035309      -0.000372303
+    3 HYDROGEN        -0.000020386      -0.000035309      -0.000372303
+    4 HYDROGEN         0.000040771       0.000000000      -0.000372303
+
+ ----- RESTART INFORMATION FOR NEXT DRC RUN:
+ COORDINATES (IN ANGSTROM) FOR $DATA GROUP ARE
+ NITROGEN    7.0       -0.0000000000        0.0000000000       -0.0016303456
+ HYDROGEN    1.0       -0.4882955252        0.8457526587        0.0075508623
+ HYDROGEN    1.0       -0.4882955252       -0.8457526587        0.0075508623
+ HYDROGEN    1.0        0.9765910504       -0.0000000000        0.0075508623
+ $END
+ $DRC NSTEP=??  DELTAT=0.1000  TOTIME=   0.5000
+      NPRTSM= 1  NMANAL=.T.  NPRT= 0  NPUN= 0  NVEL=.TRUE.
+  VEL(1)=  -0.000000000055   0.000000000000  -0.006174521196
+            0.000005253901  -0.000009099574   0.028596979479
+            0.000005253901   0.000009099573   0.028596979477
+           -0.000010507044  -0.000000000000   0.028596979478
+  HESS2=MIN     
+  C0(1) =      0.000000000      0.000000000      0.060175788
+              -0.469265116      0.812791023     -0.278701089
+              -0.469265116     -0.812791023     -0.278701089
+               0.938530232      0.000000000     -0.278701089
+ $END
+
+ MOPAC ONE- AND TWO-ELECTRON INTEGRALS REQUIRE        89 WORDS.
+ ...... END OF ONE- AND TWO-ELECTRON INTEGRALS......
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.0 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.2 SECONDS, CPU UTILIZATION IS    12.37%
+ ...... END OF ONE-ELECTRON INTEGRALS ......
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.0 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.2 SECONDS, CPU UTILIZATION IS    12.38%
+
+          --------------------------
+               R-AM1 SCF CALCULATION
+          --------------------------
+     DENSITY MATRIX CONV=  1.00E-05
+
+ ITER EX DEM     TOTAL ENERGY        E CHANGE  DENSITY CHANGE    DIIS ERROR
+   1  0  0       -9.1287075777    -9.1287075777   0.001136851   0.000000000
+   2  1  0       -9.1287093451    -0.0000017674   0.000629596   0.000000000
+   3  2  0       -9.1287098872    -0.0000005421   0.000348687   0.000000000
+   4  3  0       -9.1287100535    -0.0000001663   0.000193117   0.000000000
+   5  4  0       -9.1287101045    -0.0000000510   0.000106958   0.000000000
+   6  5  0       -9.1287101201    -0.0000000156   0.000059239   0.000000000
+   7  6  0       -9.1287101249    -0.0000000048   0.000032810   0.000000000
+   8  7  0       -9.1287101264    -0.0000000015   0.000018172   0.000000000
+   9  8  0       -9.1287101268    -0.0000000005   0.000010065   0.000000000
+  10  9  0       -9.1287101270    -0.0000000001   0.000005575   0.000000000
+
+          -----------------
+          DENSITY CONVERGED
+          -----------------
+     TIME TO FORM FOCK OPERATORS=       0.0 SECONDS (       0.0 SEC/ITER)
+     TIME TO SOLVE SCF EQUATIONS=       0.0 SECONDS (       0.0 SEC/ITER)
+
+ FINAL R-AM1 ENERGY IS       -9.1287101270 AFTER  10 ITERATIONS
+
+ HEAT OF FORMATION IS        -3.05042 KCAL/MOL
+
+
+ Alpha HOMO=    -9.566596 eV, LUMO=    4.157772 eV, gap=   13.724369 eV
+ ...... END OF RHF CALCULATION ......
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.0 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.2 SECONDS, CPU UTILIZATION IS    12.41%
+ ---------------------------------------------------------------------------
+   TIME     MODE     Q              P     KINETIC      POTENTIAL          TOTAL
+    FS       BOHR*SQRT(AMU) BOHR*SQRT(AMU)/FS   E         ENERGY         ENERGY
+    0.6000  L 1      1.039735  0.053049   0.00161       -9.12871       -9.12710
+            L 2      0.000001  0.000000
+            L 3     -0.000004 -0.000000
+            L 4      0.000000  0.000000
+            L 5      0.000006  0.000001
+            L 6     -0.147422 -0.014152
+ ---------------------------------------------------------------------------
+           CARTESIAN COORDINATES (BOHR)               VELOCITY (BOHR/FS)
+ ---------------------------------------------------------------------------
+  7.0    -0.00000    0.00000   -0.00370      -0.00000    0.00000   -0.00618
+  1.0    -0.92274    1.59824    0.01713       0.00001   -0.00001    0.02864
+  1.0    -0.92274   -1.59824    0.01713       0.00001    0.00001    0.02864
+  1.0     1.84549   -0.00000    0.01713      -0.00001   -0.00000    0.02864
+ ---------------------------------------------------------------------------
+
+                         ----------------------
+                         GRADIENT OF THE ENERGY
+                         ----------------------
+
+ UNITS ARE HARTREE/BOHR    E'X               E'Y               E'Z 
+    1 NITROGEN         0.000000002      -0.000000000       0.001341031
+    2 HYDROGEN        -0.000026244       0.000045455      -0.000447010
+    3 HYDROGEN        -0.000026244      -0.000045455      -0.000447010
+    4 HYDROGEN         0.000052486       0.000000000      -0.000447010
+
+ ----- RESTART INFORMATION FOR NEXT DRC RUN:
+ COORDINATES (IN ANGSTROM) FOR $DATA GROUP ARE
+ NITROGEN    7.0       -0.0000000000        0.0000000000       -0.0019572983
+ HYDROGEN    1.0       -0.4882951924        0.8457520822        0.0090651271
+ HYDROGEN    1.0       -0.4882951924       -0.8457520822        0.0090651271
+ HYDROGEN    1.0        0.9765903848       -0.0000000000        0.0090651271
+ $END
+ $DRC NSTEP=??  DELTAT=0.1000  TOTIME=   0.6000
+      NPRTSM= 1  NMANAL=.T.  NPRT= 0  NPUN= 0  NVEL=.TRUE.
+  VEL(1)=  -0.000000000065   0.000000000000  -0.006182775994
+            0.000007415602  -0.000012843661   0.028635211149
+            0.000007415602   0.000012843659   0.028635211150
+           -0.000014830300  -0.000000000000   0.028635211151
+  HESS2=MIN     
+  C0(1) =      0.000000000      0.000000000      0.060175788
+              -0.469265116      0.812791023     -0.278701089
+              -0.469265116     -0.812791023     -0.278701089
+               0.938530232      0.000000000     -0.278701089
+ $END
+
+ MOPAC ONE- AND TWO-ELECTRON INTEGRALS REQUIRE        89 WORDS.
+ ...... END OF ONE- AND TWO-ELECTRON INTEGRALS......
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.0 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.2 SECONDS, CPU UTILIZATION IS    12.60%
+ ...... END OF ONE-ELECTRON INTEGRALS ......
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.0 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.2 SECONDS, CPU UTILIZATION IS    12.60%
+
+          --------------------------
+               R-AM1 SCF CALCULATION
+          --------------------------
+     DENSITY MATRIX CONV=  1.00E-05
+
+ ITER EX DEM     TOTAL ENERGY        E CHANGE  DENSITY CHANGE    DIIS ERROR
+   1  0  0       -9.1287126478    -9.1287126478   0.001138125   0.000000000
+   2  1  0       -9.1287144201    -0.0000017723   0.000630344   0.000000000
+   3  2  0       -9.1287149638    -0.0000005437   0.000349126   0.000000000
+   4  3  0       -9.1287151306    -0.0000001668   0.000193374   0.000000000
+   5  4  0       -9.1287151817    -0.0000000512   0.000107109   0.000000000
+   6  5  0       -9.1287151974    -0.0000000157   0.000059327   0.000000000
+   7  6  0       -9.1287152022    -0.0000000048   0.000032861   0.000000000
+   8  7  0       -9.1287152037    -0.0000000015   0.000018202   0.000000000
+   9  8  0       -9.1287152042    -0.0000000005   0.000010082   0.000000000
+  10  9  0       -9.1287152043    -0.0000000001   0.000005585   0.000000000
+
+          -----------------
+          DENSITY CONVERGED
+          -----------------
+     TIME TO FORM FOCK OPERATORS=       0.0 SECONDS (       0.0 SEC/ITER)
+     TIME TO SOLVE SCF EQUATIONS=       0.0 SECONDS (       0.0 SEC/ITER)
+
+ FINAL R-AM1 ENERGY IS       -9.1287152043 AFTER  10 ITERATIONS
+
+ HEAT OF FORMATION IS        -3.05360 KCAL/MOL
+
+
+ Alpha HOMO=    -9.566853 eV, LUMO=    4.157630 eV, gap=   13.724483 eV
+ ...... END OF RHF CALCULATION ......
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.0 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.3 SECONDS, CPU UTILIZATION IS    12.15%
+ ---------------------------------------------------------------------------
+   TIME     MODE     Q              P     KINETIC      POTENTIAL          TOTAL
+    FS       BOHR*SQRT(AMU) BOHR*SQRT(AMU)/FS   E         ENERGY         ENERGY
+    0.7000  L 1      1.045044  0.053130   0.00161       -9.12872       -9.12710
+            L 2      0.000001  0.000000
+            L 3     -0.000004 -0.000000
+            L 4      0.000000  0.000000
+            L 5      0.000006  0.000001
+            L 6     -0.148839 -0.014183
+ ---------------------------------------------------------------------------
+           CARTESIAN COORDINATES (BOHR)               VELOCITY (BOHR/FS)
+ ---------------------------------------------------------------------------
+  7.0    -0.00000    0.00000   -0.00432      -0.00000    0.00000   -0.00619
+  1.0    -0.92274    1.59824    0.02000       0.00001   -0.00002    0.02868
+  1.0    -0.92274   -1.59824    0.02000       0.00001    0.00002    0.02868
+  1.0     1.84549   -0.00000    0.02000      -0.00002   -0.00000    0.02868
+ ---------------------------------------------------------------------------
+
+                         ----------------------
+                         GRADIENT OF THE ENERGY
+                         ----------------------
+
+ UNITS ARE HARTREE/BOHR    E'X               E'Y               E'Z 
+    1 NITROGEN         0.000000002       0.000000000       0.001565126
+    2 HYDROGEN        -0.000033113       0.000057352      -0.000521709
+    3 HYDROGEN        -0.000033113      -0.000057352      -0.000521709
+    4 HYDROGEN         0.000066224      -0.000000000      -0.000521709
+
+ ----- RESTART INFORMATION FOR NEXT DRC RUN:
+ COORDINATES (IN ANGSTROM) FOR $DATA GROUP ARE
+ NITROGEN    7.0       -0.0000000000        0.0000000000       -0.0022847275
+ HYDROGEN    1.0       -0.4882947299        0.8457512813        0.0105815989
+ HYDROGEN    1.0       -0.4882947299       -0.8457512813        0.0105815989
+ HYDROGEN    1.0        0.9765894599       -0.0000000000        0.0105815989
+ $END
+ $DRC NSTEP=??  DELTAT=0.1000  TOTIME=   0.7000
+      NPRTSM= 1  NMANAL=.T.  NPRT= 0  NPUN= 0  NVEL=.TRUE.
+  VEL(1)=  -0.000000000075   0.000000000000  -0.006192531303
+            0.000010169603  -0.000017613644   0.028680392368
+            0.000010169604   0.000017613642   0.028680392368
+           -0.000020338161  -0.000000000000   0.028680392369
+  HESS2=MIN     
+  C0(1) =      0.000000000      0.000000000      0.060175788
+              -0.469265116      0.812791023     -0.278701089
+              -0.469265116     -0.812791023     -0.278701089
+               0.938530232      0.000000000     -0.278701089
+ $END
+
+ MOPAC ONE- AND TWO-ELECTRON INTEGRALS REQUIRE        89 WORDS.
+ ...... END OF ONE- AND TWO-ELECTRON INTEGRALS......
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.0 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.3 SECONDS, CPU UTILIZATION IS    12.31%
+ ...... END OF ONE-ELECTRON INTEGRALS ......
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.0 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.3 SECONDS, CPU UTILIZATION IS    12.31%
+
+          --------------------------
+               R-AM1 SCF CALCULATION
+          --------------------------
+     DENSITY MATRIX CONV=  1.00E-05
+
+ ITER EX DEM     TOTAL ENERGY        E CHANGE  DENSITY CHANGE    DIIS ERROR
+   1  0  0       -9.1287185077    -9.1287185077   0.001139607   0.000000000
+   2  1  0       -9.1287202857    -0.0000017780   0.000631215   0.000000000
+   3  2  0       -9.1287208312    -0.0000005455   0.000349638   0.000000000
+   4  3  0       -9.1287209986    -0.0000001674   0.000193675   0.000000000
+   5  4  0       -9.1287210499    -0.0000000514   0.000107284   0.000000000
+   6  5  0       -9.1287210657    -0.0000000158   0.000059430   0.000000000
+   7  6  0       -9.1287210705    -0.0000000048   0.000032921   0.000000000
+   8  7  0       -9.1287210720    -0.0000000015   0.000018237   0.000000000
+   9  8  0       -9.1287210725    -0.0000000005   0.000010102   0.000000000
+  10  9  0       -9.1287210726    -0.0000000001   0.000005596   0.000000000
+
+          -----------------
+          DENSITY CONVERGED
+          -----------------
+     TIME TO FORM FOCK OPERATORS=       0.0 SECONDS (       0.0 SEC/ITER)
+     TIME TO SOLVE SCF EQUATIONS=       0.0 SECONDS (       0.0 SEC/ITER)
+
+ FINAL R-AM1 ENERGY IS       -9.1287210726 AFTER  10 ITERATIONS
+
+ HEAT OF FORMATION IS        -3.05729 KCAL/MOL
+
+
+ Alpha HOMO=    -9.567150 eV, LUMO=    4.157467 eV, gap=   13.724617 eV
+ ...... END OF RHF CALCULATION ......
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.0 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.3 SECONDS, CPU UTILIZATION IS    12.67%
+ ---------------------------------------------------------------------------
+   TIME     MODE     Q              P     KINETIC      POTENTIAL          TOTAL
+    FS       BOHR*SQRT(AMU) BOHR*SQRT(AMU)/FS   E         ENERGY         ENERGY
+    0.8000  L 1      1.050362  0.053224   0.00162       -9.12872       -9.12710
+            L 2      0.000001  0.000000
+            L 3     -0.000004 -0.000000
+            L 4      0.000000  0.000000
+            L 5      0.000006  0.000001
+            L 6     -0.150259 -0.014220
+ ---------------------------------------------------------------------------
+           CARTESIAN COORDINATES (BOHR)               VELOCITY (BOHR/FS)
+ ---------------------------------------------------------------------------
+  7.0    -0.00000    0.00000   -0.00494      -0.00000    0.00000   -0.00620
+  1.0    -0.92274    1.59824    0.02287       0.00001   -0.00002    0.02873
+  1.0    -0.92274   -1.59824    0.02287       0.00001    0.00002    0.02873
+  1.0     1.84548   -0.00000    0.02287      -0.00003   -0.00000    0.02873
+ ---------------------------------------------------------------------------
+
+                         ----------------------
+                         GRADIENT OF THE ENERGY
+                         ----------------------
+
+ UNITS ARE HARTREE/BOHR    E'X               E'Y               E'Z 
+    1 NITROGEN         0.000000001      -0.000000000       0.001789189
+    2 HYDROGEN        -0.000040966       0.000070955      -0.000596396
+    3 HYDROGEN        -0.000040966      -0.000070955      -0.000596396
+    4 HYDROGEN         0.000081931      -0.000000000      -0.000596396
+
+ ----- RESTART INFORMATION FOR NEXT DRC RUN:
+ COORDINATES (IN ANGSTROM) FOR $DATA GROUP ARE
+ NITROGEN    7.0       -0.0000000000        0.0000000000       -0.0026127127
+ HYDROGEN    1.0       -0.4882941040        0.8457501972        0.0121006455
+ HYDROGEN    1.0       -0.4882941040       -0.8457501972        0.0121006455
+ HYDROGEN    1.0        0.9765882082       -0.0000000000        0.0121006455
+ $END
+ $DRC NSTEP=??  DELTAT=0.1000  TOTIME=   0.8000
+      NPRTSM= 1  NMANAL=.T.  NPRT= 0  NPUN= 0  NVEL=.TRUE.
+  VEL(1)=  -0.000000000086   0.000000000000  -0.006203786925
+            0.000013608781  -0.000023570384   0.028732522208
+            0.000013608782   0.000023570383   0.028732522208
+           -0.000027216372  -0.000000000000   0.028732522208
+  HESS2=MIN     
+  C0(1) =      0.000000000      0.000000000      0.060175788
+              -0.469265116      0.812791023     -0.278701089
+              -0.469265116     -0.812791023     -0.278701089
+               0.938530232      0.000000000     -0.278701089
+ $END
+
+ MOPAC ONE- AND TWO-ELECTRON INTEGRALS REQUIRE        89 WORDS.
+ ...... END OF ONE- AND TWO-ELECTRON INTEGRALS......
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.0 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.3 SECONDS, CPU UTILIZATION IS    11.76%
+ ...... END OF ONE-ELECTRON INTEGRALS ......
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.0 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.3 SECONDS, CPU UTILIZATION IS    11.76%
+
+          --------------------------
+               R-AM1 SCF CALCULATION
+          --------------------------
+     DENSITY MATRIX CONV=  1.00E-05
+
+ ITER EX DEM     TOTAL ENERGY        E CHANGE  DENSITY CHANGE    DIIS ERROR
+   1  0  0       -9.1287251615    -9.1287251615   0.001141299   0.000000000
+   2  1  0       -9.1287269461    -0.0000017846   0.000632211   0.000000000
+   3  2  0       -9.1287274937    -0.0000005476   0.000350223   0.000000000
+   4  3  0       -9.1287276618    -0.0000001681   0.000194018   0.000000000
+   5  4  0       -9.1287277134    -0.0000000516   0.000107486   0.000000000
+   6  5  0       -9.1287277292    -0.0000000158   0.000059548   0.000000000
+   7  6  0       -9.1287277341    -0.0000000049   0.000032990   0.000000000
+   8  7  0       -9.1287277356    -0.0000000015   0.000018277   0.000000000
+   9  8  0       -9.1287277360    -0.0000000005   0.000010126   0.000000000
+  10  9  0       -9.1287277362    -0.0000000001   0.000005610   0.000000000
+
+          -----------------
+          DENSITY CONVERGED
+          -----------------
+     TIME TO FORM FOCK OPERATORS=       0.0 SECONDS (       0.0 SEC/ITER)
+     TIME TO SOLVE SCF EQUATIONS=       0.0 SECONDS (       0.0 SEC/ITER)
+
+ FINAL R-AM1 ENERGY IS       -9.1287277362 AFTER  10 ITERATIONS
+
+ HEAT OF FORMATION IS        -3.06147 KCAL/MOL
+
+
+ Alpha HOMO=    -9.567488 eV, LUMO=    4.157284 eV, gap=   13.724772 eV
+ ...... END OF RHF CALCULATION ......
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.0 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.3 SECONDS, CPU UTILIZATION IS    12.10%
+ ---------------------------------------------------------------------------
+   TIME     MODE     Q              P     KINETIC      POTENTIAL          TOTAL
+    FS       BOHR*SQRT(AMU) BOHR*SQRT(AMU)/FS   E         ENERGY         ENERGY
+    0.9000  L 1      1.055689  0.053329   0.00163       -9.12873       -9.12710
+            L 2      0.000001  0.000000
+            L 3     -0.000004 -0.000000
+            L 4      0.000000  0.000000
+            L 5      0.000006  0.000001
+            L 6     -0.151683 -0.014264
+ ---------------------------------------------------------------------------
+           CARTESIAN COORDINATES (BOHR)               VELOCITY (BOHR/FS)
+ ---------------------------------------------------------------------------
+  7.0    -0.00000    0.00000   -0.00556      -0.00000    0.00000   -0.00622
+  1.0    -0.92274    1.59823    0.02574       0.00002   -0.00003    0.02879
+  1.0    -0.92274   -1.59823    0.02574       0.00002    0.00003    0.02879
+  1.0     1.84548   -0.00000    0.02574      -0.00004   -0.00000    0.02879
+ ---------------------------------------------------------------------------
+
+                         ----------------------
+                         GRADIENT OF THE ENERGY
+                         ----------------------
+
+ UNITS ARE HARTREE/BOHR    E'X               E'Y               E'Z 
+    1 NITROGEN         0.000000001       0.000000000       0.002013217
+    2 HYDROGEN        -0.000049775       0.000086212      -0.000671072
+    3 HYDROGEN        -0.000049775      -0.000086212      -0.000671072
+    4 HYDROGEN         0.000099549      -0.000000000      -0.000671072
+
+ ----- RESTART INFORMATION FOR NEXT DRC RUN:
+ COORDINATES (IN ANGSTROM) FOR $DATA GROUP ARE
+ NITROGEN    7.0       -0.0000000000        0.0000000000       -0.0029413332
+ HYDROGEN    1.0       -0.4882932760        0.8457487630        0.0136226344
+ HYDROGEN    1.0       -0.4882932760       -0.8457487630        0.0136226344
+ HYDROGEN    1.0        0.9765865522       -0.0000000000        0.0136226344
+ $END
+ $DRC NSTEP=??  DELTAT=0.1000  TOTIME=   0.9000
+      NPRTSM= 1  NMANAL=.T.  NPRT= 0  NPUN= 0  NVEL=.TRUE.
+  VEL(1)=  -0.000000000095   0.000000000000  -0.006216542646
+            0.000017823401  -0.000030870236   0.028791599676
+            0.000017823403   0.000030870233   0.028791599676
+           -0.000035645477  -0.000000000000   0.028791599677
+  HESS2=MIN     
+  C0(1) =      0.000000000      0.000000000      0.060175788
+              -0.469265116      0.812791023     -0.278701089
+              -0.469265116     -0.812791023     -0.278701089
+               0.938530232      0.000000000     -0.278701089
+ $END
+
+          ********************
+          1 ELECTRON INTEGRALS
+          ********************
+
+          **************************
+          1 AND 2 ELECTRON INTEGRALS
+          **************************
+
+ MOPAC ONE- AND TWO-ELECTRON INTEGRALS REQUIRE        89 WORDS.
+ ...... END OF ONE- AND TWO-ELECTRON INTEGRALS......
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.0 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.3 SECONDS, CPU UTILIZATION IS    12.26%
+ ...... END OF ONE-ELECTRON INTEGRALS ......
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.0 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.3 SECONDS, CPU UTILIZATION IS    12.27%
+
+          --------------------------
+               R-AM1 SCF CALCULATION
+          --------------------------
+
+     NUCLEAR ENERGY =         6.8999101104
+     MAXIT =   30     NPUNCH=    2
+     EXTRAP=T  DAMP=F  SHIFT=F  RSTRCT=F  DIIS=F  DEM=F  SOSCF=F
+     DENSITY MATRIX CONV=  1.00E-05
+     MEMORY REQUIRED FOR RHF ITERS=       538 WORDS.
+
+ ITER EX DEM     TOTAL ENERGY        E CHANGE  DENSITY CHANGE    DIIS ERROR
+   1  0  0       -9.1287326143    -9.1287326143   0.001143198   0.000000000
+   2  1  0       -9.1287344062    -0.0000017919   0.000633330   0.000000000
+   3  2  0       -9.1287349563    -0.0000005500   0.000350881   0.000000000
+   4  3  0       -9.1287351251    -0.0000001688   0.000194404   0.000000000
+   5  4  0       -9.1287351769    -0.0000000518   0.000107712   0.000000000
+   6  5  0       -9.1287351929    -0.0000000159   0.000059680   0.000000000
+   7  6  0       -9.1287351977    -0.0000000049   0.000033067   0.000000000
+   8  7  0       -9.1287351992    -0.0000000015   0.000018322   0.000000000
+   9  8  0       -9.1287351997    -0.0000000005   0.000010152   0.000000000
+  10  9  0       -9.1287351998    -0.0000000001   0.000005625   0.000000000
+
+          -----------------
+          DENSITY CONVERGED
+          -----------------
+     TIME TO FORM FOCK OPERATORS=       0.0 SECONDS (       0.0 SEC/ITER)
+     TIME TO SOLVE SCF EQUATIONS=       0.0 SECONDS (       0.0 SEC/ITER)
+
+ FINAL R-AM1 ENERGY IS       -9.1287351998 AFTER  10 ITERATIONS
+
+ HEAT OF FORMATION IS        -3.06615 KCAL/MOL
+
+
+ Alpha HOMO=    -9.567868 eV, LUMO=    4.157081 eV, gap=   13.724949 eV
+
+          ------------
+          EIGENVECTORS
+          ------------
+
+                      1          2          3          4          5
+                   -1.1848    -0.5938    -0.5938    -0.3516     0.1528
+                     A          A          A          A          A   
+    1  N  1  S    0.844418  -0.000000   0.000000  -0.019577   0.535327
+    2  N  1  X   -0.000000  -0.000740   0.735207   0.000000   0.000000
+    3  N  1  Y    0.000000   0.735207   0.000740  -0.000000  -0.000000
+    4  N  1  Z    0.008130   0.000000  -0.000000   0.999685   0.023734
+    5  H  2  S    0.309242   0.479586  -0.276245   0.009058  -0.487463
+    6  H  3  S    0.309242  -0.479028  -0.277211   0.009058  -0.487463
+    7  H  4  S    0.309242  -0.000557   0.553456   0.009058  -0.487463
+
+                      6          7
+                    0.2652     0.2652
+                     A          A   
+    1  N  1  S   -0.000000   0.000000
+    2  N  1  X    0.677842  -0.000619
+    3  N  1  Y    0.000619   0.677842
+    4  N  1  Z   -0.000000   0.000000
+    5  H  2  S    0.299672  -0.520144
+    6  H  3  S    0.300621   0.519596
+    7  H  4  S   -0.600294   0.000548
+ ...... END OF RHF CALCULATION ......
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.0 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.3 SECONDS, CPU UTILIZATION IS    11.88%
+
+     ----------------------------------------------------------------
+     PROPERTY VALUES FOR THE RHF   SELF-CONSISTENT FIELD WAVEFUNCTION
+     ----------------------------------------------------------------
+
+                    -------------
+                    MOPAC CHARGES
+                    -------------
+         ATOM NO.   TYPE          CHARGE        ATOM  ELECTRON DENSITY
+           1         N             -0.5878          5.5878
+           2         H              0.1959          0.8041
+           3         H              0.1959          0.8041
+           4         H              0.1959          0.8041
+
+          ---------------------
+          ELECTROSTATIC MOMENTS
+          ---------------------
+
+ POINT   1           X           Y           Z (ANGS)      CHARGE
+                 0.000000    0.000000    0.000000        0.00 (A.U.)
+         DX          DY          DZ         /D/  (DEBYE)
+     0.000000   -0.000000    0.135101    0.135101
+ ...... END OF PROPERTY EVALUATION ......
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.0 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.3 SECONDS, CPU UTILIZATION IS    12.13%
+ ---------------------------------------------------------------------------
+   TIME     MODE     Q              P     KINETIC      POTENTIAL          TOTAL
+    FS       BOHR*SQRT(AMU) BOHR*SQRT(AMU)/FS   E         ENERGY         ENERGY
+    1.0000  L 1      1.061028  0.053447   0.00163       -9.12874       -9.12710
+            L 2      0.000001  0.000000
+            L 3     -0.000004 -0.000000
+            L 4      0.000000  0.000000
+            L 5      0.000006  0.000001
+            L 6     -0.153112 -0.014313
+ ---------------------------------------------------------------------------
+           CARTESIAN COORDINATES (BOHR)               VELOCITY (BOHR/FS)
+ ---------------------------------------------------------------------------
+  7.0    -0.00000    0.00000   -0.00618      -0.00000    0.00000   -0.00623
+  1.0    -0.92274    1.59823    0.02863       0.00002   -0.00004    0.02886
+  1.0    -0.92274   -1.59823    0.02863       0.00002    0.00004    0.02886
+  1.0     1.84548   -0.00000    0.02863      -0.00005   -0.00000    0.02886
+ ---------------------------------------------------------------------------
+
+                         ----------------------
+                         GRADIENT OF THE ENERGY
+                         ----------------------
+
+ UNITS ARE HARTREE/BOHR    E'X               E'Y               E'Z 
+    1 NITROGEN         0.000000001       0.000000000       0.002237207
+    2 HYDROGEN        -0.000059506       0.000103066      -0.000745736
+    3 HYDROGEN        -0.000059506      -0.000103066      -0.000745736
+    4 HYDROGEN         0.000119011      -0.000000000      -0.000745736
+
+ ----- RESTART INFORMATION FOR NEXT DRC RUN:
+ COORDINATES (IN ANGSTROM) FOR $DATA GROUP ARE
+ NITROGEN    7.0       -0.0000000000        0.0000000000       -0.0032706684
+ HYDROGEN    1.0       -0.4882922025        0.8457469037        0.0151479335
+ HYDROGEN    1.0       -0.4882922025       -0.8457469037        0.0151479335
+ HYDROGEN    1.0        0.9765844052       -0.0000000000        0.0151479335
+ $END
+ $DRC NSTEP=??  DELTAT=0.1000  TOTIME=   1.0000
+      NPRTSM= 1  NMANAL=.T.  NPRT= 0  NPUN= 0  NVEL=.TRUE.
+  VEL(1)=  -0.000000000105   0.000000000000  -0.006230798226
+            0.000022900799  -0.000039664459   0.028857623666
+            0.000022900801   0.000039664457   0.028857623667
+           -0.000045800139  -0.000000000000   0.028857623667
+  HESS2=MIN     
+  C0(1) =      0.000000000      0.000000000      0.060175788
+              -0.469265116      0.812791023     -0.278701089
+              -0.469265116     -0.812791023     -0.278701089
+               0.938530232      0.000000000     -0.278701089
+ $END
+ .... DONE WITH DRC SEGMENT ....
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.0 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.3 SECONDS, CPU UTILIZATION IS    12.26%
+               580000  WORDS OF DYNAMIC MEMORY USED
+ EXECUTION OF GAMESS TERMINATED NORMALLY 09:19:43 13-OCT-2026    
+ DDI: 263640 bytes (0.3 MB / 0 MWords) used by master data server.
+
+ ----------------------------------------
+ CPU timing information for all processes
+ ========================================
+ 0: 0.39 + 0.61 = 0.101
+ 1: 0.48 + 0.62 = 0.110
+ ----------------------------------------
+----- accounting info -----
+Files used on the parent node meyeri were:
+-rw-r--r-- 1 eric users    2857 Oct 13 09:19 /home/eric/data/development/forks/OpenChemistry/openchemistry-nix/openchemistry/avogadrodata/data/gamess/scratch/exam27.dat
+-rw-r--r-- 1 eric users    4090 Oct 13 09:19 /home/eric/data/development/forks/OpenChemistry/openchemistry-nix/openchemistry/avogadrodata/data/gamess/scratch/exam27.F05
+-rw-r--r-- 1 eric users       0 Oct 13 09:19 /home/eric/data/development/forks/OpenChemistry/openchemistry-nix/openchemistry/avogadrodata/data/gamess/scratch/exam27.F08
+-rw-r--r-- 1 eric users 1341520 Oct 13 09:19 /home/eric/data/development/forks/OpenChemistry/openchemistry-nix/openchemistry/avogadrodata/data/gamess/scratch/exam27.F10
+-rw-r--r-- 1 eric users       7 Oct 13 09:19 /home/eric/data/development/forks/OpenChemistry/openchemistry-nix/openchemistry/avogadrodata/data/gamess/scratch/exam27.nodes.mpd
+-rw-r--r-- 1 eric users   13860 Oct 13 09:19 /home/eric/data/development/forks/OpenChemistry/openchemistry-nix/openchemistry/avogadrodata/data/gamess/scratch/exam27.trj
+Tue Oct 13 09:19:43 AM EDT 2026
+1.021u 0.319s 0:03.88 34.2%	0+0k 0+56890io 300pf+0w

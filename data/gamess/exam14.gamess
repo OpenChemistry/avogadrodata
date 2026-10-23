@@ -1,0 +1,682 @@
+1 : exam14.inp
+2 : 00
+3 : 1
+4 : 1
+----- GAMESS execution script 'rungms' -----
+This job is running on host meyeri
+under operating system Linux at Tue Oct 13 09:19:39 AM EDT 2026
+Available scratch disk space (Kbyte units) at beginning of the job is
+Filesystem       1K-blocks       Used   Available Use% Mounted on
+zraid/home     69573174272 6905928704 62667245568  10% /home
+GAMESS temporary binary files will be written to /home/eric/data/development/forks/OpenChemistry/openchemistry-nix/openchemistry/avogadrodata/data/gamess/scratch
+GAMESS supplementary output files will be written to /home/eric/data/development/forks/OpenChemistry/openchemistry-nix/openchemistry/avogadrodata/data/gamess/scratch
+Copying input file /home/eric/data/development/forks/OpenChemistry/openchemistry-nix/openchemistry/avogadrodata/data/gamess/exam14.inp to your run's scratch directory...
+MPI found 1 node, the current host.
+MPI kickoff will run GAMESS on 1 cores in 1 nodes.
+The binary to be executed is /nix/store/8ifmh5fpc19dw92jhpczcnjdzyvk9hqc-gamess-us-2024R2P1/bin/gamess.2024R2P1.x
+MPI will run 1 compute processes and 1 data servers,
+    placing 1 of each process type onto each node.
+The scratch disk space on each node is /home/eric/data/development/forks/OpenChemistry/openchemistry-nix/openchemistry/avogadrodata/data/gamess/scratch, with free space
+Filesystem       1K-blocks       Used   Available Use% Mounted on
+zraid/home     69573174272 6905928704 62667245568  10% /home
+          *******************************************************
+          *                                                     *
+          *      GAMESS VERSION = 15 JUL 2024 (R2 Patch 1)          *
+          *                                                     *
+          *              doi.org/10.1063/5.0005188              *
+          *                                                     *
+          **************** 64 BIT LINUX VERSION *****************
+
+  GAMESS HAS BEEN MADE POSSIBLE WITH IMPORTANT CONTRIBUTIONS FROM
+  THE FOLLOWING INDIVIDUALS (IN ALPHABETICAL ORDER):
+
+     IVANA ADAMOVIC, CHRISTINE AIKENS, TOMOKO AKAMA,
+     MELISA ALKAN, YURI ALEXEEV, YURIKO AOKI, POOJA ARORA,
+     TOSHIO ASADA, ANDREY ASADCHEV, KIM K. BALDRIDGE,
+     PRADIPTA BANDYOPADHYAY, TAYLOR A. BARNES, MARIA BARYSZ,
+     ROB BELL, JONATHAN BENTZ, COLLEEN BERTONI,
+     JERRY A. BOATZ, BRETT BODE, KURT BRORSEN, KURT R. BRORSEN,
+     LAIMUTIS BYTAUTAS, CALEB CARLIN, LAURA CARRINGTON,
+     GALINA CHABAN, BENOIT CHAMPAGNE, WEI CHEN, MAHITO CHIBA,
+     DAN CHIPMAN, CHEOL HO CHOI, TANNER CULPITT,
+     DIPAYAN DATTA, PAUL DAY, ALBERT DEFUSCO,
+     NUWAN DESILVA, J. EMILIANO DEUSTUA,
+     TIM DUDLEY, MICHEL DUPUIS, STEVEN T. ELBERT,
+     DMITRI FEDOROV, KATHERINE FERRERAS, MICHAEL FILATOV,
+     ALEX FINDLATER,GRAHAM FLETCHER, MARK FREITAG,
+     CHRISTIAN FRIEDL, DAVID GARMER, 
+     IGOR S. GERASIMOV, KURT GLAESEMANN,
+     MARK S. GORDON, JEFFREY R. GOUR, FENG LONG GU,
+     EMILIE B. GUIDEZ, ANASTASIA GUNINA, SHARON HAMMES-SCHIFFER,
+     MASATAKE HARUTA, KIMIHIKO HIRAO, YASUHIRO IKABATA,
+     TZVETELIN IORDANOV, STEPHAN IRLE, KAZUYA ISHIMURA,
+     JOE IVANIC, FRANK JENSEN, JAN H. JENSEN, VISVALDAS KAIRYS,
+     MUNEAKI KAMIYA, MICHIO KATOUDA, NAOAKI KAWAKAMI, DAN KEMP,
+     BERNARD KIRTMAN, KAZUO KITAURA, MARIUSZ KLOBUKOWSKI,
+     MASATO KOBAYASHI, KONSTANTIN KOMAROV, PRAKASHAN KORAMBATH,
+     JACEK KORCHOWIEC, SHIRO KOSEKI, KAROL KOWALSKI,
+     JIMMY KROMANN, STANISLAW A. KUCHARSKI, HENRY KURTZ,
+     SAROM SOK LEANG, SEUNGHOON LEE, HUI LI, SHUHUA LI, WEI LI,
+     JESSE J. LUTZ, ALEKSANDR O. LYKHIN,
+     ILIAS MAGOULAS, MARCIN MAKOWSKI,
+     JOANI MATO, NIKITA MATSUNAGA, BENEDETTA MENNUCCI,
+     GRANT MERRILL, NORIYUKI MINEZAWA, VLADIMIR MIRONOV,
+     EISAKU MIYOSHI, JOHN A. MONTGOMERY JR., HIROTOSHI MORI,
+     JONATHAN MULLIN, MONIKA MUSIAL, SHIGERU NAGASE,
+     TAKESHI NAGATA, HIROMI NAKAI, TAKAHITO NAKAJIMA,
+     YUYA NAKAJIMA, HARUYUKI NAKANO, HIROYA NAKATA, SEAN NEDD,
+     HEATHER NETZLOFF, KIET A. NGUYEN, YOSHIO NISHIMOTO,
+     BOSILJKA NJEGIC, RYAN OLSON, MIKE PAK, ROBERTO PEVERATI,
+     BUU PHAM, PIOTR PIECUCH, ANNA POMOGAEVA, DAVID POOLE,
+     SPENCER PRUITT, OLIVIER QUINET, LUKE ROSKOP,
+     KLAUS RUEDENBERG, ANDREW SAND, TOSAPORN SATTASATHUCHANA,
+     NOZOMI SAWADA, MICHAEL W. SCHMIDT, PATRICK E. SCHNEIDER,
+     JUNJI SEINO, PRACHI SHARMA, JUN SHEN, JIM SHOEMAKER,
+     GEORGE SCHOENDORFF, YINAN SHU, DEJUN SI, JONATHAN SKONE,
+     LYUDMILA SLIPCHENKO, TONY SMITH, JIE SONG, MARK SPACKMAN,
+     CASPER STEINMANN, WALT STEVENS, PEIFENG SU, SHUJUN SU,
+     CHET SWALINA, CHINAMI TAKASHIMA, TETSUYA TAKETSUGU,
+     ZHEN TAO, NANDUN THELLAMUREGE, ANANTA TIWARI,
+     SEIKEN TOKURA, JACOPO TOMASI,
+     TSUGUKI TOUMA, TAKAO TSUNEDA, HIROAKI UMEDA,
+     JORGE LUIS GALVEZ VALLEJO, YALI WANG, SIMON WEBB,
+     AARON WEST, THERESA L. WINDUS, MARTA WLOCH,
+     PENG XU, KIYOSHI YAGI, SUSUMU YANAGISAWA, YANG YANG,
+     SOOHAENG YOO, TAKESHI YOSHIKAWA, FEDERICO ZAHARIEV,
+     TOBY ZENG
+
+  WHO ARE SUPPORTED BY THEIR INSTITUTION/UNIVERSITY/COMPANY/GROUP
+  (IN ALPHABETICAL ORDER):
+
+     EP ANALYTICS,
+     FACULTES UNIVERSITAIRES NOTRE-DAME DE LA PAIX,
+     INSTITUTE FOR MOLECULAR SCIENCE, IOWA STATE UNIVERSITY,
+     JACKSON STATE UNIVERSITY, JOHANNES KEPLER UNIVERSITY LINZ,
+     KYUNGPOOK NATIONAL UNIVERSITY
+     KYUSHU UNIVERSITY, MICHIGAN STATE UNIVERSITY,
+     MIE UNIVERSITY, THE MOLECULAR SCIENCES SOFTWARE INSTITUTE,
+     MOSCOW STATE UNIVERSITY,
+     N. COPERNICUS UNIVERSITY, NAGOYA UNIVERSITY,
+     NANJING UNIVERSITY, NAT. INST. OF ADVANCED INDUSTRIAL
+     SCIENCE AND TECHNOLOGY, NATIONAL INST. OF STANDARDS AND
+     TECHNOLOGY, NESMEYANOV INSTITUTE OF ORGANOELEMENT COMPOUNDS
+     OF RUSSIAN ACADEMY OF SCIENCES, OSAKA PREFECTURE UNIVERSITY,
+     PENNSYLVANIA STATE UNIVERSITY, TOKYO INSTITUTE OF TECHNOLOGY,
+     UNIVERSITY OF AARHUS, UNIVERSITY OF ALBERTA,
+     UNIVERSITY OF CALIFORNIA AT SANTA BARBARA,
+     UNIVERSITY OF COPENHAGEN, UNIVERSITY OF IOWA,
+     UNIVERSITY OF MEMPHIS, UNIVERSITY OF MINNESOTA,
+     UNIVERSITY OF NEBRASKA, UNIVERSITY OF NEW ENGLAND,
+     UNIVERSITY OF NOTRE DAME, UNIVERSITY OF PISA,
+     UNIVERSITY OF SILESIA, UNIVERSITY OF TOKYO,
+     UNIVERSITY OF ZURICH, WASEDA UNIVERSITY,
+     YALE UNIVERSITY
+
+  GAMESS SOFTWARE MANAGEMENT TEAM FOR THIS RELEASE:
+     MARK S. GORDON (TEAM LEAD),
+     BRETT BODE (SENIOR ADVISOR),
+     GIUSEPPE BARCA,
+     COLLEEN BERTONI,
+     KRISTOPHER KEIPERT (ADVISOR),
+     SAROM S. LEANG (DEVELOPMENT LEAD),
+     BUU PHAM,
+     JACKSON HAYES (WEBSITE ADMINISTRATOR),
+     PENG XU
+
+ EXECUTION OF GAMESS BEGUN 09:19:43 13-OCT-2026    
+
+            ECHO OF THE FIRST FEW INPUT CARDS -
+ INPUT CARD>! EXAM 14.                                                                      
+ INPUT CARD>!  CI transition moments.  Water, using RHF/STO-3G MOs.                         
+ INPUT CARD>!  All orbitals are occupied, transition is 1-1A1 to 2-1A1.                     
+ INPUT CARD>!                                                                               
+ INPUT CARD>!  E(STATE 1)= -75.010111355, E(STATE 2)= -74.394581939                         
+ INPUT CARD>!  Dipole LENGTH is <Q>=0.392614                                                
+ INPUT CARD>!  Dipole VELOCITY is <d/dQ>=0.368205                                           
+ INPUT CARD>!                                                                               
+ INPUT CARD> $CONTRL SCFTYP=NONE CITYP=GUGA RUNTYP=TRANSITN UNITS=BOHR $END                 
+ INPUT CARD> $SYSTEM TIMLIM=1 $END                                                          
+ INPUT CARD> $BASIS  GBASIS=STO  NGAUSS=3 $END                                              
+ INPUT CARD>!            standard SD-CI calculation                                         
+ INPUT CARD> $DRT1   GROUP=C2V IEXCIT=2 NFZC=1 NDOC=4 NVAL=2 $END                           
+ INPUT CARD> $TRANST NFZC=1 IROOTS(1)=2 $END                                                
+ INPUT CARD> $DATA                                                                          
+ INPUT CARD>WATER MOLECULE...STO-3G...TRANSITION MOMENT                                     
+ INPUT CARD>CNV      2                                                                      
+ INPUT CARD>                                                                                
+ INPUT CARD>OXYGEN      8.0   0.0   0.0      0.0                                            
+ INPUT CARD>HYDROGEN    1.0   0.0   1.428   -1.096                                          
+ INPUT CARD> $END                                                                           
+ INPUT CARD>                                                                                
+ INPUT CARD>--- RHF ORBITALS --- GENERATED AT 09:24:04    18-FEB-88                         
+ INPUT CARD>WATER MOLECULE...STO-3G...TRANSITION MOMENT                                     
+ INPUT CARD>E(RHF)=  -74.9620539825, E(NUC)=    9.2384802989,    8 ITERS                    
+ INPUT CARD> $VEC1                                                                          
+ INPUT CARD> 1  1 9.94117078E-01 2.66680164E-02 0.00000000E+00 0.00000000E+00-4.37663441E-03
+ INPUT CARD> 1  2-6.02779209E-03-6.02779209E-03                                             
+ INPUT CARD> 2  1-2.32646075E-01 8.31899807E-01 0.00000000E+00 0.00000000E+00-1.30711442E-01
+ INPUT CARD> 2  2 1.59112113E-01 1.59112113E-01                                             
+ INPUT CARD> 3  1 0.00000000E+00 0.00000000E+00 0.00000000E+00 6.05977383E-01 0.00000000E+00
+ INPUT CARD> 3  2-4.44410026E-01 4.44410026E-01                                             
+ INPUT CARD> 4  1-1.03107214E-01 5.36888546E-01 0.00000000E+00 0.00000000E+00 7.79238006E-01
+ INPUT CARD> 4  2-2.75438667E-01-2.75438667E-01                                             
+ INPUT CARD> 5  1 0.00000000E+00 0.00000000E+00-1.00000000E+00 0.00000000E+00 0.00000000E+00
+ INPUT CARD> 5  2 0.00000000E+00 0.00000000E+00                                             
+ INPUT CARD> 6  1-1.33255319E-01 8.93987858E-01 0.00000000E+00 0.00000000E+00-7.40007314E-01
+ INPUT CARD> 6  2-8.01069824E-01-8.01069824E-01                                             
+ INPUT CARD> 7  1 0.00000000E+00 0.00000000E+00 0.00000000E+00-9.94651519E-01 0.00000000E+00
+ INPUT CARD> 7  2-8.42653177E-01 8.42653177E-01                                             
+ INPUT CARD> $END                                                                           
+ INPUT CARD>! TRAVIS-CI SKIP                                                                
+ INPUT CARD>                                                                                
+ INPUT CARD>                                                                                
+      1000000 WORDS OF MEMORY AVAILABLE
+
+     BASIS OPTIONS
+     -------------
+     GBASIS=STO          IGAUSS=       3      POLAR=NONE    
+     NDFUNC=       0     NFFUNC=       0     DIFFSP=       F
+     NPFUNC=       0      DIFFS=       F     BASNAM=        
+
+
+     RUN TITLE
+     ---------
+ WATER MOLECULE...STO-3G...TRANSITION MOMENT                                     
+
+ THE POINT GROUP OF THE MOLECULE IS CNV     
+ THE ORDER OF THE PRINCIPAL AXIS IS     2
+
+ ATOM      ATOMIC                      COORDINATES (BOHR)
+           CHARGE         X                   Y                   Z
+ OXYGEN      8.0     0.0000000000        0.0000000000        0.0000000000
+ HYDROGEN    1.0    -0.0000000000       -1.4280000000       -1.0960000000
+ HYDROGEN    1.0     0.0000000000        1.4280000000       -1.0960000000
+
+          INTERNUCLEAR DISTANCES (ANGS.)
+          ------------------------------
+
+                1 OXYG       2 HYDR       3 HYDR  
+
+   1 OXYG    0.0000000    0.9525778 *  0.9525778 *
+   2 HYDR    0.9525778 *  0.0000000    1.5113302 *
+   3 HYDR    0.9525778 *  1.5113302 *  0.0000000  
+
+  * ... LESS THAN  3.000
+
+
+     ATOMIC BASIS SET
+     ----------------
+ THE CONTRACTED PRIMITIVE FUNCTIONS HAVE BEEN UNNORMALIZED
+ THE CONTRACTED BASIS FUNCTIONS ARE NOW NORMALIZED TO UNITY
+
+  SHELL TYPE  PRIMITIVE        EXPONENT          CONTRACTION COEFFICIENT(S)
+
+ OXYGEN    
+
+      1   S       1           130.7093214    0.154328967295
+      1   S       2            23.8088661    0.535328142282
+      1   S       3             6.4436083    0.444634542185
+
+      2   L       4             5.0331513   -0.099967229187    0.155916274999
+      2   L       5             1.1695961    0.399512826089    0.607683718598
+      2   L       6             0.3803890    0.700115468880    0.391957393099
+
+ HYDROGEN  
+
+      4   S       7             3.4252509    0.154328967295
+      4   S       8             0.6239137    0.535328142282
+      4   S       9             0.1688554    0.444634542185
+
+ TOTAL NUMBER OF BASIS SET SHELLS             =    4
+ NUMBER OF CARTESIAN GAUSSIAN BASIS FUNCTIONS =    7
+ NUMBER OF ELECTRONS                          =   10
+ CHARGE OF MOLECULE                           =    0
+ SPIN MULTIPLICITY                            =    1
+ NUMBER OF OCCUPIED ORBITALS (ALPHA)          =    5
+ NUMBER OF OCCUPIED ORBITALS (BETA )          =    5
+ TOTAL NUMBER OF ATOMS                        =    3
+ THE NUCLEAR REPULSION ENERGY IS        9.2384802989
+
+     $CONTRL OPTIONS
+     ---------------
+ SCFTYP=NONE         RUNTYP=TRANSITN     EXETYP=RUN     
+ MPLEVL=       0     CITYP =GUGA         CCTYP =NONE         VBTYP =NONE    
+ DFTTYP=NONE         TDDFT =NONE    
+ MULT  =       1     ICHARG=       0     NZVAR =       0     COORD =UNIQUE  
+ PP    =NONE         RELWFN=NONE         LOCAL =NONE         NUMGRD=       F
+ ISPHER=      -1     NOSYM =       0     MAXIT =      30     UNITS =BOHR    
+ PLTORB=       F     MOLPLT=       F     AIMPAC=       F     FRIEND=        
+ NPRINT=       7     IREST =       0     GEOM  =INPUT   
+ NORMF =       0     NORMP =       0     ITOL  =      20     ICUT  =       9
+ INTTYP=BEST         GRDTYP=BEST         QMTTOL= 1.0E-06
+
+     $SYSTEM OPTIONS
+     ---------------
+  REPLICATED MEMORY=     1000000 WORDS (ON EVERY NODE).
+ DISTRIBUTED MEMDDI=           0 MILLION WORDS IN AGGREGATE,
+ MEMDDI DISTRIBUTED OVER   1 PROCESSORS IS           0 WORDS/PROCESSOR.
+ TOTAL MEMORY REQUESTED ON EACH PROCESSOR=     1000000 WORDS.
+ TIMLIM=           1.00 MINUTES, OR       0.0 DAYS.
+ PARALL= F  BALTYP=  DLB     KDIAG=    0  COREFL= F
+ MXSEQ2=     300 MXSEQ3=     150  mem10=         0  mem22=         0
+
+          ----------------
+          PROPERTIES INPUT
+          ----------------
+
+     MOMENTS            FIELD           POTENTIAL          DENSITY
+ IEMOM =       1   IEFLD =       0   IEPOT =       0   IEDEN =       0
+ WHERE =COMASS     WHERE =NUCLEI     WHERE =NUCLEI     WHERE =NUCLEI  
+ OUTPUT=BOTH       OUTPUT=BOTH       OUTPUT=BOTH       OUTPUT=BOTH    
+ IEMINT=       0   IEFINT=       0                     IEDINT=       0
+                                                       MORB  =       0
+          EXTRAPOLATION IN EFFECT
+ ORBITAL PRINTING OPTION: NPREO=     1     7     2     1
+
+     ----------------------
+     TARGET OFFLOAD OPTIONS
+     ----------------------
+     RHF    =       F
+     CPHF    =       F
+     MAKEFP =       F
+
+     -------------------------------
+     INTEGRAL TRANSFORMATION OPTIONS
+     -------------------------------
+     NWORD  =            0
+     CUTTRF = 1.0E-09     MPTRAN =       0
+     DIRTRF =       F     AOINTS =DUP     
+
+          ----------------------
+          INTEGRAL INPUT OPTIONS
+          ----------------------
+ NOPK  =       1 NORDER=       0 SCHWRZ=       F
+
+     ------------------------------------------
+     THE POINT GROUP IS CNV, NAXIS= 2, ORDER= 4
+     ------------------------------------------
+
+     DIMENSIONS OF THE SYMMETRY SUBSPACES ARE
+ A1  =    4     A2  =    0     B1  =    1     B2  =    2
+
+ ..... DONE SETTING UP THE RUN .....
+ STEP CPU TIME =     0.01 TOTAL CPU TIME =          0.0 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.2 SECONDS, CPU UTILIZATION IS     5.49%
+
+     ------------------------
+     TRANSITION MOMENT DRIVER
+     ------------------------
+
+     -------------------------------
+     INPUT FOR TRANSITION MOMENT RUN
+     -------------------------------
+     OPERAT=DM           NFZC  =       1     NOCC  =       7
+     NUMCI =       1     NUMVEC=       1     SYMTOL=   1.0E-04
+     IPRHSO=       0     NOSYM =       0     ETOL  =   100.000000
+     UPPER ENERGY LIMIT FOR SPIN-ORBIT CI MATRIX   =      100.000 HARTREE.
+     TMOMNT=       F     SKIPDM=       T     PRTPRM=       F
+     SLOWFF=       F     PHYSRC=       F     MODPAR=       3
+     JZ    =       0     PARMP =      -2     ZEFTYP=TRUE    
+     MCP2E =       0     ONECNT=       0     NFFBUF=      -1
+     EEQTOL=   0.10E-05  ISTNO =  0  0
+     DEGTOL= .0200 .0020
+
+     IROOTS=         2
+     NSTATE=         2
+     IVEX  =         1
+
+          ********************
+          1 ELECTRON INTEGRALS
+          ********************
+ ...... END OF ONE-ELECTRON INTEGRALS ......
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.0 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.2 SECONDS, CPU UTILIZATION IS     6.10%
+ OPENING FILE SOCCDAT WITH       6 LOGICAL RECORDS OF       0 WORDS
+ WITH A MAXIMUM OF           6 PHYSICAL RECORDS OF    2048 WORDS
+
+
+          ----------------------
+          CORRESPONDING ORBITALS
+          ----------------------
+ THE CORRESPONDING ORBITAL OVERLAPS ARE
+  1.0000000000 1.0000000000 1.0000000000 1.0000000000 1.0000000000
+  1.0000000000 1.0000000000
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.0 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.2 SECONDS, CPU UTILIZATION IS     6.33%
+
+                    ----------------------
+                    AO INTEGRAL TECHNOLOGY
+                    ----------------------
+     S,P,L SHELL ROTATED AXIS INTEGRALS, REPROGRAMMED BY
+        KAZUYA ISHIMURA (IMS) AND JOSE SIERRA (SYNSTAR).
+     S,P,D,L SHELL ROTATED AXIS INTEGRALS PROGRAMMED BY
+        KAZUYA ISHIMURA (INSTITUTE FOR MOLECULAR SCIENCE).
+     S,P,D,F,G SHELL TO TOTAL QUARTET ANGULAR MOMENTUM SUM 5,
+        ERIC PROGRAM BY GRAHAM FLETCHER (ELORET AND NASA ADVANCED
+        SUPERCOMPUTING DIVISION, AMES RESEARCH CENTER).
+     S,P,D,F,G,L SHELL GENERAL RYS QUADRATURE PROGRAMMED BY
+        MICHEL DUPUIS (PACIFIC NORTHWEST NATIONAL LABORATORY).
+
+          --------------------
+          2 ELECTRON INTEGRALS
+          --------------------
+
+ THE -PK- OPTION IS OFF, THE INTEGRALS ARE NOT IN SUPERMATRIX FORM.
+ STORING   15000 INTEGRALS/RECORD ON DISK, USING 12 BYTES/INTEGRAL.
+ TWO ELECTRON INTEGRAL EVALUATION REQUIRES   89366 WORDS OF MEMORY.
+ II,JST,KST,LST =  1  1  1  1 NREC =         1 INTLOC =    1
+ II,JST,KST,LST =  2  1  1  1 NREC =         1 INTLOC =    2
+ II,JST,KST,LST =  3  1  1  1 NREC =         1 INTLOC =   34
+ II,JST,KST,LST =  4  1  1  1 NREC =         1 INTLOC =   34
+ TOTAL NUMBER OF NONZERO TWO-ELECTRON INTEGRALS =                 141
+          1 INTEGRAL RECORDS WERE STORED ON DISK FILE  8.
+  ...... END OF TWO-ELECTRON INTEGRALS .....
+ STEP CPU TIME =     0.01 TOTAL CPU TIME =          0.0 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.4 SECONDS, CPU UTILIZATION IS     5.66%
+ ...... END OF ORBITAL SELECTION ......
+
+
+     -------------------------
+      1-ST     CI CALCULATION
+     -------------------------
+
+          -----------------------     ----------------------------
+          GUGA DISTINCT ROW TABLE     WRITTEN BY B.R.BROOKS,P.SAXE
+          -----------------------     ----------------------------
+
+      GROUP=C2V          NPRT=       0
+       FORS=       F   INTACT=       F
+       FOCI=       F   MXNINT=   50000
+       SOCI=       F   MXNEME=   10000
+     IEXCIT=       2
+
+      -CORE-    -INTERNAL-  -EXTERNAL-
+     NFZC=   1   NDOC=   4   NEXT=   0
+     NMCC=   0   NAOS=   0   NFZV=   0
+                 NBOS=   0
+                 NALP=   0
+                 NVAL=   2
+
+ THE MAXIMUM ELECTRON EXCITATION WILL BE   2
+
+ SYMMETRIES FOR THE   1 CORE,   6 ACTIVE,   0 EXTERNAL MO-S ARE
+     CORE= A1  
+   ACTIVE= A1    B2    A1    B1    A1    B2  
+           DOC   DOC   DOC   DOC   VAL   VAL 
+
+ MOLECULAR CHARGE          =    0
+ NUMBER OF ALPHA ELECTRONS =    5
+ NUMBER OF  BETA ELECTRONS =    5
+
+ THE ELECTRONIC STATE IS  1-A1  
+
+ THE DISTINCT ROW TABLE HAS        23 ROWS.
+  THE WAVEFUNCTION CONTAINS        18 WALKS (CSF-S).
+
+ TOTAL NUMBER OF INTEGRALS =        106
+ NUMBER OF INTEGRALS/GROUP =        106
+ NUMBER OF INTEGRAL GROUPS =          1
+ MAXIMUM RECORD SIZES ARE     500 FOR UNIT 11      22 FOR UNIT 12
+                            30001 FOR UNIT 15   30001 FOR UNIT 16
+ ...... END OF -DRT- GENERATION ...... 
+ STEP CPU TIME =     0.01 TOTAL CPU TIME =          0.0 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.6 SECONDS, CPU UTILIZATION IS     5.33%
+
+     --------------------------------------------
+     PARTIAL TWO ELECTRON INTEGRAL TRANSFORMATION
+     --------------------------------------------
+
+ NUMBER OF CORE MOLECULAR ORBITALS     =    1
+ NUMBER OF OCCUPIED MOLECULAR ORBITALS =    7
+ TOTAL NUMBER OF MOLECULAR ORBITALS    =    7
+ TOTAL NUMBER OF ATOMIC ORBITALS       =    7
+ THRESHOLD FOR KEEPING TRANSFORMED 2E- INTEGRALS = 1.000E-09
+ AO INTEGRALS WILL BE READ IN FROM DISK...
+ EVALUATING THE FROZEN CORE ENERGY...
+ ----- FROZEN CORE ENERGY =       -60.6727618652
+
+ PLAN A: REQUIREMENTS FOR FULLY IN-MEMORY TRANSFORMATION:
+ # OF WORDS AVAILABLE =               971250
+ # OF WORDS NEEDED    =                61437
+
+ CHOOSING IN MEMORY PARTIAL TRANSFORMATION...
+ TOTAL NUMBER OF TRANSFORMED 2E- INTEGRALS KEPT =           85
+ ... END OF INTEGRAL TRANSFORMATION ...
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.0 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.6 SECONDS, CPU UTILIZATION IS     5.47%
+
+          ------------------------
+          GUGA-CI INTEGRAL SORTING
+          ------------------------
+
+     80133 WORDS NEEDED TO SORT            106 GUGA INTEGRALS IN MEMORY
+    971250 WORDS ARE AVAILABLE
+ CHOOSING IN-MEMORY SORTING...
+ IN CORE ALGORITHM SORTED             10 NON-ZERO 1E- INTEGRALS
+ IN CORE ALGORITHM SORTED             85 NON-ZERO 2E- INTEGRALS
+ ...... END OF INTEGRAL SORTING ...... 
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.0 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.6 SECONDS, CPU UTILIZATION IS     5.56%
+
+ -------------------------     ---------------------------------------
+ ENERGY MATRIX CALCULATION     WRITTEN BY B.R.BROOKS,W.D.LAIDIG,P.SAXE
+ -------------------------     ---------------------------------------
+
+ COMPUTING THE HAMILTONIAN FOR THE        18 CSF-S...
+
+         301 IS THE TOTAL NUMBER OF GENERATED LOOPS
+         301 WERE CREATED BY THE LOOP-DRIVEN ALGORITHM
+           0 WERE CREATED IMPLICITLY
+
+         301 IS THE TOTAL NUMBER OF PROCESSED LOOPS
+         135     DIAGONAL LOOPS ARE STORED ON WORK15 IN     1 BUFFERS OF  10000 ELEMENTS.
+         166 OFF DIAGONAL LOOPS ARE STORED ON WORK16 IN     1 BUFFERS OF  10000 ELEMENTS.
+ ...... END OF ENERGY MATRIX CALCULATION ...... 
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.0 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.6 SECONDS, CPU UTILIZATION IS     5.20%
+
+          -----------------------------------------
+          DAVIDSON METHOD CI-MATRIX DIAGONALIZATION
+                   WRITTEN BY STEVE ELBERT
+          -----------------------------------------
+ NUMBER OF STATES REQUESTED =     2
+ MAX. NUMB. OF EXPAN. VEC   =    30
+ MAX. NUMB. IMPROVED STATES =     2
+ MAX. NUMB. OF ITERATIONS   =    50
+ CONVERGENCE CRITERION      =    1.0E-06
+
+ CHOOSING TO SOLVE SECULAR EQUATION IN MEMORY
+ NUMBER OF WORDS AVAILABLE =     971250
+ NUMBER OF WORDS USED      =      31389
+ ENERGY MATRIX BUFFER SIZE =      10000
+ SOLUTION FOUND WITH DIRECT METHOD
+
+ STATE #    1  ENERGY =     -75.010111355
+
+      CSF      COEF    OCCUPANCY (IGNORING CORE)
+      ---      ----    --------- --------- -----
+        1    0.987461  222200
+        4   -0.075304  202202
+       12   -0.078293  211211
+       13   -0.050742  112211
+
+ THE PROJECTION OF THIS CI STATE ONTO SPACE SYMMETRY A1   WEIGHS 1.0000E+00
+
+
+ STATE #    2  ENERGY =     -74.394581939
+
+      CSF      COEF    OCCUPANCY (IGNORING CORE)
+      ---      ----    --------- --------- -----
+        2   -0.216997  212201
+        5   -0.084809  220202
+        8    0.948395  221210
+        9   -0.077501  122210
+       10   -0.052169  211211
+       12   -0.129069  211211
+       15    0.061253  202220
+       16   -0.102544  220220
+
+ THE PROJECTION OF THIS CI STATE ONTO SPACE SYMMETRY A1   WEIGHS 1.0000E+00
+
+
+ RENORMALIZED DAVIDSON CORRECTION FOR     1-REFERENCE CI.
+ C0SQ= 0.975079 EREF=      -74.962054 E-E(REF)=   0.048057 E(Q)=   0.001228
+ GIVES A E(SD+Q) ESTIMATE OF      -75.0113396097
+ ...... END OF CI-MATRIX DIAGONALIZATION ......
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.0 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.6 SECONDS, CPU UTILIZATION IS     5.30%
+
+          ---------------------
+          STORE CSF INFORMATION
+          --------------------
+
+ READING THE DRT FILE
+ TITLE=DRT1    09:19:44 13-OCT-2026                                                    
+ NUMBER OF CONFIGURATIONS =         18
+
+ READING THE CI VECTOR FILE
+ RUN TITLE=WATER MOLECULE...STO-3G...TRANSITION MOMENT                                     
+ DRT TITLE=DRT1    09:19:44 13-OCT-2026                                                    
+     2 STATES WERE COMPUTED, NWKS=        18
+
+ STORING CSF AND CI COEF. INFORMATION FOR    2 STATES ON FILE  17.
+     ENERGIES ARE ...
+     -75.0101114    -74.3945819
+ ...... DONE STORING CSF INFORMATION ......
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.0 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.6 SECONDS, CPU UTILIZATION IS     5.33%
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.0 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.6 SECONDS, CPU UTILIZATION IS     5.34%
+
+ ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+ THE SYMMETRIES OF THE ANGULAR MOMENTUM L AND TRANSLATION R:
+ LX BELONGS TO B2  
+ LY BELONGS TO B1  
+ LZ BELONGS TO A2  
+ RX BELONGS TO B1  
+ RY BELONGS TO B2  
+ RZ BELONGS TO A1  
+ SOC INTEGRALS NEED BE CALCULATED FOR LX: NAY 
+ SOC INTEGRALS NEED BE CALCULATED FOR LY: NAY 
+ SOC INTEGRALS NEED BE CALCULATED FOR LZ: NAY 
+
+     ---------------------------
+     RADIATIVE TRANSITION MOMENT
+             SHIRO KOSEKI
+     ---------------------------
+
+ ...... DONE WITH DIPOLE INTEGRALS ......
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.0 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.6 SECONDS, CPU UTILIZATION IS     5.40%
+
+ ...... DONE WITH DIPOLE VELOCITY INTEGRALS ......
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.0 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.6 SECONDS, CPU UTILIZATION IS     5.42%
+
+          ------------------
+          TRANSITION MOMENTS
+          ------------------
+
+        820 WORDS OF MEMORY ARE REQUIRED.
+
+ RECOVER CI INFORMATION OF STATE 1.  IROOTS=    2
+
+ THE FOLLOWING LEGEND IS USED BELOW:
+ [C] - THE MATRIX ELEMENT ACTUALLY CALCULATED
+ [Z] - ZERO BY POINT GROUP SYMMETRY
+
+ [Z]'S ARE NOT CALCULATED.
+
+
+          ---- LENGTH FORM ----
+
+ THE NEXT PAIR ARE THE SAME STATE, SO THIS IS AN EXPECTATION VALUE,
+ RATHER THAN A TRANSITION MOMENT.
+
+ CI STATE NUMBER=  1  1 STATE MULTIPLICITY=  1  1
+ NUMBER OF CSF-S=        18        18
+ STATE ENERGIES          -75.0101113553      -75.0101113553
+ TRANSITION ENERGY=  0.0000E+00 [1/SEC] =        0.00 [1/CM] =        0.00 [EV]
+                          X [Z]       Y [Z]       Z [C]       NORM
+ CENTER OF MASS    =   -0.000000    0.000000   -0.122659             BOHR
+ TRANSITION DIPOLE =   -0.000000   -0.000000   -0.638955    0.638955 E*BOHR
+ TRANSITION DIPOLE =   -0.000000   -0.000000   -1.624075    1.624075 DEBYE
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.0 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.6 SECONDS, CPU UTILIZATION IS     5.47%
+
+ CI STATE NUMBER=  1  2 STATE MULTIPLICITY=  1  1
+ NUMBER OF CSF-S=        18        18
+ STATE ENERGIES          -75.0101113553      -74.3945819389
+ TRANSITION ENERGY=  4.0500E+15 [1/SEC] =   135090.00 [1/CM] =       16.75 [EV]
+                          X [Z]       Y [Z]       Z [C]       NORM
+ CENTER OF MASS    =   -0.000000    0.000000   -0.122659             BOHR
+ TRANSITION DIPOLE =    0.000000   -0.000000    0.392614    0.392614 E*BOHR
+ TRANSITION DIPOLE =    0.000000   -0.000000    0.997932    0.997932 DEBYE
+ OSCILLATOR STRENGTH =    0.063254
+ EINSTEIN COEFFICIENTS: A=  7.6996E+08 1/SEC; B=  6.2555E+07 SEC/G
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.0 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.6 SECONDS, CPU UTILIZATION IS     5.49%
+
+ THE NEXT PAIR ARE THE SAME STATE, SO THIS IS AN EXPECTATION VALUE,
+ RATHER THAN A TRANSITION MOMENT.
+
+ CI STATE NUMBER=  2  2 STATE MULTIPLICITY=  1  1
+ NUMBER OF CSF-S=        18        18
+ STATE ENERGIES          -74.3945819389      -74.3945819389
+ TRANSITION ENERGY=  0.0000E+00 [1/SEC] =        0.00 [1/CM] =        0.00 [EV]
+                          X [Z]       Y [Z]       Z [C]       NORM
+ CENTER OF MASS    =   -0.000000    0.000000   -0.122659             BOHR
+ TRANSITION DIPOLE =    0.000000    0.000000    0.129795    0.129795 E*BOHR
+ TRANSITION DIPOLE =    0.000000    0.000000    0.329910    0.329910 DEBYE
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.0 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.6 SECONDS, CPU UTILIZATION IS     5.51%
+
+          ---- VELOCITY FORM ----
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.0 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.6 SECONDS, CPU UTILIZATION IS     5.53%
+
+ CI STATE NUMBER=  1  2 STATE MULTIPLICITY=  1  1
+ NUMBER OF CSF-S=        18        18
+ STATE ENERGIES          -75.0101113553      -74.3945819389
+ TRANSITION ENERGY=  4.0500E+15 [1/SEC] =   135090.00 [1/CM] =       16.75 [EV]
+                             X [Z]     Y [Z]     Z [C]     NORM
+ DIPOLE VELOCITY <D/DQ> =  0.000000 -0.000000  0.368205  0.368205 E/BOHR
+ OSCILLATOR STRENGTH IS    0.146838
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.0 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.6 SECONDS, CPU UTILIZATION IS     5.55%
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.0 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.6 SECONDS, CPU UTILIZATION IS     5.56%
+
+ ....... DONE WITH TRANSITION MOMENT .......
+
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.0 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.6 SECONDS, CPU UTILIZATION IS     5.56%
+               580000  WORDS OF DYNAMIC MEMORY USED
+ EXECUTION OF GAMESS TERMINATED NORMALLY 09:19:44 13-OCT-2026    
+ DDI: 263640 bytes (0.3 MB / 0 MWords) used by master data server.
+
+ ----------------------------------------
+ CPU timing information for all processes
+ ========================================
+ 0: 0.46 + 0.42 = 0.88
+ 1: 0.42 + 0.82 = 0.125
+ ----------------------------------------
+----- accounting info -----
+Files used on the parent node meyeri were:
+-rw-r--r-- 1 eric users     864 Oct 13 09:19 /home/eric/data/development/forks/OpenChemistry/openchemistry-nix/openchemistry/avogadrodata/data/gamess/scratch/exam14.dat
+-rw-r--r-- 1 eric users    1665 Oct 13 09:19 /home/eric/data/development/forks/OpenChemistry/openchemistry-nix/openchemistry/avogadrodata/data/gamess/scratch/exam14.F05
+-rw-r--r-- 1 eric users  180016 Oct 13 09:19 /home/eric/data/development/forks/OpenChemistry/openchemistry-nix/openchemistry/avogadrodata/data/gamess/scratch/exam14.F08
+-rw-r--r-- 1 eric users  180192 Oct 13 09:19 /home/eric/data/development/forks/OpenChemistry/openchemistry-nix/openchemistry/avogadrodata/data/gamess/scratch/exam14.F09
+-rw-r--r-- 1 eric users 1472400 Oct 13 09:19 /home/eric/data/development/forks/OpenChemistry/openchemistry-nix/openchemistry/avogadrodata/data/gamess/scratch/exam14.F10
+-rw-r--r-- 1 eric users  277976 Oct 13 09:19 /home/eric/data/development/forks/OpenChemistry/openchemistry-nix/openchemistry/avogadrodata/data/gamess/scratch/exam14.F11
+-rw-r--r-- 1 eric users     488 Oct 13 09:19 /home/eric/data/development/forks/OpenChemistry/openchemistry-nix/openchemistry/avogadrodata/data/gamess/scratch/exam14.F12
+-rw-r--r-- 1 eric users  400008 Oct 13 09:19 /home/eric/data/development/forks/OpenChemistry/openchemistry-nix/openchemistry/avogadrodata/data/gamess/scratch/exam14.F14
+-rw-r--r-- 1 eric users  160368 Oct 13 09:19 /home/eric/data/development/forks/OpenChemistry/openchemistry-nix/openchemistry/avogadrodata/data/gamess/scratch/exam14.F15
+-rw-r--r-- 1 eric users  200216 Oct 13 09:19 /home/eric/data/development/forks/OpenChemistry/openchemistry-nix/openchemistry/avogadrodata/data/gamess/scratch/exam14.F16
+-rw-r--r-- 1 eric users     456 Oct 13 09:19 /home/eric/data/development/forks/OpenChemistry/openchemistry-nix/openchemistry/avogadrodata/data/gamess/scratch/exam14.F17
+-rw-r--r-- 1 eric users   32768 Oct 13 09:19 /home/eric/data/development/forks/OpenChemistry/openchemistry-nix/openchemistry/avogadrodata/data/gamess/scratch/exam14.F40
+-rw-r--r-- 1 eric users       7 Oct 13 09:19 /home/eric/data/development/forks/OpenChemistry/openchemistry-nix/openchemistry/avogadrodata/data/gamess/scratch/exam14.nodes.mpd
+Tue Oct 13 09:19:44 AM EDT 2026
+1.042u 0.329s 0:04.72 29.0%	0+0k 0+9526io 265pf+0w

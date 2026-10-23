@@ -1,0 +1,650 @@
+1 : exam49.inp
+2 : 00
+3 : 1
+4 : 1
+----- GAMESS execution script 'rungms' -----
+This job is running on host meyeri
+under operating system Linux at Tue Oct 13 09:19:39 AM EDT 2026
+Available scratch disk space (Kbyte units) at beginning of the job is
+Filesystem       1K-blocks       Used   Available Use% Mounted on
+zraid/home     69573174272 6905928704 62667245568  10% /home
+GAMESS temporary binary files will be written to /home/eric/data/development/forks/OpenChemistry/openchemistry-nix/openchemistry/avogadrodata/data/gamess/scratch
+GAMESS supplementary output files will be written to /home/eric/data/development/forks/OpenChemistry/openchemistry-nix/openchemistry/avogadrodata/data/gamess/scratch
+Copying input file /home/eric/data/development/forks/OpenChemistry/openchemistry-nix/openchemistry/avogadrodata/data/gamess/exam49.inp to your run's scratch directory...
+MPI found 1 node, the current host.
+MPI kickoff will run GAMESS on 1 cores in 1 nodes.
+The binary to be executed is /nix/store/8ifmh5fpc19dw92jhpczcnjdzyvk9hqc-gamess-us-2024R2P1/bin/gamess.2024R2P1.x
+MPI will run 1 compute processes and 1 data servers,
+    placing 1 of each process type onto each node.
+The scratch disk space on each node is /home/eric/data/development/forks/OpenChemistry/openchemistry-nix/openchemistry/avogadrodata/data/gamess/scratch, with free space
+Filesystem       1K-blocks       Used   Available Use% Mounted on
+zraid/home     69573174272 6905928704 62667245568  10% /home
+          *******************************************************
+          *                                                     *
+          *      GAMESS VERSION = 15 JUL 2024 (R2 Patch 1)          *
+          *                                                     *
+          *              doi.org/10.1063/5.0005188              *
+          *                                                     *
+          **************** 64 BIT LINUX VERSION *****************
+
+  GAMESS HAS BEEN MADE POSSIBLE WITH IMPORTANT CONTRIBUTIONS FROM
+  THE FOLLOWING INDIVIDUALS (IN ALPHABETICAL ORDER):
+
+     IVANA ADAMOVIC, CHRISTINE AIKENS, TOMOKO AKAMA,
+     MELISA ALKAN, YURI ALEXEEV, YURIKO AOKI, POOJA ARORA,
+     TOSHIO ASADA, ANDREY ASADCHEV, KIM K. BALDRIDGE,
+     PRADIPTA BANDYOPADHYAY, TAYLOR A. BARNES, MARIA BARYSZ,
+     ROB BELL, JONATHAN BENTZ, COLLEEN BERTONI,
+     JERRY A. BOATZ, BRETT BODE, KURT BRORSEN, KURT R. BRORSEN,
+     LAIMUTIS BYTAUTAS, CALEB CARLIN, LAURA CARRINGTON,
+     GALINA CHABAN, BENOIT CHAMPAGNE, WEI CHEN, MAHITO CHIBA,
+     DAN CHIPMAN, CHEOL HO CHOI, TANNER CULPITT,
+     DIPAYAN DATTA, PAUL DAY, ALBERT DEFUSCO,
+     NUWAN DESILVA, J. EMILIANO DEUSTUA,
+     TIM DUDLEY, MICHEL DUPUIS, STEVEN T. ELBERT,
+     DMITRI FEDOROV, KATHERINE FERRERAS, MICHAEL FILATOV,
+     ALEX FINDLATER,GRAHAM FLETCHER, MARK FREITAG,
+     CHRISTIAN FRIEDL, DAVID GARMER, 
+     IGOR S. GERASIMOV, KURT GLAESEMANN,
+     MARK S. GORDON, JEFFREY R. GOUR, FENG LONG GU,
+     EMILIE B. GUIDEZ, ANASTASIA GUNINA, SHARON HAMMES-SCHIFFER,
+     MASATAKE HARUTA, KIMIHIKO HIRAO, YASUHIRO IKABATA,
+     TZVETELIN IORDANOV, STEPHAN IRLE, KAZUYA ISHIMURA,
+     JOE IVANIC, FRANK JENSEN, JAN H. JENSEN, VISVALDAS KAIRYS,
+     MUNEAKI KAMIYA, MICHIO KATOUDA, NAOAKI KAWAKAMI, DAN KEMP,
+     BERNARD KIRTMAN, KAZUO KITAURA, MARIUSZ KLOBUKOWSKI,
+     MASATO KOBAYASHI, KONSTANTIN KOMAROV, PRAKASHAN KORAMBATH,
+     JACEK KORCHOWIEC, SHIRO KOSEKI, KAROL KOWALSKI,
+     JIMMY KROMANN, STANISLAW A. KUCHARSKI, HENRY KURTZ,
+     SAROM SOK LEANG, SEUNGHOON LEE, HUI LI, SHUHUA LI, WEI LI,
+     JESSE J. LUTZ, ALEKSANDR O. LYKHIN,
+     ILIAS MAGOULAS, MARCIN MAKOWSKI,
+     JOANI MATO, NIKITA MATSUNAGA, BENEDETTA MENNUCCI,
+     GRANT MERRILL, NORIYUKI MINEZAWA, VLADIMIR MIRONOV,
+     EISAKU MIYOSHI, JOHN A. MONTGOMERY JR., HIROTOSHI MORI,
+     JONATHAN MULLIN, MONIKA MUSIAL, SHIGERU NAGASE,
+     TAKESHI NAGATA, HIROMI NAKAI, TAKAHITO NAKAJIMA,
+     YUYA NAKAJIMA, HARUYUKI NAKANO, HIROYA NAKATA, SEAN NEDD,
+     HEATHER NETZLOFF, KIET A. NGUYEN, YOSHIO NISHIMOTO,
+     BOSILJKA NJEGIC, RYAN OLSON, MIKE PAK, ROBERTO PEVERATI,
+     BUU PHAM, PIOTR PIECUCH, ANNA POMOGAEVA, DAVID POOLE,
+     SPENCER PRUITT, OLIVIER QUINET, LUKE ROSKOP,
+     KLAUS RUEDENBERG, ANDREW SAND, TOSAPORN SATTASATHUCHANA,
+     NOZOMI SAWADA, MICHAEL W. SCHMIDT, PATRICK E. SCHNEIDER,
+     JUNJI SEINO, PRACHI SHARMA, JUN SHEN, JIM SHOEMAKER,
+     GEORGE SCHOENDORFF, YINAN SHU, DEJUN SI, JONATHAN SKONE,
+     LYUDMILA SLIPCHENKO, TONY SMITH, JIE SONG, MARK SPACKMAN,
+     CASPER STEINMANN, WALT STEVENS, PEIFENG SU, SHUJUN SU,
+     CHET SWALINA, CHINAMI TAKASHIMA, TETSUYA TAKETSUGU,
+     ZHEN TAO, NANDUN THELLAMUREGE, ANANTA TIWARI,
+     SEIKEN TOKURA, JACOPO TOMASI,
+     TSUGUKI TOUMA, TAKAO TSUNEDA, HIROAKI UMEDA,
+     JORGE LUIS GALVEZ VALLEJO, YALI WANG, SIMON WEBB,
+     AARON WEST, THERESA L. WINDUS, MARTA WLOCH,
+     PENG XU, KIYOSHI YAGI, SUSUMU YANAGISAWA, YANG YANG,
+     SOOHAENG YOO, TAKESHI YOSHIKAWA, FEDERICO ZAHARIEV,
+     TOBY ZENG
+
+  WHO ARE SUPPORTED BY THEIR INSTITUTION/UNIVERSITY/COMPANY/GROUP
+  (IN ALPHABETICAL ORDER):
+
+     EP ANALYTICS,
+     FACULTES UNIVERSITAIRES NOTRE-DAME DE LA PAIX,
+     INSTITUTE FOR MOLECULAR SCIENCE, IOWA STATE UNIVERSITY,
+     JACKSON STATE UNIVERSITY, JOHANNES KEPLER UNIVERSITY LINZ,
+     KYUNGPOOK NATIONAL UNIVERSITY
+     KYUSHU UNIVERSITY, MICHIGAN STATE UNIVERSITY,
+     MIE UNIVERSITY, THE MOLECULAR SCIENCES SOFTWARE INSTITUTE,
+     MOSCOW STATE UNIVERSITY,
+     N. COPERNICUS UNIVERSITY, NAGOYA UNIVERSITY,
+     NANJING UNIVERSITY, NAT. INST. OF ADVANCED INDUSTRIAL
+     SCIENCE AND TECHNOLOGY, NATIONAL INST. OF STANDARDS AND
+     TECHNOLOGY, NESMEYANOV INSTITUTE OF ORGANOELEMENT COMPOUNDS
+     OF RUSSIAN ACADEMY OF SCIENCES, OSAKA PREFECTURE UNIVERSITY,
+     PENNSYLVANIA STATE UNIVERSITY, TOKYO INSTITUTE OF TECHNOLOGY,
+     UNIVERSITY OF AARHUS, UNIVERSITY OF ALBERTA,
+     UNIVERSITY OF CALIFORNIA AT SANTA BARBARA,
+     UNIVERSITY OF COPENHAGEN, UNIVERSITY OF IOWA,
+     UNIVERSITY OF MEMPHIS, UNIVERSITY OF MINNESOTA,
+     UNIVERSITY OF NEBRASKA, UNIVERSITY OF NEW ENGLAND,
+     UNIVERSITY OF NOTRE DAME, UNIVERSITY OF PISA,
+     UNIVERSITY OF SILESIA, UNIVERSITY OF TOKYO,
+     UNIVERSITY OF ZURICH, WASEDA UNIVERSITY,
+     YALE UNIVERSITY
+
+  GAMESS SOFTWARE MANAGEMENT TEAM FOR THIS RELEASE:
+     MARK S. GORDON (TEAM LEAD),
+     BRETT BODE (SENIOR ADVISOR),
+     GIUSEPPE BARCA,
+     COLLEEN BERTONI,
+     KRISTOPHER KEIPERT (ADVISOR),
+     SAROM S. LEANG (DEVELOPMENT LEAD),
+     BUU PHAM,
+     JACKSON HAYES (WEBSITE ADMINISTRATOR),
+     PENG XU
+
+ EXECUTION OF GAMESS BEGUN 09:19:42 13-OCT-2026    
+
+            ECHO OF THE FIRST FEW INPUT CARDS -
+ INPUT CARD>! An SN2 reaction that takes place in water but here for speed                  
+ INPUT CARD>! the solvent is removed.                                                       
+ INPUT CARD>! QM is used for all atoms (HF-3c).                                             
+ INPUT CARD>! NVT MD at 298 K with umbrella sampling                                        
+ INPUT CARD>! for asymmetric coordinate R=R(NC)-R(CBr) (N...C...Br).                        
+ INPUT CARD>! The value is contrained to -0.7 A with the force constant of 50.0 kcal/mol/A2.
+ INPUT CARD>! MD summary printed every 2 steps, trajectory written every 3 steps.           
+ INPUT CARD>! Step size 1 fs, 6 steps (6 fs total).                                         
+ INPUT CARD>! A fresh start (not a restart with velocities).                                
+ INPUT CARD>!                                                                               
+ INPUT CARD>!    US asymmetric stretch =   -0.6801927343 Ang                                
+ INPUT CARD>!    ...                                                                        
+ INPUT CARD>!    US asymmetric stretch =   -0.6817046732 Ang                                
+ INPUT CARD>!                                                                               
+ INPUT CARD>!    POT  ENERGY      =     -1.673731258E+06 KCAL/MOL                           
+ INPUT CARD>!    ...                                                                        
+ INPUT CARD>!    POT  ENERGY      =     -1.673730574E+06 KCAL/MOL                           
+ INPUT CARD>!                                                                               
+ INPUT CARD> $CONTRL RUNTYP=MD NPRINT=-5 $END                                               
+ INPUT CARD> $SYSTEM MWORDS=100 MODIO=1040 $END                                             
+ INPUT CARD> $SCF DIRSCF=.T. NPUNCH=0 $END                                                  
+ INPUT CARD> $BASIS GBASIS=HF-3c $END                                                       
+ INPUT CARD> $MD MDINT= VVERLET NVTNH=2 MBT=.t. MBR=.t. BATHT=298 RSTEMP=.T.                
+ INPUT CARD>DT= 1E-15 NSTEPS=6 JEVERY=2 KEVERY=3 IRATTL(1)= 1,1,1 TRJFMT=F14O6              
+ INPUT CARD>USAMP=.T. UFORCE(1)=50.0 RZERO(1)=-0.7 IUSTYP= 1 ipair(1)= 1,3,2                
+ INPUT CARD> $END                                                                           
+ INPUT CARD> $DATA                                                                          
+ INPUT CARD> SN2 reaction NH3 + CH3I -> NH3CH3(+) + I(-)                                    
+ INPUT CARD> C1                                                                             
+ INPUT CARD>C           6.0       6.0954818495     8.7425780425    11.9974795652            
+ INPUT CARD>Br         35.0       8.3845926748    10.2458278361    11.9273643888            
+ INPUT CARD>N           7.0       4.3600420583     7.6340703439    12.0068982721            
+ INPUT CARD>H           1.0       6.5227697425     8.2586325701    12.9090227905            
+ INPUT CARD>H           1.0       6.3148008489     8.3079169447    10.9921646587            
+ INPUT CARD>H           1.0       5.5317196490     9.7033113333    12.0802596387            
+ INPUT CARD>H           1.0       3.5681779795     7.9873850761    12.5756591606            
+ INPUT CARD>H           1.0       4.1179627497     7.7493772544    11.0051642408            
+ INPUT CARD>H           1.0       4.4885865261     6.6114832513    12.1216191546            
+ INPUT CARD> $end                                                                           
+    100000000 WORDS OF MEMORY AVAILABLE
+
+     BASIS OPTIONS
+     -------------
+     GBASIS=HF-3C        IGAUSS=       0      POLAR=NONE    
+     NDFUNC=       0     NFFUNC=       0     DIFFSP=       F
+     NPFUNC=       0      DIFFS=       F     BASNAM=        
+
+
+     RUN TITLE
+     ---------
+  SN2 reaction NH3 + CH3I -> NH3CH3(+) + I(-)                                    
+
+ THE POINT GROUP OF THE MOLECULE IS C1      
+ THE ORDER OF THE PRINCIPAL AXIS IS     0
+
+ WARNING: a patch was used for the SV/SVP basis set for atom with Z= 35
+     NORMALIZATION FACTOR=  0.11943675E+01 FOR ATOM Z= 35 SHELL=  1 ITYP=   1
+     NORMALIZATION FACTOR=  0.98621345E+00 FOR ATOM Z= 35 SHELL=  2 ITYP=   1
+     NORMALIZATION FACTOR=  0.96539314E+00 FOR ATOM Z= 35 SHELL=  3 ITYP=   1
+     NORMALIZATION FACTOR=  0.94400012E+00 FOR ATOM Z= 35 SHELL=  6 ITYP=   2
+     NORMALIZATION FACTOR=  0.94702960E+00 FOR ATOM Z= 35 SHELL=  7 ITYP=   2
+     NORMALIZATION FACTOR=  0.11784581E+01 FOR ATOM Z= 35 SHELL= 10 ITYP=   3
+     NORMALIZATION FACTOR=  0.36849665E+01 FOR ATOM Z= 35 SHELL= 11 ITYP=   3
+
+ ATOM      ATOMIC                      COORDINATES (BOHR)
+           CHARGE         X                   Y                   Z
+ C           6.0    11.5187904587       16.5210769266       22.6719489215
+ BR         35.0    15.8445826740       19.3618071276       22.5394504505
+ N           7.0     8.2392847851       14.4263011210       22.6897476967
+ H           1.0    12.3262474943       15.6065525908       24.3945158433
+ H           1.0    11.9332432715       15.6996865542       20.7721792169
+ H           1.0    10.4534343775       18.3365995935       22.8283805777
+ H           1.0     6.7428786567       15.0939691522       23.7645499285
+ H           1.0     7.7818212246       14.6441995863       20.7967448650
+ H           1.0     8.4821986065       12.4938917174       22.9065387297
+
+          INTERNUCLEAR DISTANCES (ANGS.)
+          ------------------------------
+
+                1 C          2 BR         3 N          4 H          5 H     
+
+   1 C       0.0000000    2.7394716 *  2.0592788 *  1.1170001 *  1.1170001 *
+   2 BR      2.7394716 *  0.0000000    4.7983967    2.8946473 *  2.9856549 *
+   3 N       2.0592788 *  4.7983967    0.0000000    2.4251387 *  2.3032228 *
+   4 H       1.1170001 *  2.8946473 *  2.4251387 *  0.0000000    1.9287367 *
+   5 H       1.1170001 *  2.9856549 *  2.3032228 *  1.9287367 *  0.0000000  
+   6 H       1.1169999 *  2.9080209 *  2.3790688 *  1.9380726 *  1.9350174 *
+   7 H       2.7003468 *  5.3589831    1.0370000 *  2.9856857 *  3.1865550  
+   8 H       2.4252256 *  5.0286031    1.0370001 *  3.1091985    2.2667671 *
+   9 H       2.6719072 *  5.3315157    1.0370000 *  2.7333142 *  2.7365331 *
+
+                6 H          7 H          8 H          9 H     
+
+   1 C       1.1169999 *  2.7003468 *  2.4252256 *  2.6719072 *
+   2 BR      2.9080209 *  5.3589831    5.0286031    5.3315157  
+   3 N       2.3790688 *  1.0370000 *  1.0370001 *  1.0370000 *
+   4 H       1.9380726 *  2.9856857 *  3.1091985    2.7333142 *
+   5 H       1.9350174 *  3.1865550    2.2667671 *  2.7365331 *
+   6 H       0.0000000    2.6543021 *  2.6405297 *  3.2633171  
+   7 H       2.6543021 *  0.0000000    1.6808823 *  1.7165110 *
+   8 H       2.6405297 *  1.6808823 *  0.0000000    1.6366540 *
+   9 H       3.2633171    1.7165110 *  1.6366540 *  0.0000000  
+
+  * ... LESS THAN  3.000
+
+
+     ATOMIC BASIS SET
+     ----------------
+ THE CONTRACTED PRIMITIVE FUNCTIONS HAVE BEEN UNNORMALIZED
+ THE CONTRACTED BASIS FUNCTIONS ARE NOW NORMALIZED TO UNITY
+
+  SHELL TYPE  PRIMITIVE        EXPONENT          CONTRACTION COEFFICIENT(S)
+
+ C         
+
+      1   S       1           153.1722600    0.070740009534
+      1   S       2            23.0730300    0.395380053285
+      1   S       3             4.9232900    0.663311089393
+
+      2   S       4             6.6166120   -0.081379988353
+      2   S       5             0.5258560    0.574852917728
+      2   S       6             0.1699580    0.502412928096
+
+      3   P       7             4.9129200    0.109930927555
+      3   P       8             0.9976160    0.462712695070
+      3   P       9             0.2326850    0.627513586466
+
+ BR        
+
+      4   S      10        113286.3877600    0.001705919551
+      4   S      11         17009.6263030    0.013078822297
+      4   S      12          3870.1842567    0.064998679261
+      4   S      13          1093.0357227    0.227502010735
+      4   S      14           356.3972180    0.466097633034
+      4   S      15           123.1253964    0.368037553985
+
+      5   S      16           236.7408401   -0.110732693940
+      5   S      17            28.4686611    0.638829253369
+      5   S      18            11.8834437    0.436257200524
+
+      6   S      19            21.2696333   -0.218589877714
+      6   S      20             3.6129227    0.712689048722
+      6   S      21             1.6626649    0.412067138699
+
+      7   S      22             0.3482379    1.000000000000
+
+      8   S      23             0.1301903    1.000000000000
+
+      9   P      24          1560.2801881    0.008228534626
+      9   P      25           368.4785920    0.062534001825
+      9   P      26           117.2297885    0.250118594435
+      9   P      27            42.6489092    0.508241741779
+      9   P      28            16.0872251    0.345309466394
+
+     10   P      29             8.6352810    0.324346153085
+     10   P      30             3.5613666    0.544548441346
+     10   P      31             1.5292627    0.230416033957
+
+     11   P      32             0.5306429    1.000000000000
+
+     12   P      33             0.1570276    1.000000000000
+
+     13   D      34           104.8551864    0.026692250997
+     13   D      35            30.2811437    0.158567238635
+     13   D      36            10.6513943    0.429836181858
+     13   D      37             3.8699456    0.577969932890
+
+     14   D      38             1.3240877    1.000000000000
+
+     15   D      39             0.3890000    1.000000000000
+
+ N         
+
+     16   S      40           218.3644900    0.067870009988
+     16   S      41            32.5988900    0.390202057422
+     16   S      42             6.9173900    0.670083098609
+
+     17   S      43             8.9194260   -0.080889971265
+     17   S      44             0.7061410    0.567201798512
+     17   S      45             0.2250540    0.511091818444
+
+     18   P      46             6.5562720    0.115918975307
+     18   P      47             1.3490790    0.469957899890
+     18   P      48             0.3122090    0.618447868259
+
+ H         
+
+     19   S      49             7.0340630    0.070452012431
+     19   S      50             1.0647560    0.407826071961
+     19   S      51             0.2365590    0.647752114297
+
+ H         
+
+     20   S      52             7.0340630    0.070452012431
+     20   S      53             1.0647560    0.407826071961
+     20   S      54             0.2365590    0.647752114297
+
+ H         
+
+     21   S      55             7.0340630    0.070452012431
+     21   S      56             1.0647560    0.407826071961
+     21   S      57             0.2365590    0.647752114297
+
+ H         
+
+     22   S      58             7.0340630    0.070452012431
+     22   S      59             1.0647560    0.407826071961
+     22   S      60             0.2365590    0.647752114297
+
+ H         
+
+     23   S      61             7.0340630    0.070452012431
+     23   S      62             1.0647560    0.407826071961
+     23   S      63             0.2365590    0.647752114297
+
+ H         
+
+     24   S      64             7.0340630    0.070452012431
+     24   S      65             1.0647560    0.407826071961
+     24   S      66             0.2365590    0.647752114297
+
+ TOTAL NUMBER OF BASIS SET SHELLS             =   24
+ NUMBER OF CARTESIAN GAUSSIAN BASIS FUNCTIONS =   51
+ NUMBER OF ELECTRONS                          =   54
+ CHARGE OF MOLECULE                           =    0
+ SPIN MULTIPLICITY                            =    1
+ NUMBER OF OCCUPIED ORBITALS (ALPHA)          =   27
+ NUMBER OF OCCUPIED ORBITALS (BETA )          =   27
+ TOTAL NUMBER OF ATOMS                        =    9
+ THE NUCLEAR REPULSION ENERGY IS      139.0340707915
+  ________________________________
+
+           DFTD3 V1.2             
+   S.GRIMME, UNIVERSITY MUENSTER  
+   WED MAR 10 08:38:00 CET 2010   
+  ________________________________
+
+ PLEASE CITE DFT-D3 WORK DONE WITH THIS CODE AS:
+ S. GRIMME, J. ANTONY, S. EHRLICH AND H. KRIEG,
+ J. CHEM. PHYS, 132 (2010), 154104.
+ IF USED WITH BJ-DAMPING CITE ALSO
+ S. GRIMME, S. EHRLICH AND L. GOERIGK,
+ J. COMPUT. CHEM. 32 (2011), 1456-1465
+
+ DFT-D3 PARAMETERS WILL BE LOADED AND PRINTED
+ BEFORE THE RESULTS
+
+ IMPLEMENTATION OF DFT-D IN GAMESS BY:
+ R.PEVERATI AND K.K.BALDRIDGE, 
+ J.CHEM.THEORY COMPUT. 4,(2008), 2030-2048
+
+
+ PLEASE CITE GCP WORK DONE WITH THIS CODE AS:
+  H. Kruse and S. Grimme,
+  J. Chem. Phys. 134 (2012), 154101
+
+ PLEASE CITE SRB WORK DONE WITH THIS CODE AS:
+  R. Sure and S. Grimme,
+  J. Comput. Chem., 34 (2013), 1672
+
+
+     $CONTRL OPTIONS
+     ---------------
+ SCFTYP=RHF          RUNTYP=MD           EXETYP=RUN     
+ MPLEVL=       0     CITYP =NONE         CCTYP =NONE         VBTYP =NONE    
+ DFTTYP=NONE         TDDFT =NONE    
+ MULT  =       1     ICHARG=       0     NZVAR =       0     COORD =UNIQUE  
+ PP    =NONE         RELWFN=NONE         LOCAL =NONE         NUMGRD=       F
+ ISPHER=      -1     NOSYM =       0     MAXIT =      30     UNITS =ANGS    
+ PLTORB=       F     MOLPLT=       F     AIMPAC=       F     FRIEND=        
+ NPRINT=      -5     IREST =       0     GEOM  =INPUT   
+ NORMF =       0     NORMP =       0     ITOL  =      20     ICUT  =       9
+ INTTYP=BEST         GRDTYP=BEST         QMTTOL= 1.0E-06
+
+     $SYSTEM OPTIONS
+     ---------------
+  REPLICATED MEMORY=   100000000 WORDS (ON EVERY NODE).
+ DISTRIBUTED MEMDDI=           0 MILLION WORDS IN AGGREGATE,
+ MEMDDI DISTRIBUTED OVER   1 PROCESSORS IS           0 WORDS/PROCESSOR.
+ TOTAL MEMORY REQUESTED ON EACH PROCESSOR=   100000000 WORDS.
+ TIMLIM=      525600.00 MINUTES, OR     365.0 DAYS.
+ PARALL= F  BALTYP=  DLB     KDIAG=    0  COREFL= F
+ MXSEQ2=     300 MXSEQ3=     150  mem10=         0  mem22=         0
+
+     High-tech $SYSTEM options in MODIO:    1040
+        (       1) file flushing:        yes
+        (       2) recycle dictionary:   no 
+        (       4) skip timing summary:  no 
+        (       8) save DFT grid file:   yes
+        (      16) reduce output:        yes
+        (      32) slaves open F15:      yes
+        (      64) in-memory F15:        no 
+        (     128) parallelize EVVRSP:   yes
+        (     256) reduce timing output: no 
+        (     512) use XYZ file:         no 
+        (    1024) supershort output:    yes
+        (    2048) superfast calculation:no 
+
+          ----------------
+          PROPERTIES INPUT
+          ----------------
+
+     MOMENTS            FIELD           POTENTIAL          DENSITY
+ IEMOM =       1   IEFLD =       0   IEPOT =       0   IEDEN =       0
+ WHERE =COMASS     WHERE =NUCLEI     WHERE =NUCLEI     WHERE =NUCLEI  
+ OUTPUT=BOTH       OUTPUT=BOTH       OUTPUT=BOTH       OUTPUT=BOTH    
+ IEMINT=       0   IEFINT=       0                     IEDINT=       0
+                                                       MORB  =       0
+          EXTRAPOLATION IN EFFECT
+          SOSCF IN EFFECT
+ ORBITAL PRINTING OPTION: NPREO=     1    51     2     1
+
+     ----------------------
+     TARGET OFFLOAD OPTIONS
+     ----------------------
+     RHF    =       F
+     CPHF    =       F
+     MAKEFP =       F
+
+     -------------------------------
+     INTEGRAL TRANSFORMATION OPTIONS
+     -------------------------------
+     NWORD  =            0
+     CUTTRF = 1.0E-09     MPTRAN =       0
+     DIRTRF =       T     AOINTS =DUP     
+
+          ----------------------
+          INTEGRAL INPUT OPTIONS
+          ----------------------
+ NOPK  =       1 NORDER=       0 SCHWRZ=       T
+
+     ------------------------------------------
+     THE POINT GROUP IS C1 , NAXIS= 0, ORDER= 1
+     ------------------------------------------
+
+     DIMENSIONS OF THE SYMMETRY SUBSPACES ARE
+ A   =   51
+
+ ..... DONE SETTING UP THE RUN .....
+ STEP CPU TIME =     0.01 TOTAL CPU TIME =          0.0 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.0 SECONDS, CPU UTILIZATION IS    40.49%
+
+          $MD INPUT OPTIONS
+          -----------------
+     MDINT = VVERLET          NVTNH =       2
+     DT    = 1.00E-15         NSTEPS=       6         TTOTAL=    0.00E+00 SEC.
+     BATHT =   298.00
+     JEVERY=        2         KEVERY=       3
+     READ  =        F         MODFLU=       0
+     MBT   =        T         MBR   =       T         QRAND =       F
+     PROD  =        F         DELR  =    0.02         PBCOUT=       F
+     NVTOFF=        0         NPROP =       0
+     SSBP  =        F         SForce=    0.00         DROFF = 0.10E+11 0.10E+11
+     CCMS  =        F         CForce=    0.00
+     USAMP =        T         UForce=   50.00    0.00    0.00    0.00
+     IUSTYP=        1         Rzero =   -0.70    0.00    0.00    0.00
+     --------------------------------------------
+     RATTLE Bond Constraint Options (C-H/N-H/O-H)
+     --------------------------------------------
+     IRATTL(1)=  1 1 1
+     RATTOL(1)= 0.10E-04 0.10E-04 0.10E-04
+     IRATIT(1)= 2000 2000 2000
+     RATLEN(1)= 1.117 1.037 1.020
+     ---------------------------------------------
+     TULLY SURFACE HOPPING NONADIABATIC MD OPTIONS
+     ---------------------------------------------
+     NAMD=        F         NDTLF =       2
+
+     TEMPERATURE RANGE NVT ENSEMBLE CHOSEN: RSTEMP= T, DTEMP=  100.00 DEGREES
+     THIS MD SIMULATION HAS       9 QM ATOMS, AND    0 EFFECTIVE FRAGMENTS
+
+ *** NO $RDF GROUP FOUND. CONTINUE...***
+
+     PROPERTY EVALUATIONS IN MOLECULAR DYNAMICS
+     ------------------------------------------
+     PRESSURE= F          DIFFUSION= F
+     DIPOLE PROPERTIES= F      ROT. RELAXATION= F
+     HEAT OF VAPORIZATION= F
+     COORDINATION # / G(R)#= F/ 0
+
+          -------------
+          GUESS OPTIONS
+          -------------
+          GUESS =HUCKEL            NORB  =       0          NORDER=       0
+          MIX   =       F          PRTMO =       F          PUNMO =       F
+          TOLZ  = 1.0E-08          TOLE  = 1.0E-05
+          SYMDEN=       F          PURIFY=       F
+
+ INITIAL GUESS ORBITALS GENERATED BY HUCKEL   ROUTINE.
+ HUCKEL GUESS REQUIRES     30498 WORDS.
+
+ SYMMETRIES FOR INITIAL GUESS ORBITALS FOLLOW.   BOTH SET(S).
+    27 ORBITALS ARE OCCUPIED (   16 CORE ORBITALS).
+    17=A       18=A       19=A       20=A       21=A       22=A       23=A   
+    24=A       25=A       26=A       27=A       28=A       29=A       30=A   
+    31=A       32=A       33=A       34=A       35=A       36=A       37=A   
+ ...... END OF INITIAL ORBITAL SELECTION ......
+
+                    ----------------------
+                    AO INTEGRAL TECHNOLOGY
+                    ----------------------
+     S,P,L SHELL ROTATED AXIS INTEGRALS, REPROGRAMMED BY
+        KAZUYA ISHIMURA (IMS) AND JOSE SIERRA (SYNSTAR).
+     S,P,D,L SHELL ROTATED AXIS INTEGRALS PROGRAMMED BY
+        KAZUYA ISHIMURA (INSTITUTE FOR MOLECULAR SCIENCE).
+     S,P,D,F,G SHELL TO TOTAL QUARTET ANGULAR MOMENTUM SUM 5,
+        ERIC PROGRAM BY GRAHAM FLETCHER (ELORET AND NASA ADVANCED
+        SUPERCOMPUTING DIVISION, AMES RESEARCH CENTER).
+     S,P,D,F,G,L SHELL GENERAL RYS QUADRATURE PROGRAMMED BY
+        MICHEL DUPUIS (PACIFIC NORTHWEST NATIONAL LABORATORY).
+
+ FINAL RHF ENERGY IS    -2667.2134211757 AFTER  10 ITERATIONS
+ ..... END OF 1-ELECTRON GRADIENT ......
+
+     Applying Umbrella Sampling Constraints ...
+     Bonds 21 and 31 for atoms    1    3    2 =    2.0592788298   2.7394715641
+     US asymmetric stretch =   -0.6801927343 Ang
+     INITIAL POTENTIAL ENERGY =         -2667.2134055456 AU
+     INITIAL POTENTIAL ENERGY =      -1673731.2577432429 KCAL/MOL
+
+
+ *** AT T=          0.00 FSEC, THIS RUN'S STEP NO.=       0
+     POT  ENERGY      =     -1.673731258E+06 KCAL/MOL
+
+ FINAL RHF ENERGY IS    -2667.2134658386 AFTER   7 ITERATIONS
+ ..... END OF 1-ELECTRON GRADIENT ......
+
+     Applying Umbrella Sampling Constraints ...
+     Bonds 21 and 31 for atoms    1    3    2 =    2.0634267436   2.7415706030
+     US asymmetric stretch =   -0.6781438594 Ang
+ *** RESCALING VELOCITIES AFTER MD STEP NO.       1 ***
+
+ FINAL RHF ENERGY IS    -2667.2133370858 AFTER   7 ITERATIONS
+ ..... END OF 1-ELECTRON GRADIENT ......
+
+     Applying Umbrella Sampling Constraints ...
+     Bonds 21 and 31 for atoms    1    3    2 =    2.0675644253   2.7445148396
+     US asymmetric stretch =   -0.6769504142 Ang
+
+ *** AT T=          2.00 FSEC, THIS RUN'S STEP NO.=       2
+     POT  ENERGY      =     -1.673731202E+06 KCAL/MOL
+
+     TRANS    KE      =           7.65005926 KCAL/MOL
+     ROT      KE      =           0.00000000 KCAL/MOL
+     TOT      KE      =           7.65005926 KCAL/MOL
+
+     TOT. HAM. ENERGY =     -1.673723552E+06 KCAL/MOL    0.00000000
+
+     TEMPERATURE      =         285.15825989 K
+
+ FINAL RHF ENERGY IS    -2667.2131647762 AFTER   7 ITERATIONS
+ ..... END OF 1-ELECTRON GRADIENT ......
+
+     Applying Umbrella Sampling Constraints ...
+     Bonds 21 and 31 for atoms    1    3    2 =    2.0709249203   2.7475534034
+     US asymmetric stretch =   -0.6766284832 Ang
+
+ FINAL RHF ENERGY IS    -2667.2129439111 AFTER   7 ITERATIONS
+ ..... END OF 1-ELECTRON GRADIENT ......
+
+     Applying Umbrella Sampling Constraints ...
+     Bonds 21 and 31 for atoms    1    3    2 =    2.0734247129   2.7507012433
+     US asymmetric stretch =   -0.6772765304 Ang
+
+ *** AT T=          4.00 FSEC, THIS RUN'S STEP NO.=       4
+     POT  ENERGY      =     -1.673730955E+06 KCAL/MOL
+
+     TRANS    KE      =           7.40284489 KCAL/MOL
+     ROT      KE      =           0.00000000 KCAL/MOL
+     TOT      KE      =           7.40284489 KCAL/MOL
+
+     TOT. HAM. ENERGY =     -1.673723553E+06 KCAL/MOL    0.00000000
+
+     TEMPERATURE      =         275.94326960 K
+
+ FINAL RHF ENERGY IS    -2667.2126588421 AFTER   7 ITERATIONS
+ ..... END OF 1-ELECTRON GRADIENT ......
+
+     Applying Umbrella Sampling Constraints ...
+     Bonds 21 and 31 for atoms    1    3    2 =    2.0750018620   2.7539587740
+     US asymmetric stretch =   -0.6789569120 Ang
+
+ FINAL RHF ENERGY IS    -2667.2123285376 AFTER   7 ITERATIONS
+ ..... END OF 1-ELECTRON GRADIENT ......
+
+     Applying Umbrella Sampling Constraints ...
+     Bonds 21 and 31 for atoms    1    3    2 =    2.0756092265   2.7573138991
+     US asymmetric stretch =   -0.6817046726 Ang
+
+ *** AT T=          6.00 FSEC, THIS RUN'S STEP NO.=       6
+     POT  ENERGY      =     -1.673730574E+06 KCAL/MOL
+
+     TRANS    KE      =           7.02560003 KCAL/MOL
+     ROT      KE      =           0.00000000 KCAL/MOL
+     TOT      KE      =           7.02560003 KCAL/MOL
+
+     TOT. HAM. ENERGY =     -1.673723550E+06 KCAL/MOL    0.00000000
+
+     TEMPERATURE      =         261.88135397 K
+ .... DONE WITH THIS PORTION OF THE MD TRAJECTORY ....
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          6.1 (      0.1 MIN)
+ TOTAL WALL CLOCK TIME=         27.7 SECONDS, CPU UTILIZATION IS    21.83%
+              1079718  WORDS OF DYNAMIC MEMORY USED
+ EXECUTION OF GAMESS TERMINATED NORMALLY 09:20:09 13-OCT-2026    
+ DDI: 263640 bytes (0.3 MB / 0 MWords) used by master data server.
+
+ ----------------------------------------
+ CPU timing information for all processes
+ ========================================
+ 0: 6.56 + 0.258 = 6.315
+ 1: 1.187 + 4.922 = 6.109
+ ----------------------------------------
+----- accounting info -----
+Files used on the parent node meyeri were:
+-rw-r--r-- 1 eric users     941 Oct 13 09:19 /home/eric/data/development/forks/OpenChemistry/openchemistry-nix/openchemistry/avogadrodata/data/gamess/scratch/exam49.dat
+-rw-r--r-- 1 eric users    1708 Oct 13 09:19 /home/eric/data/development/forks/OpenChemistry/openchemistry-nix/openchemistry/avogadrodata/data/gamess/scratch/exam49.F05
+-rw-r--r-- 1 eric users 1505120 Oct 13 09:20 /home/eric/data/development/forks/OpenChemistry/openchemistry-nix/openchemistry/avogadrodata/data/gamess/scratch/exam49.F10
+-rw-r--r-- 1 eric users       7 Oct 13 09:19 /home/eric/data/development/forks/OpenChemistry/openchemistry-nix/openchemistry/avogadrodata/data/gamess/scratch/exam49.nodes.mpd
+-rw-r--r-- 1 eric users    2338 Oct 13 09:20 /home/eric/data/development/forks/OpenChemistry/openchemistry-nix/openchemistry/avogadrodata/data/gamess/scratch/exam49.rst
+-rw-r--r-- 1 eric users    1518 Oct 13 09:20 /home/eric/data/development/forks/OpenChemistry/openchemistry-nix/openchemistry/avogadrodata/data/gamess/scratch/exam49.trj
+Tue Oct 13 09:20:09 AM EDT 2026
+8.199u 5.354s 0:30.87 43.8%	0+0k 0+30575io 656pf+0w
