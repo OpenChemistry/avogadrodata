@@ -8,7 +8,8 @@
 # valences but a different Kekule structure from the reference.
 # Generated from a run of tests/io/bondorderscorpustest.cpp. Delete a line
 # when perception starts passing the entry.
-carbon/nanotube-10-0-open.mol both fail open-ended nanotube without H caps: each rim carbon has two bonds and needs two more
+carbon/nanotube-10-0-open.mol both wrong open-ended nanotube without H caps: each bent two-bond rim carbon is read as sp2 (one pi bond, valence 3), not as the reference's valence 4
+carbon/nanotube-5-5-open.mol both wrong open-ended nanotube without H caps: bent two-bond rim carbons are read as sp2 (valence 3), but the reference has them triple-bonded (valence 4)
 carbon/nanotube-5-5-defect-hcap.mol both fail odd number of sp2 carbons (a vacancy defect): no perfect matching exists
 ccd/0HV.sdf both fail nitro or N-oxide N=O: needs hypervalent or charge-separated nitrogen
 ccd/0RD.sdf both fail sulfonyl or sulfoxide S=O: sulfur valence 4 or 6 is not chosen
