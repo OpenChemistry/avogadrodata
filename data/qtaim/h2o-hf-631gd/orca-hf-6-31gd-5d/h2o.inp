@@ -1,0 +1,8 @@
+# ORCA input file
+# h2o HF 6-31G(d): Avogadro QTAIM reference data
+! HF 6-31G(d) AIM NoRI VeryTightSCF
+* xyz 0 1
+   O        0.99902        -0.06151         0.07481
+   H        1.96108        -0.09190         0.05648
+   H        0.71180        -0.84832        -0.39981
+*
