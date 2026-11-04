@@ -1,0 +1,31 @@
+# h2o HF/6-31G(d), Cartesian d (6D): Avogadro QTAIM reference data
+# Run with: psi4 h2o.in h2o.out   (written for Psi4 1.3.2)
+# Same fixed geometry as geometry.xyz; no reorientation or recentering.
+
+memory 2 GB
+
+molecule h2o {
+0 1
+O          0.99902       -0.06151        0.07481
+H          1.96108       -0.09190        0.05648
+H          0.71180       -0.84832       -0.39981
+units angstrom
+symmetry c1
+no_reorient
+no_com
+}
+
+set {
+  reference rhf
+  basis 6-31G*
+  # Psi4's Pople basis files default to Cartesian d, so set this explicitly.
+  puream false
+  # Exact integrals, as in the Gaussian and ORCA runs (no density fitting).
+  scf_type pk
+  e_convergence 1e-10
+  d_convergence 1e-10
+}
+
+E, wfn = energy('scf', return_wfn=True)
+molden(wfn, 'h2o.molden')
+fchk(wfn, 'h2o.fchk')

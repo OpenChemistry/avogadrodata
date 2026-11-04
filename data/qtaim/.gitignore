@@ -1,0 +1,2 @@
+# Keep the compressed fixtures even if the user has a global "*.gz" ignore.
+!*.gz
