@@ -1,0 +1,228 @@
+#------------------------------------------------------------------------------
+#$Date: 2025-08-18 15:40:47 +0300 (Mon, 18 Aug 2025) $
+#$Revision: 301773 $
+#$URL: file:///home/coder/svn-repositories/_RELOADED_COD/cod-reloaded/cif/1/10/06/1100686.cif $
+#------------------------------------------------------------------------------
+#
+# This file is available in the Crystallography Open Database (COD),
+# http://www.crystallography.net/
+#
+# All data on this site have been placed in the public domain by the
+# contributors.
+#
+data_1100686
+loop_
+_publ_author_name
+'Hwang, Long-Chih'
+'Wu, Rang-Rong'
+'Jane, Shin-Yi'
+'Lee, Gene-Hsiang'
+_publ_section_title
+;
+ Crystal Structure of 3-Amino-1,2,4-triazine
+;
+_journal_name_full
+;
+ Analytical Sciences: X-ray Structure Analysis Online
+;
+_journal_page_first              x73
+_journal_page_last               x74
+_journal_paper_doi               10.2116/analscix.19.x73
+_journal_volume                  19
+_journal_year                    2003
+_chemical_formula_sum            'C3 H4 N4'
+_chemical_formula_weight         96.10
+_space_group_IT_number           14
+_space_group_name_Hall           '-P 2yn'
+_space_group_name_H-M_alt        'P 1 21/n 1'
+_symmetry_cell_setting           monoclinic
+_symmetry_space_group_name_Hall  '-P 2yn'
+_symmetry_space_group_name_H-M   'P 1 21/n 1'
+_atom_sites_solution_hydrogens   geom
+_atom_sites_solution_primary     direct
+_atom_sites_solution_secondary   difmap
+_cell_angle_alpha                90.00
+_cell_angle_beta                 101.545(2)
+_cell_angle_gamma                90.00
+_cell_formula_units_Z            4
+_cell_length_a                   5.20950(10)
+_cell_length_b                   14.1845(5)
+_cell_length_c                   6.0638(2)
+_cell_measurement_reflns_used    1716
+_cell_measurement_temperature    295(2)
+_cell_volume                     439.01(2)
+_diffrn_ambient_temperature      295(2)
+_diffrn_measurement_device       'Siemens SMART CCD'
+_diffrn_measurement_method       '\w scans'
+_diffrn_radiation_monochromator  graphite
+_diffrn_radiation_source         'fine-focus sealed tube'
+_diffrn_radiation_type           MoK\a
+_diffrn_radiation_wavelength     0.71073
+_diffrn_reflns_av_R_equivalents  0.0484
+_diffrn_reflns_av_sigmaI/netI    0.0353
+_diffrn_reflns_limit_h_max       6
+_diffrn_reflns_limit_h_min       -6
+_diffrn_reflns_limit_k_max       19
+_diffrn_reflns_limit_k_min       -19
+_diffrn_reflns_limit_l_max       8
+_diffrn_reflns_limit_l_min       -8
+_diffrn_reflns_number            5927
+_diffrn_reflns_theta_max         29.51
+_diffrn_reflns_theta_min         2.87
+_exptl_absorpt_coefficient_mu    0.105
+_exptl_absorpt_correction_T_max  0.4804
+_exptl_absorpt_correction_T_min  0.4445
+_exptl_absorpt_correction_type   sadabs
+_exptl_crystal_colour            yellow
+_exptl_crystal_density_diffrn    1.454
+_exptl_crystal_description       plate
+_exptl_crystal_F_000             200
+_exptl_crystal_size_max          0.45
+_exptl_crystal_size_mid          0.3
+_exptl_crystal_size_min          0.10
+_refine_diff_density_max         0.224
+_refine_diff_density_min         -0.179
+_refine_diff_density_rms         0.038
+_refine_ls_extinction_coef       0.0561(139)
+_refine_ls_extinction_expression Fc^*^=kFc[1+0.001xFc^2^\l^3^/sin(2\q)]^-1/4^
+_refine_ls_extinction_method     SHELXL
+_refine_ls_goodness_of_fit_all   1.010
+_refine_ls_goodness_of_fit_obs   1.096
+_refine_ls_matrix_type           full
+_refine_ls_number_parameters     65
+_refine_ls_number_reflns         1172
+_refine_ls_number_restraints     0
+_refine_ls_restrained_S_all      1.010
+_refine_ls_restrained_S_obs      1.096
+_refine_ls_R_factor_all          0.0716
+_refine_ls_R_factor_obs          0.0477
+_refine_ls_shift/esd_max         0.000
+_refine_ls_shift/esd_mean        0.000
+_refine_ls_structure_factor_coef Fsqd
+_refine_ls_weighting_details
+'w=1/[\s^2^(Fo^2^)+(0.0630P)^2^+0.0508P] where P=(Fo^2^+2Fc^2^)/3'
+_refine_ls_weighting_scheme      calc
+_refine_ls_wR_factor_all         0.1228
+_refine_ls_wR_factor_obs         0.1124
+_reflns_number_observed          850
+_reflns_number_total             1172
+_reflns_observed_criterion       >2sigma(I)
+_cod_depositor_comments
+;
+The following automatic conversions were performed:
+'_symmetry_cell_setting' value 'Monoclinic' changed to 'monoclinic'
+according to '/home/saulius/struct/CIF-dictionaries/cif_core.dic'
+dictionary named 'cif_core.dic' version 2.4.1 from 2010-06-29.
+
+Automatic conversion script
+Id: cif_fix_enum 1527 2010-12-29 10:47:43Z saulius 
+
+The following automatic conversions were performed:
+
+'_exptl_crystal_density_meas' value 'not_measured' was changed to '?'
+- the value is perceived as not measured.
+
+Automatic conversion script
+Id: cif_fix_values 3008 2015-01-20 13:52:24Z robertas 
+
+The following automatic conversions were performed:
+
+'_refine_ls_weighting_scheme' value 'calc
+w=1/[\s^2^(Fo^2^)+(0.0630P)^2^+0.0508P] where P=(Fo^2^+2Fc^2^)/3' was
+changed to 'calc'. New tag '_refine_ls_weighting_details' was
+created. The value of the new tag was set to
+'w=1/[\s^2^(Fo^2^)+(0.0630P)^2^+0.0508P] where P=(Fo^2^+2Fc^2^)/3'.
+
+Automatic conversion script
+Id: cif_fix_values 3143 2015-03-26 13:38:13Z robertas 
+;
+_cod_original_sg_symbol_H-M      P2(1)/n
+_cod_database_code               1100686
+loop_
+_symmetry_equiv_pos_as_xyz
+'x, y, z'
+'-x+1/2, y+1/2, -z+1/2'
+'-x, -y, -z'
+'x-1/2, -y-1/2, z-1/2'
+loop_
+_atom_site_aniso_label
+_atom_site_aniso_U_11
+_atom_site_aniso_U_22
+_atom_site_aniso_U_33
+_atom_site_aniso_U_23
+_atom_site_aniso_U_13
+_atom_site_aniso_U_12
+N1 0.0373(6) 0.0486(7) 0.0290(6) 0.0000(5) 0.0089(5) -0.0059(5)
+N2 0.0461(7) 0.0528(8) 0.0289(7) -0.0022(5) 0.0078(5) -0.0051(6)
+N3 0.0375(6) 0.0373(6) 0.0355(6) 0.0026(5) 0.0105(5) -0.0031(5)
+N4 0.0446(7) 0.0599(9) 0.0270(6) 0.0001(5) 0.0077(5) -0.0168(6)
+C1 0.0316(7) 0.0343(7) 0.0295(7) 0.0034(5) 0.0079(5) 0.0012(5)
+C2 0.0455(8) 0.0501(9) 0.0329(7) -0.0061(6) 0.0033(6) -0.0063(7)
+C3 0.0357(8) 0.0392(8) 0.0435(8) -0.0018(6) 0.0075(6) -0.0053(6)
+loop_
+_atom_site_label
+_atom_site_type_symbol
+_atom_site_fract_x
+_atom_site_fract_y
+_atom_site_fract_z
+_atom_site_U_iso_or_equiv
+_atom_site_thermal_displace_type
+_atom_site_occupancy
+_atom_site_calc_flag
+_atom_site_refinement_flags
+_atom_site_disorder_group
+N1 N 0.2475(2) 0.57512(8) 0.6820(2) 0.0380(3) Uani 1 d . .
+N2 N 0.3881(2) 0.60521(9) 0.8778(2) 0.0425(4) Uani 1 d . .
+N3 N 0.5427(2) 0.65253(8) 0.4825(2) 0.0363(3) Uani 1 d . .
+N4 N 0.1886(2) 0.56679(9) 0.2986(2) 0.0437(4) Uani 1 d . .
+H4A H 0.0511(2) 0.53328(9) 0.2989(2) 0.052 Uiso 1 calc R .
+H4B H 0.2345(2) 0.57994(9) 0.1736(2) 0.052 Uiso 1 calc R .
+C1 C 0.3303(3) 0.59827(9) 0.4917(2) 0.0316(3) Uani 1 d . .
+C2 C 0.6013(3) 0.65556(10) 0.8796(3) 0.0435(4) Uani 1 d . .
+H2B H 0.7023(3) 0.67519(10) 1.0161(3) 0.052 Uiso 1 calc R .
+C3 C 0.6765(3) 0.67962(10) 0.6789(2) 0.0395(4) Uani 1 d . .
+H3B H 0.8262(3) 0.71598(10) 0.6845(2) 0.047 Uiso 1 calc R .
+loop_
+_atom_type_symbol
+_atom_type_description
+_atom_type_scat_dispersion_real
+_atom_type_scat_dispersion_imag
+_atom_type_scat_source
+C C 0.0033 0.0016 'International Tables Vol C Tables 4.2.6.8 and 6.1.1.4'
+H H 0.0000 0.0000 'International Tables Vol C Tables 4.2.6.8 and 6.1.1.4'
+N N 0.0061 0.0033 'International Tables Vol C Tables 4.2.6.8 and 6.1.1.4'
+loop_
+_geom_angle_atom_site_label_1
+_geom_angle_atom_site_label_2
+_geom_angle_atom_site_label_3
+_geom_angle
+_geom_angle_site_symmetry_1
+_geom_angle_site_symmetry_3
+_geom_angle_publ_flag
+N2 N1 C1 118.06(12) . . ?
+C2 N2 N1 119.48(12) . . ?
+C3 N3 C1 114.73(12) . . ?
+N4 C1 N1 117.04(12) . . ?
+N4 C1 N3 117.87(12) . . ?
+N1 C1 N3 125.08(12) . . ?
+N2 C2 C3 120.59(14) . . ?
+N3 C3 C2 122.00(13) . . ?
+loop_
+_geom_bond_atom_site_label_1
+_geom_bond_atom_site_label_2
+_geom_bond_distance
+_geom_bond_site_symmetry_2
+_geom_bond_publ_flag
+N1 N2 1.334(2) . ?
+N1 C1 1.351(2) . ?
+N2 C2 1.319(2) . ?
+N3 C3 1.312(2) . ?
+N3 C1 1.358(2) . ?
+N4 C1 1.330(2) . ?
+C2 C3 1.394(2) . ?
+loop_
+_cod_related_entry_id
+_cod_related_entry_database
+_cod_related_entry_code
+1 ChemSpider 63880
+2 PubChem 70715
