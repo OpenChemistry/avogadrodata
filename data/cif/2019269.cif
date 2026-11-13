@@ -1,0 +1,126 @@
+#------------------------------------------------------------------------------
+#$Date: 2025-08-19 09:12:48 +0300 (Tue, 19 Aug 2025) $
+#$Revision: 301798 $
+#$URL: file:///home/coder/svn-repositories/_RELOADED_COD/cod-reloaded/cif/2/01/92/2019269.cif $
+#------------------------------------------------------------------------------
+#
+# This file is available in the Crystallography Open Database (COD),
+# http://www.crystallography.net/. The original data for this entry
+# were provided by IUCr Journals, http://journals.iucr.org/.
+#
+# The file may be used within the scientific community so long as
+# proper attribution is given to the journal article from which the
+# data were obtained.
+#
+data_2019269
+loop_
+_publ_author_name
+'Lopez de Diego, Heidi'
+'Koradia, Vishal'
+'Bond, Andrew D.'
+_publ_section_title
+;
+ Enantiotropically related polymorphs of gaboxadol hydrochloride
+;
+_journal_coeditor_code           FM3008
+_journal_issue                   11
+_journal_name_full               'Acta Crystallographica Section C'
+_journal_page_first              1234
+_journal_page_last               1237
+_journal_paper_doi               10.1107/S0108270113025961
+_journal_volume                  69
+_journal_year                    2013
+_chemical_formula_moiety         'C6 H9 N2 O2 +, Cl -'
+_chemical_formula_sum            'C6 H9 Cl N2 O2'
+_chemical_formula_weight         176.60
+_chemical_name_common            'Gaboxadol hydrochloride'
+_chemical_name_systematic
+;
+4,5,6,7-Tetrahydroisoxazolo[5,4-c]pyridin-3-ol hydrochloride
+;
+_space_group_IT_number           2
+_symmetry_cell_setting           triclinic
+_symmetry_space_group_name_Hall
+'-P 1 (-1/2*x+1/2*y+1/2*z,1/2*x-1/2*y+1/2*z,1/2*x+1/2*y-1/2*z)'
+_symmetry_space_group_name_H-M   'I -1'
+_cell_angle_alpha                89.683
+_cell_angle_beta                 92.077
+_cell_angle_gamma                99.652
+_cell_formula_units_Z            8
+_cell_length_a                   13.6018
+_cell_length_b                   6.6783
+_cell_length_c                   17.0168
+_cell_volume                     1522.871
+_cod_data_source_file            fm3008.cif
+_cod_data_source_block           RT_I-1
+_cod_original_cell_volume        1522.86
+_cod_original_sg_symbol_Hall     '-I 1'
+_cod_database_code               2019269
+loop_
+_symmetry_equiv_pos_as_xyz
+'x, y, z'
+'-x, -y, -z'
+'0.5+x, 0.5+y, 0.5+z'
+'0.5-x, 0.5-y, 0.5-z'
+loop_
+_atom_site_type_symbol
+_atom_site_label
+_atom_site_fract_x
+_atom_site_fract_y
+_atom_site_fract_z
+Cl Cl1 0.61890 0.27314 0.20336
+Cl Cl2 0.62294 0.30291 0.70219
+O O1A 0.37367 0.58597 -0.03535
+H H1A 0.37409 0.60337 -0.08477
+O O2A 0.38238 0.07047 -0.04236
+N N1A 0.38138 0.26106 -0.08123
+N N2A 0.40315 0.03589 0.17111
+H H2AA 0.39208 -0.05957 0.20877
+H H2AB 0.46857 0.08863 0.17376
+C C1A 0.37697 0.39044 -0.02417
+C C2A 0.37394 0.29745 0.05144
+C C3A 0.37781 0.10502 0.03578
+C C4A 0.37880 -0.06327 0.09301
+H H4AA 0.42878 -0.14444 0.08000
+H H4AB 0.31414 -0.15046 0.09304
+C C5A 0.34499 0.19992 0.18801
+H H5AA 0.35938 0.24554 0.24185
+H H5AB 0.27426 0.14619 0.18263
+C C6A 0.36983 0.37894 0.13290
+H H6AA 0.31915 0.46500 0.13464
+H H6AB 0.43366 0.45922 0.14854
+O O1B 0.37268 -0.15151 0.46322
+H H1B 0.37544 -0.18094 0.41646
+O O2B 0.38337 0.37104 0.45852
+N N1B 0.38129 0.18109 0.41858
+N N2B 0.40896 0.40649 0.67166
+H H2BA 0.40030 0.49290 0.71022
+H H2BB 0.47408 0.39589 0.67234
+C C1B 0.37643 0.04618 0.47493
+C C2B 0.37508 0.13265 0.55106
+C C3B 0.37984 0.32928 0.53641
+C C4B 0.38179 0.49369 0.59467
+H H4BA 0.31691 0.53525 0.59640
+H H4BB 0.43087 0.61070 0.58144
+C C5B 0.34938 0.20223 0.68867
+H H5BA 0.27881 0.21008 0.68452
+H H5BB 0.36478 0.16275 0.74205
+C C6B 0.37183 0.04330 0.63208
+H H6BA 0.43546 0.00359 0.64656
+H H6BB 0.32046 -0.07629 0.63371
+loop_
+_atom_type_symbol
+_atom_type_description
+_atom_type_scat_dispersion_real
+_atom_type_scat_dispersion_imag
+_atom_type_scat_source
+C C 0.0033 0.0016 'International Tables Vol C Tables 4.2.6.8 and 6.1.1.4'
+H H 0.0000 0.0000 'International Tables Vol C Tables 4.2.6.8 and 6.1.1.4'
+N N 0.0061 0.0033 'International Tables Vol C Tables 4.2.6.8 and 6.1.1.4'
+O O 0.0106 0.0060 'International Tables Vol C Tables 4.2.6.8 and 6.1.1.4'
+Cl Cl 0.1484 0.1585 'International Tables Vol C Tables 4.2.6.8 and 6.1.1.4'
+loop_
+_cod_related_entry_id
+_cod_related_entry_database
+_cod_related_entry_code
+1 PubChem 139061703

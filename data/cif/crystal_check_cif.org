@@ -1,0 +1,103 @@
+#+DATE: [2026-10-13 Tue]
+#+TITLE: crystal_check_cif.org
+
+To complement automated tests vs. the set of .cif on
+https://github.com/openchemistry/crystals, a couple of structure models about
+small organic compounds are compiled.  For reasons of copyright and terms on
+permitted use, the .cif files' /only/ source is the Crystallographic Open Database
+(COD), https://crystallography.net consulted [2026-10-13 Tue] on
+https://crystallography.net/cod, http://qiserver.ugr.es/cod/, or
+https://crystallography.io/.
+
+There are 230 conventional settings of space groups.  CCDC reports how they
+distribute in the CSD file (about [small molecule] organic/organometallic
+structure models), a distribution different to the one in the ICSD (focused on
+inorganic compounds).  Like the printed IT, the table below compiles the
+conventional setting of a spacegroup (e.g., P2(1)/c) ahead of a
+'nonconventional' / less conventional one (e.g., P2(1)/a, or P2(1)/n), yet still
+by the same IT number.  Contrasting to the 230, there is no exhaustive
+compilation of non-standard settings of spacegroups.
+
+The focus of this first batch of structures are the 10 most frequently reported
+spacegroups of structure models of the CSD file.  This covers about 90% of the
+data eventually admitted.  The most recent survey by CCDC (see open access
+compilation on
+https://www.ccdc.cam.ac.uk/media/CSD-Organic-Space-Group-Statistics-Space-Group-Frequency-Ordering-2026.pdf
+stamped by [2026-01-01 Thu]) is used here as a guideline.
+
+To ease review, where possible, .cif referenced were favored if
+
+1) their primary publication is a journal by IUCr.  This presumes there is a
+   higher propability data are checked (e.g., https://checkcif.iucr.org/ + human
+   reviewers) for consistency and if necessary curated than in publications
+   where results of chemical crystallography tend to be an auxiliary.
+2) the model does not require to account a) for disorder and/or b) twinning
+3) the publication is open access
+
+|-------+------------+---------------+----+--------------+----------------------------------------------------------------------------------------|
+| count | COD number | space group   | IT | class        | comment                                                                                |
+|-------+------------+---------------+----+--------------+----------------------------------------------------------------------------------------|
+|    01 |    2300571 | P2(1)2(1)2(1) | 19 | orthorhombic | ylid, 1)                                                                               |
+|-------+------------+---------------+----+--------------+----------------------------------------------------------------------------------------|
+|    02 |    1100686 | P2(1)/c       | 14 | monoclinic   | 3-Amino-1,2,4-triazene                                                                 |
+|    03 |    2224953 | P2(1)/c       | 14 | monoclinic   | Propyl 4-hydroxybenzoate                                                               |
+|    04 |    1550386 | P2(1)/n       | 14 | monoclinic   | Ethyl 2,4-dihydroxy-6-methylbenzoate                                                   |
+|    05 |    2231110 | P2(1)/n       | 14 | monoclinic   | 3,4-Dihydroxyphenethyl acetate                                                         |
+|    06 |    2009004 | P2(1)/a       | 14 | monoclinic   | 1,10-decanediol                                                                        |
+|    07 |    1548840 | P2(1)/a       | 14 | monoclinic   | \alpha-D,L-sorbose                                                                     |
+|-------+------------+---------------+----+--------------+----------------------------------------------------------------------------------------|
+|    08 |    2235790 | P-1           |  2 | triclinic    | [Fe(C5H3N2O4)2(H2O)2], a Werner complex of iron(II)                                    |
+|    09 |    2238028 | P-1           |  2 | triclinic    | 2-({1-[2-(Methyl­sulfan­yl)phen­yl]-1H-tetra­zol-5-yl}sulfan­yl)acetic acid            |
+|    10 |    7006564 | A-1           |  2 | triclinic    | Co (L) (N3) (o-vanillinate), 2)                                                        |
+|    11 |    2311997 | B-1           |  2 | triclinic    | cloxazolam, 3)                                                                         |
+|    12 |    7011106 | F-1           |  2 | triclinic    | D,L-[Fe2{SCH2CH(CH2OH)S}(CO)6]                                                         |
+|    13 |    2019269 | I-1           |  2 | triclinic    | Gaboxadol hydrochloride                                                                |
+|-------+------------+---------------+----+--------------+----------------------------------------------------------------------------------------|
+|    14 |    2201380 | P2(1)2(1)2(1) | 19 | orthorhombic | Bis(L-proline) hydrogen nitrate                                                        |
+|    15 |    2017715 | P2(1)2(1)2(1) | 19 | orthorhombic | L-Isoleucyl-L-asparagine                                                               |
+|-------+------------+---------------+----+--------------+----------------------------------------------------------------------------------------|
+|    16 |    2219533 | P2(1)         |  4 | monoclinic   | 1-Methoxycarbonyl-2-(4-nitrophenyl)ethanaminium nitrate                                |
+|    17 |    2220121 | P2(1)         |  4 | monoclinic   | 3-Nitro-<i>N</i>-(8-quinolyl)benzamide                                                 |
+|    18 |    2108645 | B2(1)         |  4 | monoclinic   | 1-{(R)-1-[(3-oxo-2-isoindolinoyl)methyl]-2-propenyl}-5-methyl-2,3-indolinedione,  4)   |
+|-------+------------+---------------+----+--------------+----------------------------------------------------------------------------------------|
+|    19 |    1543726 | C2/c          | 15 | monoclinic   | Ethyl 2-[(azidocarbonyl)amino]benzoate                                                 |
+|    20 |    2228896 | C2/c          | 15 | monoclinic   | Ethyl 2-(1<i>H</i>-1,2,3-benzotriazol-1-yl)acetate                                     |
+|    21 |    2001236 | A2/a          | 15 | monoclinic   | N,N'-dimethylpiperazine-2,3-dithione                                                   |
+|    22 |    2003398 | A2/a          | 15 | monoclinic   | 3-Oxo-2-phenyl-3a,4,5,7a-tetrahydro-5,7a-epoxyisoindoline-4-carboxylic Acid            |
+|    23 |    1544292 | I2/a          | 15 | monoclinic   | Ammonium hydrogen bis[4-(2-phenyl-2<i>H</i>-tetrazol-5-yl)benzoate]                    |
+|    24 |    1556407 | I2/a          | 15 | monoclinic   | 1-Nitro-4-(1-propyn-1-yl)benzene                                                       |
+|-------+------------+---------------+----+--------------+----------------------------------------------------------------------------------------|
+|    25 |    1542455 | Pbca          | 61 | orthorhombic | 1-Anilino-5-methyl-1<i>H</i>-1,2,3-triazole-4-carbaldehyde                             |
+|    26 |    2221508 | Pbca          | 61 | orthorhombic | 2,2'-(2,2'-Biimidazole-1,1'-diyl)diethanoic acid                                       |
+|-------+------------+---------------+----+--------------+----------------------------------------------------------------------------------------|
+|    27 |    1549899 | P1            |  1 | triclinic    | Methyl 4-{<i>N</i>'-[(1<i>E</i>)-1-(pyrazin-2-yl)ethylidene]hydrazinecarbonyl}benzoate |
+|    28 |    1542542 | P1            |  1 | triclinic    | 4,4'-(1,2-Diazaniumylethane-1,2-diyl)dibenzoate rihydrate                              |
+|-------+------------+---------------+----+--------------+----------------------------------------------------------------------------------------|
+|    29 |    1546645 | C2            |  5 | monoclinic   | 2-Amino-4-methylpyridinium 4-methoxybenzoate dihydrate                                 |
+|    30 |    1546708 | C2            |  5 | monoclinic   | an indole-2,3-dione                                                                    |
+|    31 |    2012283 | A2            |  5 | monoclinic   | Methyl N-(carbobenzoxy)-α,β-didehydrovalyl-L-tryptophanate                             |
+|    32 |    1543858 | I2            |  5 | monoclinic   | L-aminobutanoic acid                                                                   |
+|    33 |    2011631 | I2            |  5 | monoclinic   | "A dideoxydidehydronucleoside derivative"                                              |
+|-------+------------+---------------+----+--------------+----------------------------------------------------------------------------------------|
+|    34 |    1546702 | Cc            |  9 | monoclinic   | 2-{(E)-[(4-Anilinophen­yl)imino]­meth­yl}-4-[(E)-(4-meth­­oxy­phen­yl)diazen­yl]phenol |
+|    35 |    2220844 | Cc            |  9 | monoclinic   | (Pyridine-2,6-diyldi­methyl­ene)bis­­(di­phenyl­methanol)                              |
+|    36 |    2022767 | Ia            |  9 | monoclinic   | 1-(4,5-dimeth­­oxy-2,3-di­nitro­phen­yl)-2-methyl­propyl N-butyl­carbamate             |
+|    37 |    2311474 | Ia            |  9 | monoclinic   | 4-(4-Hydroxyphenyl)-2,2,4-trimethyl-7,8-benzothiachroman                               |
+|-------+------------+---------------+----+--------------+----------------------------------------------------------------------------------------|
+
+Notes to the table:
+
+1) The underlying structure is "the YLID", i.e. the probably most prominent
+   reference to check single-crystal X-ray diffractometers for small molecules.
+   The CSD file holds multiple records of this by structure code MSULIN
+   (https://www.ccdc.cam.ac.uk/structures/Search?Ccdcid=msulin&DatabaseToSearch=Published)
+2) disordered methanol as solvent molecule present (O61)
+3) Abstract explicitly states "However, in order to facilitate the analysis of
+   the striking pseudosymmetry relating the four independent mol­ecules, the
+   structure has been analysed and reported in the nonconventional centred
+   B\overline{1} space-group setting."
+4) Abstract explicitly states "The twin lattice coincides with the
+   pseudo-hexagonal sublattice of the individual domain, which justifies the
+   adoption of the unconventional setting B21 of the space group."
+
+END
